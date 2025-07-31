@@ -2,30 +2,46 @@ extends Node
 
 var is_recording := false
 var recording_start_time := 0.0
-var recorded_inputs := []  # Stores input data as { time: float, input: Dictionary }
-
+var recording_inputs := []  # Stores input data as { time: float, input: Dictionary }
+var recorded_inputs := []
 # Keep reference to the current player and ghosts
-var current_player: Node = null
-var ghost_scene: PackedScene = preload("res://scenes/other.tscn")
-var start_pos
+var current_player = null
+var should_change = false
+
+func get_should_change_characters():
+	return should_change
+
+func get_last_played_character():
+	return current_player;
+
+func get_input_recorded():
+	return recorded_inputs.duplicate(true)
 
 func start_recording(player):
-	start_pos = player.global_position
 	is_recording = true
 	recording_start_time = 0.0
-	recorded_inputs.clear()
+	recording_inputs.clear()
 	current_player = player
 	print("🎥 Recording started")
 
-func stop_recording():
+func stop_recording_and_change():
 	is_recording = false
+	recorded_inputs = recording_inputs.duplicate(true)
+	should_change = true
 	print("🛑 Recording stopped")
-	
-	# Instantiate ghost and send it the recorded inputs
-	var ghost = ghost_scene.instantiate()
-	get_node("/root/Level/Ghost").add_child(ghost)
-	ghost.global_position = start_pos
-	ghost.playback(recorded_inputs)
+
+func stop_recording_but_keep_character():
+	is_recording = false
+	should_change = false
+	print("🛑 Recording stopped")
+
+func _input(event):
+	if Input.is_action_pressed("change"):
+		stop_recording_and_change()
+		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("keep"):
+		stop_recording_but_keep_character()
+		get_tree().reload_current_scene()
 
 func record_input(delta):
 	if not is_recording:
@@ -39,7 +55,7 @@ func record_input(delta):
 		"down": Input.is_action_pressed("down"),
 		"interact": Input.is_action_pressed("interagir")
 	}
-	recorded_inputs.append({
+	recording_inputs.append({
 		"time": recording_start_time,
 		"input": input_data
 	})

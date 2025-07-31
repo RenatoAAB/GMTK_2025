@@ -1,18 +1,16 @@
-[gd_scene load_steps=162 format=4 uid="uid://cil7frnkxylvv"]
+[gd_scene load_steps=160 format=4 uid="uid://xuehawguptml"]
 
-[ext_resource type="Script" uid="uid://bswcnxjqay871" path="res://scenes/cena_2d_renan.gd" id="1_0qyxi"]
-[ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="1_yo6r2"]
-[ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_mse8b"]
-[ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="3_76l6q"]
-[ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="4_ge1yq"]
-[ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="4_mse8b"]
-[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="6_76l6q"]
-[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="8_gf03w"]
-[ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scenes/enemy.gd" id="9_wf2uy"]
-[ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="11_24y8w"]
+[ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="2_jsx55"]
+[ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="3_u8dr3"]
+[ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="4_ip6fh"]
+[ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="5_4aw34"]
+[ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="6_gsas5"]
+[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="7_wmbac"]
+[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="9_k5cja"]
+[ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="10_5vacv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf03w"]
-texture = ExtResource("1_yo6r2")
+texture = ExtResource("2_jsx55")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
@@ -1288,7 +1286,7 @@ polygon = PackedVector2Array(-2, -2, 2, -2, 4, 8, -4, 8)
 polygon = PackedVector2Array(-2, -2, 2, -2, 4, 8, -4, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nk33d"]
-texture = ExtResource("2_mse8b")
+texture = ExtResource("3_u8dr3")
 texture_region_size = Vector2i(8, 8)
 0:0/size_in_atlas = Vector2i(5, 3)
 0:0/0 = 0
@@ -2182,7 +2180,7 @@ polygon = PackedVector2Array(-4, -8, 4, -8, 4, 4, -4, 4)
 polygon = PackedVector2Array(-4, -8, 4, -8, 4, 6, -4, 6)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf2uy"]
-texture = ExtResource("3_76l6q")
+texture = ExtResource("4_ip6fh")
 texture_region_size = Vector2i(8, 8)
 19:0/size_in_atlas = Vector2i(1, 2)
 19:0/0 = 0
@@ -2607,7 +2605,7 @@ polygon = PackedVector2Array(-2, -8, 4, -8, 4, 8, -2, 8)
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 8, -4, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76l6q"]
-texture = ExtResource("4_mse8b")
+texture = ExtResource("5_4aw34")
 texture_region_size = Vector2i(8, 8)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
@@ -2906,7 +2904,7 @@ polygon = PackedVector2Array(-2, -2, 4, -2, 4, 4, -2, 4)
 polygon = PackedVector2Array(-2, -2, 4, -2, 4, 2, -2, 2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge1yq"]
-texture = ExtResource("4_ge1yq")
+texture = ExtResource("6_gsas5")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_eyvlh")
@@ -3161,7 +3159,7 @@ sources/5 = SubResource("TileSetAtlasSource_76l6q")
 sources/6 = SubResource("TileSetAtlasSource_ge1yq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qyxi"]
-atlas = ExtResource("8_gf03w")
+atlas = ExtResource("9_k5cja")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk33d"]
@@ -3179,7 +3177,6 @@ animations = [{
 radius = 3.0
 
 [node name="cena_2d_renan" type="Node2D"]
-script = ExtResource("1_0qyxi")
 
 [node name="map" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -3190,8 +3187,18 @@ tile_set = SubResource("TileSet_0qyxi")
 tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAAAAP//AQAKAAAAAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_76l6q")]
+[node name="NinjaA" parent="." instance=ExtResource("7_wmbac")]
+modulate = Color(0, 0.219608, 1, 1)
+position = Vector2(-15, -12)
+collision_layer = 3
+id = "A"
+being_played = false
+
+[node name="NinjaB" parent="." instance=ExtResource("7_wmbac")]
+modulate = Color(1, 0, 0.298039, 1)
 position = Vector2(22, -12)
+collision_layer = 2
+id = "B"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(16, -16)
@@ -3199,12 +3206,14 @@ zoom = Vector2(8, 8)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(1, 1, 1, 0.996078)
-energy = 0.47
+energy = 0.0
 blend_mode = 1
+range_item_cull_mask = 2
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+light_mask = 2
 position = Vector2(48, -6)
-script = ExtResource("9_wf2uy")
+collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
 sprite_frames = SubResource("SpriteFrames_nk33d")
@@ -3218,5 +3227,5 @@ modulate = Color(1, 1, 1, 0.505882)
 show_behind_parent = true
 position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("11_24y8w")
+texture = ExtResource("10_5vacv")
 offset = Vector2(0, 100)

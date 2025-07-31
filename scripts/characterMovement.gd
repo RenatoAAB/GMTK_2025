@@ -1,6 +1,7 @@
 extends CharacterBody2D
+@onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var SPEED := 300.0
+@export var SPEED := 30.0
 @export var ACCEL := 10.0
 
 func _ready():
@@ -27,8 +28,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed("up"):
 		input_direction.y -= 1
 	
+	# animation logic
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
+		player_sprite.play("walking")
+	else:
+		player_sprite.play("idle")
+	
+	# flip sprite
+	if velocity.x != 0:
+		player_sprite.flip_h = velocity.x < 0
 	
 	velocity = lerp(velocity, input_direction * SPEED, delta * ACCEL)
 	move_and_slide()

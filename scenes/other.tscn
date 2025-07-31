@@ -1,18 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://5vntilyn772i"]
+[gd_scene load_steps=6 format=3 uid="uid://5vntilyn772i"]
 
 [ext_resource type="Script" uid="uid://b1fg4glxf82f" path="res://scripts/other.gd" id="1_xkr6e"]
-[ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="2_v7x18"]
+[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_xkr6e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_xkr6e")
+region = Rect2(16, 56, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7x18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_23gcr"]
-radius = 53.7587
+radius = 3.16228
 
 [node name="Other" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_xkr6e")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.987734, 0.441153, 0, 1)
-texture = ExtResource("2_v7x18")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.717332, 0.332605, 0.197581, 1)
+sprite_frames = SubResource("SpriteFrames_v7x18")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_23gcr")

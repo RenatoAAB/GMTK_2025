@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqd5w4ooo0chj"]
+
+[ext_resource type="Script" uid="uid://cd5wthx2f7v7d" path="res://scripts/interaction_effect.gd" id="1_12t01"]
+[ext_resource type="PackedScene" uid="uid://k663yqxubku8" path="res://scenes/interactions/interaction_effect_dano.tscn" id="2_wvwqb"]
+[ext_resource type="PackedScene" uid="uid://ctt11owa3ktow" path="res://scenes/interactions/interaction_effect_distraction.tscn" id="3_fbwtm"]
+
+[node name="Explosao" type="Node2D"]
+script = ExtResource("1_12t01")
+
+[node name="InteractionEffectDano" parent="." instance=ExtResource("2_wvwqb")]
+key_frame = 11
+
+[node name="effect" parent="InteractionEffectDano/EffectArea" index="0"]
+y_sort_enabled = false
+
+[node name="InteractionEffectDistraction" parent="." instance=ExtResource("3_fbwtm")]
+
+[editable path="InteractionEffectDano"]

@@ -3203,6 +3203,8 @@ tile_set = SubResource("TileSet_0qyxi")
 tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAAAAP//AQAKAAAAAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
 
+[node name="Interactables" type="Node2D" parent="."]
+
 [node name="NinjaA" parent="." instance=ExtResource("6_yy46b")]
 modulate = Color(0, 0.219608, 1, 1)
 position = Vector2(-15, -12)

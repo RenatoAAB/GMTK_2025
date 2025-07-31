@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var being_played = true
 @export var died = false
 
+var possible_interaction = null
+
 #Playback variables
 var playback_inputs := []
 var playback_index := 0
@@ -24,6 +26,9 @@ func _ready():
 		else:
 			being_played = last_played == id
 	call_deferred("_start_recording")
+	
+func set_possible_interaction(interaction):
+	possible_interaction = interaction
 
 func _start_recording():
 	if (being_played):
@@ -65,6 +70,9 @@ func _move(input, delta):
 	if input["down"]: direction.y += 1
 	direction = direction.normalized()
 	
+	if input["interact"] and possible_interaction != null:
+		possible_interaction.activate()
+		
 	velocity = lerp(velocity, direction * SPEED, delta * ACCEL)
 	
 	_control_animation(direction)

@@ -44,11 +44,17 @@ func stop_recording_but_keep_character():
 	print("🛑 Recording stopped")
 
 func _input(event):
-	if Input.is_action_pressed("change"):
-		stop_recording_and_change()
+	if Input.is_action_pressed("play_first"):
+		if (current_player == 'A'):
+			stop_recording_but_keep_character()
+		else:
+			stop_recording_and_change()
 		get_tree().reload_current_scene()
-	if Input.is_action_just_pressed("keep"):
-		stop_recording_but_keep_character()
+	if Input.is_action_just_pressed("play_second"):
+		if (current_player == 'B'):
+			stop_recording_but_keep_character()
+		else:
+			stop_recording_and_change()
 		get_tree().reload_current_scene()
 
 func record_input(delta):

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctt11owa3ktow"]
+
+[ext_resource type="Script" uid="uid://c436su8ox00ft" path="res://scripts/interaction_effect_distraction.gd" id="1_d4btq"]
+
+[node name="InteractionEffectDistraction" type="Node2D"]
+script = ExtResource("1_d4btq")
+
+[node name="som" type="AudioStreamPlayer2D" parent="."]

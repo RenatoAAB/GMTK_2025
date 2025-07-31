@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://v2tgiusrnp0n"]
+
+[ext_resource type="Script" uid="uid://0ki6k02n8hwm" path="res://scripts/interaction.gd" id="1_83e7e"]
+[ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="2_xkqms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7hjyq"]
+
+[node name="Interaction" type="Node2D"]
+script = ExtResource("1_83e7e")
+
+[node name="TriggerArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="trigger" type="Sprite2D" parent="TriggerArea"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_xkqms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("CircleShape2D_7hjyq")
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]

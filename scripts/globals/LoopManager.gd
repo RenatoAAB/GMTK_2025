@@ -17,6 +17,14 @@ func get_last_played_character():
 func get_input_recorded():
 	return recorded_inputs.duplicate(true)
 
+func reset_vars_for_level_start():
+	current_player = null
+	should_change = false
+	recorded_inputs = []
+	is_recording = false
+	recording_start_time = 0.0
+	recording_inputs = []
+
 func start_recording(player):
 	is_recording = true
 	recording_start_time = 0.0

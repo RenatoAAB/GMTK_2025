@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var ACCEL := 10.0
 
 @export var being_played = true
+@export var died = false
 
 #Playback variables
 var playback_inputs := []
@@ -16,6 +17,7 @@ var playback_done := false
 func _ready():
 	var should_change_character = LoopManager.get_should_change_characters()
 	var last_played = LoopManager.get_last_played_character()
+	add_to_group("Playable")
 	if last_played != null:
 		if should_change_character:
 			being_played = not last_played == id

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn2pln1gqhliw"]
+
+[ext_resource type="Script" uid="uid://cfwjbuf0epy8m" path="res://scripts/ui/menu.gd" id="1_cx0sj"]
+[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="2_ntye7"]
+[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="3_cghgw"]
+[ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="4_1pxh0"]
+[ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/ui/level_selection.tscn" id="5_e11en"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cx0sj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.12, 16.72)
+color = Color(0.925011, 0.667135, 0.39847, 1)
+
+[node name="PlayText2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 112.0
+offset_right = 1164.0
+offset_bottom = 235.0
+text = "Twin escape"
+label_settings = ExtResource("2_ntye7")
+horizontal_alignment = 1
+
+[node name="PlayText3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 112.0
+offset_right = 1164.0
+offset_bottom = 235.0
+text = "Twin escape"
+label_settings = ExtResource("3_cghgw")
+horizontal_alignment = 1
+
+[node name="Botao" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 371.0
+offset_right = 762.0
+offset_bottom = 541.0
+color = Color(0.345098, 0.0980392, 0.196078, 1)
+
+[node name="BotaoBack" type="ColorRect" parent="Botao"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 355.0
+offset_bottom = 155.0
+color = Color(0.792157, 0.501961, 0.4, 1)
+
+[node name="PlayText" type="Label" parent="Botao/BotaoBack"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 15.0
+offset_right = 317.0
+offset_bottom = 138.0
+text = "Play"
+label_settings = ExtResource("4_1pxh0")
+
+[node name="BotaoPlay" type="Button" parent="Botao/BotaoBack/PlayText"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -183.5
+offset_top = -138.0
+offset_right = 166.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="LevelSelection" parent="." instance=ExtResource("5_e11en")]
+
+[connection signal="pressed" from="Botao/BotaoBack/PlayText/BotaoPlay" to="." method="_on_botao_play_pressed"]

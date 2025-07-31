@@ -1,17 +1,26 @@
-[gd_scene load_steps=161 format=4 uid="uid://xuehawguptml"]
+[gd_scene load_steps=166 format=4 uid="uid://ck1gkaat6s53u"]
 
-[ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="2_jsx55"]
-[ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="3_u8dr3"]
-[ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="4_ip6fh"]
-[ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="5_4aw34"]
-[ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="6_gsas5"]
-[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="7_wmbac"]
-[ext_resource type="PackedScene" uid="uid://bb1lmjt284vec" path="res://scenes/ui/pause_menu.tscn" id="9_6ig0u"]
-[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="9_k5cja"]
-[ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="10_5vacv"]
+[ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="1_64vxc"]
+[ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_h5t2n"]
+[ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="3_bgxm0"]
+[ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="4_ablmx"]
+[ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="5_cqqo6"]
+[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="6_yy46b"]
+[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="7_7c24a"]
+[ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="8_fr8k4"]
+[ext_resource type="PackedScene" uid="uid://bb1lmjt284vec" path="res://scenes/ui/pause_menu.tscn" id="9_8yl83"]
+[ext_resource type="Script" uid="uid://de7accoonycq4" path="res://scripts/winning_area.gd" id="10_b0lsh"]
+[ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="10_fal5o"]
+[ext_resource type="PackedScene" uid="uid://cgnxum1dgug0u" path="res://scenes/ui/win_menu.tscn" id="12_0caop"]
+
+[sub_resource type="Environment" id="Environment_fal5o"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 3.73
+glow_hdr_scale = 1.34
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf03w"]
-texture = ExtResource("2_jsx55")
+texture = ExtResource("1_64vxc")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
@@ -1287,7 +1296,7 @@ polygon = PackedVector2Array(-2, -2, 2, -2, 4, 8, -4, 8)
 polygon = PackedVector2Array(-2, -2, 2, -2, 4, 8, -4, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nk33d"]
-texture = ExtResource("3_u8dr3")
+texture = ExtResource("2_h5t2n")
 texture_region_size = Vector2i(8, 8)
 0:0/size_in_atlas = Vector2i(5, 3)
 0:0/0 = 0
@@ -2181,7 +2190,7 @@ polygon = PackedVector2Array(-4, -8, 4, -8, 4, 4, -4, 4)
 polygon = PackedVector2Array(-4, -8, 4, -8, 4, 6, -4, 6)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf2uy"]
-texture = ExtResource("4_ip6fh")
+texture = ExtResource("3_bgxm0")
 texture_region_size = Vector2i(8, 8)
 19:0/size_in_atlas = Vector2i(1, 2)
 19:0/0 = 0
@@ -2606,7 +2615,7 @@ polygon = PackedVector2Array(-2, -8, 4, -8, 4, 8, -2, 8)
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 8, -4, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76l6q"]
-texture = ExtResource("5_4aw34")
+texture = ExtResource("4_ablmx")
 texture_region_size = Vector2i(8, 8)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
@@ -2905,7 +2914,7 @@ polygon = PackedVector2Array(-2, -2, 4, -2, 4, 4, -2, 4)
 polygon = PackedVector2Array(-2, -2, 4, -2, 4, 2, -2, 2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ge1yq"]
-texture = ExtResource("6_gsas5")
+texture = ExtResource("5_cqqo6")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_eyvlh")
@@ -3160,7 +3169,7 @@ sources/5 = SubResource("TileSetAtlasSource_76l6q")
 sources/6 = SubResource("TileSetAtlasSource_ge1yq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qyxi"]
-atlas = ExtResource("9_k5cja")
+atlas = ExtResource("7_7c24a")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk33d"]
@@ -3177,7 +3186,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wf2uy"]
 radius = 3.0
 
-[node name="cena_2d_renan" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6ue0"]
+size = Vector2(19, 14)
+
+[node name="base_level" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fal5o")
 
 [node name="map" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -3188,17 +3203,15 @@ tile_set = SubResource("TileSet_0qyxi")
 tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAAAAP//AQAKAAAAAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
 
-[node name="NinjaA" parent="." instance=ExtResource("7_wmbac")]
+[node name="NinjaA" parent="." instance=ExtResource("6_yy46b")]
 modulate = Color(0, 0.219608, 1, 1)
 position = Vector2(-15, -12)
-collision_layer = 3
 id = "A"
 being_played = false
 
-[node name="NinjaB" parent="." instance=ExtResource("7_wmbac")]
+[node name="NinjaB" parent="." instance=ExtResource("6_yy46b")]
 modulate = Color(1, 0, 0.298039, 1)
 position = Vector2(22, -12)
-collision_layer = 2
 id = "B"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -3211,24 +3224,43 @@ energy = 0.0
 blend_mode = 1
 range_item_cull_mask = 2
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="enemy" type="CharacterBody2D" parent="."]
 light_mask = 2
 position = Vector2(48, -6)
 collision_layer = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy"]
 sprite_frames = SubResource("SpriteFrames_nk33d")
 frame_progress = 0.890277
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
 shape = SubResource("CircleShape2D_wf2uy")
 
-[node name="VisionCone" type="Sprite2D" parent="CharacterBody2D2"]
+[node name="VisionCone" type="Sprite2D" parent="enemy"]
 modulate = Color(1, 1, 1, 0.505882)
 show_behind_parent = true
 position = Vector2(0, 4.76837e-07)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("10_5vacv")
+texture = ExtResource("8_fr8k4")
 offset = Vector2(0, 100)
 
-[node name="PauseMenu" parent="." instance=ExtResource("9_6ig0u")]
+[node name="winning_area" type="Area2D" parent="."]
+position = Vector2(8, 17)
+collision_mask = 3
+script = ExtResource("10_b0lsh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="winning_area"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_u6ue0")
+
+[node name="Sprite2D" type="Sprite2D" parent="winning_area"]
+modulate = Color(10, 10, 4, 1)
+scale = Vector2(0.135178, 0.0379147)
+texture = ExtResource("10_fal5o")
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_8yl83")]
+
+[node name="WinMenu" parent="." instance=ExtResource("12_0caop")]
+visible = false
+
+[connection signal="body_entered" from="winning_area" to="winning_area" method="_on_body_entered"]

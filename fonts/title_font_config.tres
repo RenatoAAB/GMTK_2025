@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b84qimq2ponbu"]
+
+[ext_resource type="FontFile" uid="uid://dm2riqyucv4dq" path="res://fonts/PixeloidSans-Bold.otf" id="1_nuf7j"]
+
+[resource]
+font = ExtResource("1_nuf7j")
+font_size = 84
+font_color = Color(0.364706, 0, 0, 1)

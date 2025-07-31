@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgnxum1dgug0u"]
+
+[ext_resource type="Script" uid="uid://bkeenjw5js8sy" path="res://scripts/ui/win_menu.gd" id="1_53mlp"]
+[ext_resource type="LabelSettings" uid="uid://crqyb5auexjsb" path="res://fonts/pause_button_font_config.tres" id="2_8ch8s"]
+[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="2_53mlp"]
+[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="3_j7fic"]
+
+[node name="WinMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_53mlp")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.12, 16.72)
+color = Color(0, 0, 0, 0.509804)
+
+[node name="PlayText2" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 107.0
+offset_right = 1153.0
+offset_bottom = 230.0
+text = "Only this time !!"
+label_settings = ExtResource("2_53mlp")
+horizontal_alignment = 1
+
+[node name="PlayText3" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 107.0
+offset_right = 1153.0
+offset_bottom = 230.0
+text = "You escaped"
+label_settings = ExtResource("3_j7fic")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -172.0
+offset_right = 185.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Botao3" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(390, 170)
+layout_mode = 2
+color = Color(0.345098, 0.0980392, 0.196078, 1)
+
+[node name="BotaoBack" type="ColorRect" parent="VBoxContainer/Botao3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 375.0
+offset_bottom = 155.0
+color = Color(0.792157, 0.501961, 0.4, 1)
+
+[node name="SelectLevel" type="Label" parent="VBoxContainer/Botao3/BotaoBack"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 379.0
+offset_bottom = 257.0
+text = "Select  level"
+label_settings = ExtResource("2_8ch8s")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BotaoSelectLevel" type="Button" parent="VBoxContainer/Botao3/BotaoBack/SelectLevel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -251.0
+offset_right = 173.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Botao3/BotaoBack/SelectLevel/BotaoSelectLevel" to="." method="_on_botao_select_level_pressed"]

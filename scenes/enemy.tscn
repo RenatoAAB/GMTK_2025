@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch2hw7pw87h1w"]
+[gd_scene load_steps=9 format=3 uid="uid://ch2hw7pw87h1w"]
 
 [ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scripts/ui/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://dm4l6xah288m3" path="res://sprites/inimigo_morto.png" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="3_c4w8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_c4w8v")
+region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qyxi"]
 atlas = ExtResource("2_5uy6h")
@@ -10,6 +15,14 @@ region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk33d"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0qyxi")
@@ -27,7 +40,6 @@ script = ExtResource("1_4ra3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nk33d")
-frame_progress = 0.890277
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wf2uy")

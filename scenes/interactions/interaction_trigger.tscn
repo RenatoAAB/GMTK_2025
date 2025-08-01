@@ -1,9 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://v2tgiusrnp0n"]
+[gd_scene load_steps=7 format=3 uid="uid://v2tgiusrnp0n"]
 
 [ext_resource type="Script" uid="uid://0ki6k02n8hwm" path="res://scripts/interaction.gd" id="1_83e7e"]
-[ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="2_xkqms"]
+[ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_r72qc"]
+[ext_resource type="Texture2D" uid="uid://bqchxnndk5ik4" path="res://sprites/interactions/altar_do_fogo.png" id="3_xkqms"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ty0p"]
+shader = ExtResource("2_r72qc")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 0.5
+shader_parameter/show_outline = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7hjyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkqms"]
+size = Vector2(4, 3)
 
 [node name="Interaction" type="Node2D"]
 script = ExtResource("1_83e7e")
@@ -12,11 +22,17 @@ script = ExtResource("1_83e7e")
 collision_mask = 3
 
 [node name="trigger" type="Sprite2D" parent="TriggerArea"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_xkqms")
+material = SubResource("ShaderMaterial_1ty0p")
+texture = ExtResource("3_xkqms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
 shape = SubResource("CircleShape2D_7hjyq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_xkqms")
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]

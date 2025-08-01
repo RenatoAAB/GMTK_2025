@@ -1954,37 +1954,24 @@ sources/5 = SubResource("TileSetAtlasSource_76l6q")
 sources/6 = SubResource("TileSetAtlasSource_ge1yq")
 
 [node name="base_level" instance=ExtResource("1_x6ivy")]
-y_sort_enabled = true
 
-[node name="furniture" parent="." index="2"]
+[node name="furniture" parent="." index="1"]
 tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAA=")
+
+[node name="Interactables" parent="." index="2"]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(2, -1)
+
+[node name="Explosao" parent="Interactables" index="0" instance=ExtResource("2_dd0lh")]
+y_sort_enabled = true
+position = Vector2(34, -20)
+
+[node name="Interaction" parent="Interactables" index="1" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_4tcl0")]
+position = Vector2(-23, 12)
+interactionEffect = NodePath("../Explosao")
 
 [node name="furnitureMiddle" type="TileMapLayer" parent="." index="3"]
 z_index = 1
 tile_map_data = PackedByteArray("AAAGAPz/BgAEAB4AAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
-
-[node name="Interactables" parent="." index="4"]
-z_index = 1
-position = Vector2(2, -1)
-
-[node name="Interaction" parent="Interactables" index="0" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_4tcl0")]
-interactionEffect = NodePath("../Explosao")
-
-[node name="TriggerArea" parent="Interactables/Interaction" index="0"]
-position = Vector2(-19, 10)
-
-[node name="Explosao" parent="Interactables" index="1" instance=ExtResource("2_dd0lh")]
-y_sort_enabled = true
-position = Vector2(34, -20)
-
-[node name="NinjaA" parent="." index="5"]
-z_index = 1
-
-[node name="NinjaB" parent="." index="6"]
-z_index = 1
-
-[node name="enemy" parent="." index="9"]
-z_index = 1
-
-[editable path="Interactables/Interaction"]

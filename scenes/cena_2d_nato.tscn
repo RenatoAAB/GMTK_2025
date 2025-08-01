@@ -3198,7 +3198,6 @@ being_played = false
 [node name="NinjaB" parent="." instance=ExtResource("7_wmbac")]
 modulate = Color(1, 0, 0.298039, 1)
 position = Vector2(22, -12)
-collision_layer = 2
 id = "B"
 
 [node name="Camera2D" type="Camera2D" parent="."]

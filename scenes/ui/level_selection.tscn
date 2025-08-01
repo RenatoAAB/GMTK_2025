@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=12 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
 [ext_resource type="PackedScene" uid="uid://di00pasualrhk" path="res://scenes/levels/level1.tscn" id="3_yssoo"]
-[ext_resource type="PackedScene" uid="uid://ywawm5lqv0oj" path="res://scenes/levels/nivel_testes_patrulhamento.tscn" id="4_hvilc"]
 [ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
@@ -11,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("6_hg3rx")
-shader_parameter/time = 1.0
+shader_parameter/time = 0.0
 
 [sub_resource type="Animation" id="Animation_hg3rx"]
 resource_name = "transition_to_title"
@@ -41,7 +40,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwede"]
@@ -67,32 +66,29 @@ text = "Choose level"
 label_settings = ExtResource("1_48dmm")
 
 [node name="BotaoLevel" parent="." instance=ExtResource("2_hvilc")]
-offset_left = 122.0
-offset_top = 299.0
-offset_right = 292.0
-offset_bottom = 469.0
+offset_left = 130.0
+offset_top = 250.0
+offset_right = 300.0
+offset_bottom = 420.0
 level_number = "1"
 level = ExtResource("3_yssoo")
 level_name = "The Prison"
 
 [node name="BotaoLevel2" parent="." instance=ExtResource("2_hvilc")]
-offset_left = 372.0
-offset_top = 298.0
-offset_right = 542.0
-offset_bottom = 468.0
+offset_left = 430.0
+offset_top = 252.0
+offset_right = 600.0
+offset_bottom = 422.0
 level_number = "2"
-level = ExtResource("4_hvilc")
-
-[node name="BotaoLevel3" parent="." instance=ExtResource("2_hvilc")]
-offset_left = 630.0
-offset_top = 297.0
-offset_right = 800.0
-offset_bottom = 467.0
-level_number = "3"
 level = ExtResource("5_yssoo")
+level_name = "The Kitchen"
 
-[node name="TitleScreen" type="CanvasLayer" parent="."]
+[node name="TitleScreen" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="TitleScreen"]
 material = SubResource("ShaderMaterial_n7r7k")
@@ -123,5 +119,3 @@ offset_bottom = 123.0
 text = "Twin escape"
 label_settings = ExtResource("8_tjon8")
 horizontal_alignment = 1
-
-[connection signal="animation_finished" from="TitleScreen/AnimationPlayer" to="BotaoLevel" method="_on_animation_player_animation_finished"]

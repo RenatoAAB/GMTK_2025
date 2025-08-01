@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgq738i6jt228"]
+
+[ext_resource type="Script" uid="uid://t1l5kj14b3r2" path="res://scripts/fireball.gd" id="1_y0tbf"]
+[ext_resource type="Texture2D" uid="uid://05nn6xgnx13b" path="res://sprites/interactions/fireball.png" id="2_oxeb6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pam0"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(0, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aplk"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(9, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbwmi"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(18, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v2ee"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(27, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fogx0"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(36, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3hb5"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(45, 0, 9, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5n34"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pam0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aplk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbwmi")
+}],
+"loop": false,
+"name": &"surgindo",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v2ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fogx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3hb5")
+}],
+"loop": true,
+"name": &"voando",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxeb6"]
+radius = 3.0
+
+[node name="Fireball" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_y0tbf")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 5.5)
+sprite_frames = SubResource("SpriteFrames_k5n34")
+animation = &"surgindo"
+frame = 2
+frame_progress = 1.0
+
+[node name="kill_area" type="Area2D" parent="."]
+position = Vector2(0, 5.5)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_oxeb6")
+
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]

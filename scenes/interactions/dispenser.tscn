@@ -1,0 +1,106 @@
+[gd_scene load_steps=17 format=3 uid="uid://dma0n7vkdga00"]
+
+[ext_resource type="Script" uid="uid://bw3a033g61nmt" path="res://scripts/dispenser.gd" id="1_yiol8"]
+[ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_u13x7"]
+[ext_resource type="Texture2D" uid="uid://cpbhlnvdi5xcs" path="res://sprites/interactions/fire_dispenser_front.png" id="4_107be"]
+[ext_resource type="AudioStream" uid="uid://k15jyeq2q83u" path="res://sounds/portal_ativo.mp3" id="5_mwgev"]
+[ext_resource type="AudioStream" uid="uid://bo8fgs8gtx5go" path="res://sounds/portal_passagem.mp3" id="6_gk421"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wgj74"]
+shader = ExtResource("2_u13x7")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 0.5
+shader_parameter/show_outline = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgj74"]
+atlas = ExtResource("4_107be")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf61a"]
+atlas = ExtResource("4_107be")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u13x7"]
+atlas = ExtResource("4_107be")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxfuu"]
+atlas = ExtResource("4_107be")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydxqj"]
+atlas = ExtResource("4_107be")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwgev"]
+atlas = ExtResource("4_107be")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk421"]
+atlas = ExtResource("4_107be")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcyg6"]
+atlas = ExtResource("4_107be")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7rqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgj74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf61a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u13x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxfuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydxqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwgev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk421")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcyg6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgj74"]
+size = Vector2(8, 5)
+
+[node name="Dispenser" type="Node2D"]
+script = ExtResource("1_yiol8")
+
+[node name="som_ativo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mwgev")
+volume_db = 20.0
+bus = &"EfeitoInteracao"
+
+[node name="som_passagem" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gk421")
+bus = &"EfeitoInteracao"
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_wgj74")
+sprite_frames = SubResource("SpriteFrames_t7rqq")
+frame = 7
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_wgj74")
+
+[connection signal="frame_changed" from="sprite" to="." method="_on_sprite_frame_changed"]

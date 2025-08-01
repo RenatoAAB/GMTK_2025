@@ -21,6 +21,7 @@ var playback_timer := 0.0
 var playback_done := false
 
 func _ready():
+	player_sprite.play("idle_"+id)
 	var should_change_character = LoopManager.get_should_change_characters()
 	var last_played = LoopManager.get_last_played_character()
 	add_to_group("Playable")
@@ -41,6 +42,7 @@ func kill():
 		som_morte.play()
 		player_sprite.visible = false
 		var dying_animation = DYING_ANIMATION.instantiate()
+		dying_animation.play("dying_"+id)
 		dying_animation.animation_finished.connect(_on_dying_animation_animation_finished)
 		get_tree().current_scene.add_child(dying_animation)
 		dying_animation.global_position = global_position
@@ -104,9 +106,9 @@ func _move(input, delta):
 func _control_animation(direction):
 	if not dead:
 		if direction.length() > 0:
-			player_sprite.play("walking")
+			player_sprite.play("walking_"+id)
 		else:
-			player_sprite.play("idle")
+			player_sprite.play("idle_"+id)
 	
 	# flip sprite
 	if velocity.x != 0:
@@ -116,4 +118,4 @@ func _control_animation(direction):
 func _on_dying_animation_animation_finished() -> void:
 	dying = false
 	player_sprite.visible = true
-	player_sprite.play("dead")
+	player_sprite.play("dead_"+id)

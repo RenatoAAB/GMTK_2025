@@ -81,5 +81,6 @@ grow_vertical = 0
 flat = true
 
 [node name="LevelSelection" parent="." instance=ExtResource("5_e11en")]
+visible = false
 
 [connection signal="pressed" from="Botao/BotaoBack/PlayText/BotaoPlay" to="." method="_on_botao_play_pressed"]

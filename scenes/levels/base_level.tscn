@@ -3195,13 +3195,11 @@ tile_set = SubResource("TileSet_63tae")
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="NinjaA" parent="." instance=ExtResource("6_yy46b")]
-modulate = Color(0, 0.219608, 1, 1)
 position = Vector2(-15, -12)
 id = "A"
 being_played = false
 
 [node name="NinjaB" parent="." instance=ExtResource("6_yy46b")]
-modulate = Color(1, 0, 0.298039, 1)
 position = Vector2(22, -12)
 id = "B"
 

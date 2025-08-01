@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dma0n7vkdga00"]
+[gd_scene load_steps=16 format=3 uid="uid://dma0n7vkdga00"]
 
 [ext_resource type="Script" uid="uid://bw3a033g61nmt" path="res://scripts/dispenser.gd" id="1_yiol8"]
+[ext_resource type="AudioStream" uid="uid://fn5564ea5u25" path="res://sounds/fireball_cast.mp3" id="2_107be"]
 [ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_u13x7"]
 [ext_resource type="Texture2D" uid="uid://cpbhlnvdi5xcs" path="res://sprites/interactions/fire_dispenser_front.png" id="4_107be"]
-[ext_resource type="AudioStream" uid="uid://k15jyeq2q83u" path="res://sounds/portal_ativo.mp3" id="5_mwgev"]
-[ext_resource type="AudioStream" uid="uid://bo8fgs8gtx5go" path="res://sounds/portal_passagem.mp3" id="6_gk421"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgj74"]
 shader = ExtResource("2_u13x7")
@@ -82,13 +81,8 @@ size = Vector2(8, 5)
 [node name="Dispenser" type="Node2D"]
 script = ExtResource("1_yiol8")
 
-[node name="som_ativo" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_mwgev")
-volume_db = 20.0
-bus = &"EfeitoInteracao"
-
-[node name="som_passagem" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_gk421")
+[node name="som_cast" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_107be")
 bus = &"EfeitoInteracao"
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]

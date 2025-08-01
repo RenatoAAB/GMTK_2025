@@ -1,7 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgq738i6jt228"]
+[gd_scene load_steps=16 format=3 uid="uid://dgq738i6jt228"]
 
 [ext_resource type="Script" uid="uid://t1l5kj14b3r2" path="res://scripts/fireball.gd" id="1_y0tbf"]
 [ext_resource type="Texture2D" uid="uid://05nn6xgnx13b" path="res://sprites/interactions/fireball.png" id="2_oxeb6"]
+[ext_resource type="AudioStream" uid="uid://ffixd1xm6m8d" path="res://sounds/fireball_voando.mp3" id="3_5pam0"]
+[ext_resource type="AudioStream" uid="uid://xp5glta3row1" path="res://sounds/fireball_hit.mp3" id="4_6aplk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5n34"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(54, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3yd3"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(63, 0, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yb4l"]
+atlas = ExtResource("2_oxeb6")
+region = Rect2(72, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pam0"]
 atlas = ExtResource("2_oxeb6")
@@ -29,6 +43,20 @@ region = Rect2(45, 0, 9, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5n34"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5n34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3yd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yb4l")
+}],
+"loop": false,
+"name": &"explodindo",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5pam0")
@@ -69,17 +97,27 @@ script = ExtResource("1_y0tbf")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 5.5)
 sprite_frames = SubResource("SpriteFrames_k5n34")
-animation = &"surgindo"
+animation = &"explodindo"
 frame = 2
 frame_progress = 1.0
 
 [node name="kill_area" type="Area2D" parent="."]
-position = Vector2(0, 5.5)
+position = Vector2(0, 6.5)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_oxeb6")
+
+[node name="som" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5pam0")
+volume_db = 20.0
+bus = &"EfeitoInteracao"
+parameters/looping = true
+
+[node name="som_explosao" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6aplk")
+bus = &"EfeitoInteracao"
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]

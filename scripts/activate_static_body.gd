@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 
 func _on_effect_animation_finished() -> void:
 	collision_shape_2d.disabled = false
-	navigation_obstacle_2d.carve_navigation_mesh = true
+	var navmesh = get_tree().get_nodes_in_group("navigation")[0]
+	navmesh.add_child(navigation_obstacle_2d)

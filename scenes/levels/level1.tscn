@@ -1986,11 +1986,12 @@ position = Vector2(32, 14)
 position = Vector2(8, -23)
 
 [node name="Dispenser" parent="Interactables" index="4" instance=ExtResource("6_5ntmo")]
-position = Vector2(0, -24)
+position = Vector2(16, -24)
 
 [node name="furnitureMiddle" type="TileMapLayer" parent="." index="3"]
 z_index = 1
 tile_map_data = PackedByteArray("AAAGAPz/BgAEAB4AAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
 
+[editable path="Interactables/Interaction"]
 [editable path="Interactables/Portal"]

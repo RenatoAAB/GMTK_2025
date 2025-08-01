@@ -8,7 +8,7 @@ extends InteractionEffect
 @export var key_frame : int;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	effect.material = effect.material.duplicate(true)
 
 func activate_highlight():
 	effect.material.set_shader_parameter("show_outline", true)
@@ -21,7 +21,7 @@ func activate():
 	activate_sequence()
 	
 func activate_sequence():
-	effect.play("fire_explosion")
+	effect.play()
 
 func activate_area():
 	print("Ativado dano")

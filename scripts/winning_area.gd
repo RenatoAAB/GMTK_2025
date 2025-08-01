@@ -5,7 +5,7 @@ var characters_escaped = 0
 
 func _on_body_entered(character: Node2D) -> void:
 	if character.is_in_group("Playable"):
-		if not character.died:
+		if not character.dead:
 			print(character.id + ": Saved himself")
 			update_characters_escaped()
 			character.queue_free()

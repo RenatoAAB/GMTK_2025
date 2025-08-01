@@ -1,15 +1,52 @@
-[gd_scene load_steps=28 format=3 uid="uid://k663yqxubku8"]
+[gd_scene load_steps=38 format=3 uid="uid://k663yqxubku8"]
 
 [ext_resource type="Script" uid="uid://bliqq3mmm8oov" path="res://scripts/interaction_effect_dano.gd" id="1_qy0ux"]
 [ext_resource type="Texture2D" uid="uid://dsh3hqwfaxaoc" path="res://sprites/interactions/fogo_circulo.png" id="2_1p5lb"]
 [ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_cytb0"]
 [ext_resource type="AudioStream" uid="uid://bombca256s5n4" path="res://sounds/explosion-8bit.mp3" id="3_cytb0"]
+[ext_resource type="Texture2D" uid="uid://cuy4s2l8q82v6" path="res://sprites/interactions/falling_barrels.png" id="3_uua7f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uua7f"]
 shader = ExtResource("2_cytb0")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_size = 0.5
 shader_parameter/show_outline = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa6ku"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(0, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xavfd"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(25, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgnnu"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(50, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj5vw"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(75, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d630"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(100, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phvfd"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(125, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvtlt"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(150, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujwem"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(175, 0, 25, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kq6e"]
+atlas = ExtResource("3_uua7f")
+region = Rect2(200, 0, 25, 30)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1p5lb"]
 atlas = ExtResource("2_1p5lb")
@@ -95,6 +132,38 @@ region = Rect2(361, 0, 19, 26)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xa6ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xavfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgnnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj5vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d630")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phvfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvtlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujwem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kq6e")
+}],
+"loop": false,
+"name": &"falling_barrels",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1p5lb")
 }, {
 "duration": 1.0,
@@ -160,6 +229,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1p5lb"]
+radius = 11.0
 
 [node name="InteractionEffectDano" type="Node2D"]
 script = ExtResource("1_qy0ux")

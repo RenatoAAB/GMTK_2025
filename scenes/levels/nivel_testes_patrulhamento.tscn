@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=4 uid="uid://ywawm5lqv0oj"]
+
+[ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_ahlj0"]
+[ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="2_xoqor"]
+[ext_resource type="PackedScene" uid="uid://cmsdohc1w2rpi" path="res://scenes/navigation_region.tscn" id="3_tohjc"]
+
+[sub_resource type="Curve2D" id="Curve2D_hu7t6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, -20, 28, 0, 0, 0, 0, -20, 0, 0, 0, 0, 0, 0, 1)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_oamn1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -32, 23, 0, 0, 0, 0, -62, 23)
+}
+point_count = 2
+
+[node name="base_level" instance=ExtResource("1_ahlj0")]
+
+[node name="furniture" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAAAAP//AQAKAAAAAAAEAP//BQAKAAoAAAABAP3/BQAMAAgAAAA=")
+
+[node name="Path2D" type="Path2D" parent="." index="10"]
+position = Vector2(51, -16)
+curve = SubResource("Curve2D_hu7t6")
+
+[node name="Path2d_follow_enemy1" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(0, 1)
+rotation = 1.5708
+cubic_interp = false
+
+[node name="Enemy" parent="Path2D" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_xoqor")]
+path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
+is_path_linear = false
+
+[node name="Path2D2" type="Path2D" parent="." index="11"]
+position = Vector2(49, -16)
+curve = SubResource("Curve2D_oamn1")
+
+[node name="Path2d_follow_enemy2" type="PathFollow2D" parent="Path2D2" index="0"]
+position = Vector2(-32, 23)
+rotation = 3.14159
+cubic_interp = false
+
+[node name="Enemy" parent="Path2D2" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_xoqor")]
+position = Vector2(-32, 23)
+path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
+
+[node name="NavigationRegion2D" parent="." index="12" instance=ExtResource("3_tohjc")]

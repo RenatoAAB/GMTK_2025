@@ -63,11 +63,13 @@ frame_progress = 0.494057
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_t7cam")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 1, 1, 0.509804)
-energy = 0.91
-range_item_cull_mask = 2
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(0, 2)
+color = Color(1, 1, 0.823529, 1)
+energy = 0.5
 shadow_enabled = true
-shadow_color = Color(0.0351649, 0.00984951, 0, 0.941176)
+shadow_color = Color(0.592157, 0.462745, 0.360784, 0.172549)
+shadow_filter = 2
+shadow_filter_smooth = 0.6
 texture = ExtResource("3_qhqgy")
-texture_scale = 17.18
+texture_scale = 0.5

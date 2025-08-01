@@ -8,14 +8,17 @@ func _ready() -> void:
 func activate():
 	print("Effect activated")
 	for effect in get_children():
-		effect.activate()
+		if effect is InteractionEffect:
+			effect.activate()
 		
 func activate_highlight():
 	print("Highlight activated")
 	for effect in get_children():
-		effect.activate_highlight()
+		if effect is InteractionEffect:
+			effect.activate_highlight()
 		
 func deactivate_highlight():
 	print("Highlight deactivated")
 	for effect in get_children():
-		effect.deactivate_highlight()
+		if effect is InteractionEffect:
+			effect.deactivate_highlight()

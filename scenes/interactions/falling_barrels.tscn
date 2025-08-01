@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6dtowwelhokh"]
+
+[ext_resource type="PackedScene" uid="uid://k663yqxubku8" path="res://scenes/interactions/interaction_effect_dano.tscn" id="1_lfkmq"]
+[ext_resource type="Script" uid="uid://cd5wthx2f7v7d" path="res://scripts/interaction_effect.gd" id="1_xf43o"]
+[ext_resource type="AudioStream" uid="uid://7kvlko2rpv1u" path="res://sounds/falling_barrels.mp3" id="3_uhmou"]
+[ext_resource type="Script" uid="uid://cvx46hbrvcajo" path="res://scripts/activate_static_body.gd" id="4_mq058"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhmou"]
+radius = 6.0
+height = 22.0
+
+[node name="FallingBarrels" type="Node2D"]
+script = ExtResource("1_xf43o")
+
+[node name="InteractionEffectDano" parent="." instance=ExtResource("1_lfkmq")]
+key_frame = 4
+
+[node name="effect" parent="InteractionEffectDano/EffectArea" index="0"]
+animation = &"falling_barrels"
+
+[node name="CollisionShape2D" parent="InteractionEffectDano/EffectArea" index="1"]
+position = Vector2(0, 6)
+
+[node name="som" parent="InteractionEffectDano" index="1"]
+stream = ExtResource("3_uhmou")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("4_mq058")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_uhmou")
+disabled = true
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D"]
+position = Vector2(-2, 7)
+vertices = PackedVector2Array(2, 7, 11, 5, 14, 2, 11, -3, 2, -5, -7, -3, -10, 2, -8, 5)
+
+[connection signal="animation_finished" from="InteractionEffectDano/EffectArea/effect" to="StaticBody2D" method="_on_effect_animation_finished"]
+
+[editable path="InteractionEffectDano"]

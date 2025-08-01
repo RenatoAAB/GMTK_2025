@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_ahlj0"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="2_xoqor"]
-[ext_resource type="PackedScene" uid="uid://cmsdohc1w2rpi" path="res://scenes/navigation_region.tscn" id="3_tohjc"]
 
 [sub_resource type="Curve2D" id="Curve2D_hu7t6"]
 _data = {
@@ -15,6 +14,15 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -32, 23, 0, 0, 0, 0, -62, 23)
 }
 point_count = 2
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hupe6"]
+vertices = PackedVector2Array(44, 8, 52, 12, -20, 12, 30, 8, 52, -18, 44, -16, 20, -18, 30, -16, -12, -20, 4, -20, 4, -4, 18, -4, 18, -20, 20, -20, -20, -28, -12, -28)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(4, 1, 0), PackedInt32Array(4, 0, 5), PackedInt32Array(6, 4, 5), PackedInt32Array(6, 5, 7), PackedInt32Array(8, 9, 10), PackedInt32Array(11, 12, 13), PackedInt32Array(11, 13, 6), PackedInt32Array(11, 6, 7), PackedInt32Array(11, 7, 3), PackedInt32Array(11, 3, 2), PackedInt32Array(10, 11, 2), PackedInt32Array(8, 10, 2), PackedInt32Array(8, 2, 14), PackedInt32Array(15, 8, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-29, -53, 62, -53, 62, 22, -29, 22)])
+sample_partition_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 4.0
 
 [node name="base_level" instance=ExtResource("1_ahlj0")]
 
@@ -47,4 +55,5 @@ cubic_interp = false
 position = Vector2(-32, 23)
 path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
 
-[node name="NavigationRegion2D" parent="." index="12" instance=ExtResource("3_tohjc")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="12"]
+navigation_polygon = SubResource("NavigationPolygon_hupe6")

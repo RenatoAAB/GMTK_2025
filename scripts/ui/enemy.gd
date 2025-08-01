@@ -71,12 +71,15 @@ func _process(delta):
 	
 	
 	if is_patrolling:
-		var visiblePlayer = find_visible_player(NinjaA)
 		
-		if visiblePlayer == null:
+		var visiblePlayer = null
+		if(NinjaA):
+			visiblePlayer = find_visible_player(NinjaA)
+		
+		if(NinjaB and not visiblePlayer):
 			visiblePlayer = find_visible_player(NinjaB)
 			
-		if visiblePlayer != null:
+		if visiblePlayer:
 			print("Player spotted!")
 			
 			# sets player to be chased
@@ -129,14 +132,18 @@ func stop_chase():
 func chase_player(delta):
 	
 	# Set the player as the target
-	agent.target_position = playerBeingChased.global_position
+	if(playerBeingChased):
+		agent.target_position = playerBeingChased.global_position
 
-	var next_path_point = agent.get_next_path_position()
-	var direction = (next_path_point - global_position).normalized()
+		var next_path_point = agent.get_next_path_position()
+		var direction = (next_path_point - global_position).normalized()
+		
+		# var to_player = (playerBeingChased.global_position - global_position).normalized()
+		velocity = direction * chase_speed
+		move_and_slide()
+	else: stop_chase()
 	
-	# var to_player = (playerBeingChased.global_position - global_position).normalized()
-	velocity = direction * chase_speed
-	move_and_slide()
+
 		
 # checks if players are visible, returns null if not visible returns the player node if visible
 func find_visible_player(player: Node) -> Node:

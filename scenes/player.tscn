@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://d00t07m1808r5"]
+[gd_scene load_steps=24 format=3 uid="uid://d00t07m1808r5"]
 
 [ext_resource type="Script" uid="uid://b6yfxswym3cog" path="res://scripts/characterMovement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c6vgf3k8pmlp8" path="res://tilesets/player-moves.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://dkh6qucoxo576" path="res://sprites/fantasminha.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://d0yd534stjty" path="res://sprites/animacao_morte_player.png" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://c5ewo17rfgnni" path="res://sounds/som_morte.mp3" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_qlg0r")
@@ -161,3 +162,7 @@ shadow_filter = 2
 shadow_filter_smooth = 0.6
 texture = ExtResource("3_qhqgy")
 texture_scale = 0.5
+
+[node name="som_morte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tuyoq")
+bus = &"EfeitoPlayer"

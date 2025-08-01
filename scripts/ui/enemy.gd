@@ -202,3 +202,8 @@ func get_object_with_id(group_name: String, target_id: String) -> Node:
 		if node.id == target_id:
 			return node
 	return null
+
+
+func _on_kill_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Playable"):
+		body.kill()

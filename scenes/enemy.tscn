@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch2hw7pw87h1w"]
+[gd_scene load_steps=10 format=3 uid="uid://ch2hw7pw87h1w"]
 
 [ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scripts/ui/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_5uy6h"]
@@ -33,7 +33,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wf2uy"]
-radius = 3.0
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 7.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4ra3w")
@@ -42,6 +45,7 @@ script = ExtResource("1_4ra3w")
 sprite_frames = SubResource("SpriteFrames_nk33d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_wf2uy")
 
 [node name="VisionCone" type="Sprite2D" parent="."]
@@ -57,3 +61,12 @@ path_desired_distance = 4.0
 target_desired_distance = 4.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 0.0941176, 1, 1)
+
+[node name="kill_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_5uy6h")
+
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]

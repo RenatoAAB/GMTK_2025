@@ -179,6 +179,7 @@ shape = SubResource("CircleShape2D_1p5lb")
 
 [node name="som" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_cytb0")
+bus = &"EfeitoInteracao"
 
 [connection signal="animation_finished" from="EffectArea/effect" to="." method="_on_effect_animation_finished"]
 [connection signal="frame_changed" from="EffectArea/effect" to="." method="_on_effect_frame_changed"]

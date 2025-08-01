@@ -1,13 +1,14 @@
 extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const DYING_ANIMATION = preload("res://scenes/dying_animation.tscn")
+@onready var som_morte: AudioStreamPlayer2D = $som_morte
 
 @export var id : String
 @export var SPEED := 30.0
 @export var ACCEL := 10.0
 
 @export var being_played = true
-@export var died = false
+@export var dead = false
 var dying = false
 
 
@@ -34,14 +35,17 @@ func set_possible_interaction(interaction):
 	possible_interaction = interaction
 
 func kill():
-	print(id+": Killed")
-	player_sprite.visible = false
-	var dying_animation = DYING_ANIMATION.instantiate()
-	dying_animation.animation_finished.connect(_on_dying_animation_animation_finished)
-	get_tree().current_scene.add_child(dying_animation)
-	dying_animation.global_position = global_position
-	dying = true
-	died = true
+	if not dead:
+		print(id+": Killed")
+		som_morte.pitch_scale = randf_range(0.8, 1.0)
+		som_morte.play()
+		player_sprite.visible = false
+		var dying_animation = DYING_ANIMATION.instantiate()
+		dying_animation.animation_finished.connect(_on_dying_animation_animation_finished)
+		get_tree().current_scene.add_child(dying_animation)
+		dying_animation.global_position = global_position
+		dying = true
+		dead = true
 
 func _start_recording():
 	if (being_played):
@@ -86,7 +90,7 @@ func _move(input, delta):
 	direction = direction.normalized()
 	
 	if input["interact"] and possible_interaction != null:
-		if died == false:
+		if dead == false:
 			possible_interaction.activate()
 		else:
 			pass #play sound of fail
@@ -98,7 +102,7 @@ func _move(input, delta):
 	move_and_slide()
 	
 func _control_animation(direction):
-	if not died:
+	if not dead:
 		if direction.length() > 0:
 			player_sprite.play("walking")
 		else:

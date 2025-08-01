@@ -1,10 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=13 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
 [ext_resource type="PackedScene" uid="uid://di00pasualrhk" path="res://scenes/levels/level1.tscn" id="3_yssoo"]
 [ext_resource type="PackedScene" uid="uid://ywawm5lqv0oj" path="res://scenes/levels/nivel_testes_patrulhamento.tscn" id="4_hvilc"]
 [ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
+[ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
+[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
+[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="8_tjon8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
+shader = ExtResource("6_hg3rx")
+shader_parameter/time = 1.0
+
+[sub_resource type="Animation" id="Animation_hg3rx"]
+resource_name = "transition_to_title"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_n7r7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwede"]
+_data = {
+&"RESET": SubResource("Animation_n7r7k"),
+&"transition_to_title": SubResource("Animation_hg3rx")
+}
 
 [node name="LevelSelection" type="CanvasLayer"]
 
@@ -29,6 +73,7 @@ offset_right = 292.0
 offset_bottom = 469.0
 level_number = "1"
 level = ExtResource("3_yssoo")
+level_name = "The Prison"
 
 [node name="BotaoLevel2" parent="." instance=ExtResource("2_hvilc")]
 offset_left = 372.0
@@ -45,3 +90,38 @@ offset_right = 800.0
 offset_bottom = 467.0
 level_number = "3"
 level = ExtResource("5_yssoo")
+
+[node name="TitleScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="TitleScreen"]
+material = SubResource("ShaderMaterial_n7r7k")
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_iwede")
+}
+
+[node name="LevelName" type="Label" parent="TitleScreen"]
+visible = false
+offset_left = 10.0
+offset_top = 280.0
+offset_right = 1154.0
+offset_bottom = 403.0
+size_flags_horizontal = 4
+text = "Twin escape"
+label_settings = ExtResource("7_iwede")
+horizontal_alignment = 1
+
+[node name="LevelnameFront" type="Label" parent="TitleScreen/LevelName"]
+layout_mode = 0
+offset_right = 1144.0
+offset_bottom = 123.0
+text = "Twin escape"
+label_settings = ExtResource("8_tjon8")
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="TitleScreen/AnimationPlayer" to="BotaoLevel" method="_on_animation_player_animation_finished"]

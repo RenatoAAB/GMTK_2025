@@ -74,6 +74,6 @@ func record_input(delta):
 		"input": input_data
 	})
 
-func _process(delta):
+func _physics_process(delta):
 	if is_recording:
 		record_input(delta)

@@ -10,7 +10,7 @@ shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_size = 0.5
 shader_parameter/show_outline = false
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7hjyq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkqms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkqms"]
 size = Vector2(4, 3)
@@ -26,7 +26,7 @@ material = SubResource("ShaderMaterial_1ty0p")
 texture = ExtResource("3_xkqms")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-shape = SubResource("CircleShape2D_7hjyq")
+shape = SubResource("CircleShape2D_xkqms")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

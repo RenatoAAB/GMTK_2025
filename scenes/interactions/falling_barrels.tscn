@@ -36,6 +36,8 @@ disabled = true
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D"]
 position = Vector2(-2, 7)
 vertices = PackedVector2Array(2, 7, 11, 5, 14, 2, 11, -3, 2, -5, -7, -3, -10, 2, -8, 5)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [connection signal="animation_finished" from="InteractionEffectDano/EffectArea/effect" to="StaticBody2D" method="_on_effect_animation_finished"]
 

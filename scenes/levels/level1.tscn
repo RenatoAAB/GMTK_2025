@@ -1,10 +1,11 @@
-[gd_scene load_steps=155 format=4 uid="uid://di00pasualrhk"]
+[gd_scene load_steps=156 format=4 uid="uid://di00pasualrhk"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_x6ivy"]
 [ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bqd5w4ooo0chj" path="res://scenes/interactions/explosao.tscn" id="2_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="3_8a7m2"]
+[ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="4_5ntmo"]
 [ext_resource type="PackedScene" uid="uid://c6dtowwelhokh" path="res://scenes/interactions/falling_barrels.tscn" id="4_8a7m2"]
 [ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="4_plydf"]
 [ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="5_5ntmo"]
@@ -1971,11 +1972,20 @@ position = Vector2(34, -20)
 [node name="Interaction" parent="Interactables" index="1" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_4tcl0")]
 position = Vector2(-23, 12)
 interactionEffect = NodePath("../FallingBarrels")
+interactionSprite = 0
+
+[node name="trigger" parent="Interactables/Interaction/TriggerArea" index="0"]
+position = Vector2(1, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_5ntmo")
+hframes = 3
 
 [node name="FallingBarrels" parent="Interactables" index="2" instance=ExtResource("4_8a7m2")]
-position = Vector2(1, -24)
+position = Vector2(12, -10)
 
 [node name="furnitureMiddle" type="TileMapLayer" parent="." index="3"]
 z_index = 1
 tile_map_data = PackedByteArray("AAAGAPz/BgAEAB4AAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
+
+[editable path="Interactables/Interaction"]

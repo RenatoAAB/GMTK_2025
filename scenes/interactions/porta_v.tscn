@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhiqp2eja5bih"]
+
+[ext_resource type="Script" uid="uid://dnpsl78bllkky" path="res://scripts/ui/porta_h.gd" id="1_5bsqi"]
+[ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_d6013"]
+[ext_resource type="Texture2D" uid="uid://cttv3t0yapbpy" path="res://sprites/interactions/porta-v.png" id="3_n3y8e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sos41"]
+shader = ExtResource("2_d6013")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_size = 0.5
+shader_parameter/show_outline = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rndm5"]
+size = Vector2(2, 16)
+
+[node name="porta-v" type="Node2D"]
+script = ExtResource("1_5bsqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sos41")
+texture = ExtResource("3_n3y8e")
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_rndm5")

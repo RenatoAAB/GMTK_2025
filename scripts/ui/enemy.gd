@@ -163,7 +163,7 @@ func chase_player(delta):
 		var next_path_point = agent.get_next_path_position()
 		var direction = (next_path_point - global_position).normalized()
 		
-		# var to_player = (playerBeingChased.global_position - global_position).normalized()
+	
 		velocity = direction * chase_speed
 		move_and_slide()
 	else: stop_chase()

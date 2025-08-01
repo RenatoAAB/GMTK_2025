@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var path_2d_to_follow: PathFollow2D
 @export var is_path_linear := true
 var path_follow: PathFollow2D
+var on_patrolloing_path := true
 
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
@@ -74,17 +75,19 @@ func _process(delta):
 	if is_in_line_of_sight(NinjaA, NinjaB):
 		self.visible = true
 	else:
-		self.visible = false
+		self.visible = true
 	
 	
 	if is_patrolling:
 		
 		var visiblePlayer = null
 		if(NinjaA):
-			visiblePlayer = find_visible_player(NinjaA)
+			if(not NinjaA.dead):
+				visiblePlayer = find_visible_player(NinjaA)
 		
 		if(NinjaB and not visiblePlayer):
-			visiblePlayer = find_visible_player(NinjaB)
+			if(not NinjaB.dead):
+				visiblePlayer = find_visible_player(NinjaB)
 			
 		if visiblePlayer:
 			print("Player spotted!")
@@ -97,24 +100,38 @@ func _process(delta):
 			#print("Unspotted")
 
 func patrol(delta):
-	
-		# Move enemy to path follow position
-	var direction = (path_follow.global_position - global_position).normalized()
-	velocity = direction * patrol_speed
-	move_and_slide()
-
-	if moving_forward:
-		path_follow.progress += (patrol_speed) * delta
-	else:
-		path_follow.progress -= (patrol_speed) * delta
+		# if is already in the path place
+	if(on_patrolloing_path):
 		
-	# Optional: Ping-pong movement
-	if is_path_linear:
-		if path_follow.progress_ratio >= 0.9:
-			moving_forward = false
-		elif path_follow.progress_ratio <= 0.1:
-			moving_forward = true
-	
+		# Move enemy to path follow position
+		var direction = (path_follow.global_position - global_position).normalized()
+		velocity = direction * patrol_speed
+		move_and_slide()
+
+		if moving_forward:
+			path_follow.progress += (patrol_speed) * delta
+		else:
+			path_follow.progress -= (patrol_speed) * delta
+			
+		# Optional: Ping-pong movement
+		if is_path_linear:
+			if path_follow.progress_ratio >= 0.9:
+				moving_forward = false
+			elif path_follow.progress_ratio <= 0.1:
+				moving_forward = true
+	else:
+		# directs the enemy back to the
+		agent.target_position = path_follow.global_position
+
+		var next_path_point = agent.get_next_path_position()
+		var direction = (next_path_point - global_position).normalized()
+		
+		velocity = direction * chase_speed
+		move_and_slide()
+		
+		if is_within_distance(global_position, path_follow.global_position, 30):
+			on_patrolloing_path = true
+		
 
 	
 	
@@ -131,6 +148,7 @@ func patrol(delta):
 func start_chase():
 	is_chasing = true
 	is_patrolling = false
+	on_patrolloing_path = false
 
 func stop_chase():
 	is_chasing = false
@@ -184,14 +202,16 @@ func is_in_line_of_sight(player1: Node2D, player2: Node2D, collision_mask := 1) 
 	var player_1_visible = false
 	var player_2_visible = false
 	if player1:
-		var query = PhysicsRayQueryParameters2D.create(player1.global_position, self.global_position, collision_mask, [player1])
-		var result1 := space_state.intersect_ray(query)
-		player_1_visible = not result1 or result1.get("collider") == self
+		if not player1.dead:
+			var query = PhysicsRayQueryParameters2D.create(player1.global_position, self.global_position, collision_mask, [player1])
+			var result1 := space_state.intersect_ray(query)
+			player_1_visible = not result1 or result1.get("collider") == self
 	
 	if player2:
-		var query = PhysicsRayQueryParameters2D.create(player2.global_position, self.global_position, collision_mask, [player2])
-		var result2 := space_state.intersect_ray(query)
-		player_2_visible = not result2 or result2.get("collider") == self
+		if not player2.dead:
+			var query = PhysicsRayQueryParameters2D.create(player2.global_position, self.global_position, collision_mask, [player2])
+			var result2 := space_state.intersect_ray(query)
+			player_2_visible = not result2 or result2.get("collider") == self
 	
 
 	return player_1_visible or player_2_visible
@@ -214,3 +234,7 @@ func get_object_with_id(group_name: String, target_id: String) -> Node:
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Playable"):
 		body.kill()
+		stop_chase()
+		
+func is_within_distance(point_a: Vector2, point_b: Vector2, max_distance: float) -> bool:
+	return point_a.distance_to(point_b) <= max_distance

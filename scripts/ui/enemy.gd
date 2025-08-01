@@ -20,7 +20,7 @@ var moving_forward = true
 @onready var vision_cone = $VisionCone
 
 #@onready var player : CharacterBody2D = $"../CharacterBody2D"
-
+var dead = false
 
 var direction := Vector2.DOWN
 var start_position := Vector2.ZERO
@@ -28,12 +28,18 @@ var start_position := Vector2.ZERO
 func _ready():
 	path_follow = path_2d_to_follow
 	start_position = path_follow.global_position
-	
+	add_to_group("Enemies")
 	# Set how close we need to get to the target point before requesting a new one
 	#agent.target_desired_distance = 4.0
 	#agent.path_desired_distance = 4.0
 
+func kill():
+	sprite.play("dead")
+	dead = true
+
 func _physics_process(delta):
+	if dead:
+		return
 	if is_chasing:
 		chase_player(delta)
 	if is_patrolling:
@@ -51,7 +57,8 @@ func _physics_process(delta):
 		
 		
 func _process(delta):
-	
+	if dead:
+		return
 	var NinjaA = null
 	var NinjaB = null
 	
@@ -202,3 +209,8 @@ func get_object_with_id(group_name: String, target_id: String) -> Node:
 		if node.id == target_id:
 			return node
 	return null
+
+
+func _on_kill_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Playable"):
+		body.kill()

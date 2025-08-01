@@ -1,12 +1,16 @@
 extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
+const DYING_ANIMATION = preload("res://scenes/dying_animation.tscn")
+@onready var som_morte: AudioStreamPlayer2D = $som_morte
 
 @export var id : String
 @export var SPEED := 30.0
 @export var ACCEL := 10.0
 
 @export var being_played = true
-@export var died = false
+@export var dead = false
+var dying = false
+
 
 var possible_interaction = null
 
@@ -30,6 +34,19 @@ func _ready():
 func set_possible_interaction(interaction):
 	possible_interaction = interaction
 
+func kill():
+	if not dead:
+		print(id+": Killed")
+		som_morte.pitch_scale = randf_range(0.8, 1.0)
+		som_morte.play()
+		player_sprite.visible = false
+		var dying_animation = DYING_ANIMATION.instantiate()
+		dying_animation.animation_finished.connect(_on_dying_animation_animation_finished)
+		get_tree().current_scene.add_child(dying_animation)
+		dying_animation.global_position = global_position
+		dying = true
+		dead = true
+
 func _start_recording():
 	if (being_played):
 		if not LoopManager.is_recording:
@@ -39,6 +56,8 @@ func _start_recording():
 		print(id + ": Carregou inputs")
 
 func _physics_process(delta):
+	if dying:
+		return
 	var input_data
 	if (being_played):
 		input_data = {
@@ -71,7 +90,10 @@ func _move(input, delta):
 	direction = direction.normalized()
 	
 	if input["interact"] and possible_interaction != null:
-		possible_interaction.activate()
+		if dead == false:
+			possible_interaction.activate()
+		else:
+			pass #play sound of fail
 		
 	velocity = lerp(velocity, direction * SPEED, delta * ACCEL)
 	
@@ -80,11 +102,18 @@ func _move(input, delta):
 	move_and_slide()
 	
 func _control_animation(direction):
-	if direction.length() > 0:
-		player_sprite.play("walking")
-	else:
-		player_sprite.play("idle")
+	if not dead:
+		if direction.length() > 0:
+			player_sprite.play("walking")
+		else:
+			player_sprite.play("idle")
 	
 	# flip sprite
 	if velocity.x != 0:
 		player_sprite.flip_h = velocity.x < 0
+
+
+func _on_dying_animation_animation_finished() -> void:
+	dying = false
+	player_sprite.visible = true
+	player_sprite.play("dead")

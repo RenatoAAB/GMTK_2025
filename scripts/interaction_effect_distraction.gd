@@ -12,3 +12,9 @@ func _ready() -> void:
 func activate():
 	print("Ativado distração")
 	emit_signal("distraction", global_position)
+
+func activate_highlight():
+	pass
+	
+func deactivate_highlight():
+	pass

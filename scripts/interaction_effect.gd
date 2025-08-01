@@ -9,3 +9,13 @@ func activate():
 	print("Effect activated")
 	for effect in get_children():
 		effect.activate()
+		
+func activate_highlight():
+	print("Highlight activated")
+	for effect in get_children():
+		effect.activate_highlight()
+		
+func deactivate_highlight():
+	print("Highlight deactivated")
+	for effect in get_children():
+		effect.deactivate_highlight()

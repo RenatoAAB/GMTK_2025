@@ -8,10 +8,16 @@ extends InteractionEffect
 @export var key_frame : int;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interaction_effect_dano.visible = false
+	pass
+
+func activate_highlight():
+	effect.material.set_shader_parameter("show_outline", true)
+
+func deactivate_highlight():
+	effect.material.set_shader_parameter("show_outline", false)
 
 func activate():
-	interaction_effect_dano.visible = true
+	deactivate_highlight()
 	activate_sequence()
 	
 func activate_sequence():
@@ -19,13 +25,11 @@ func activate_sequence():
 
 func activate_area():
 	print("Ativado dano")
-	effect_area.monitoring = true
-	effect_area.set_deferred("monitorable", true)
-	# Wait a frame to allow physics update
-	await get_tree().process_frame
 	# Manually check for overlaps
-	for body in effect_area.get_overlapping_bodies():
-		print("killed someone")
+	var affected_bodies = effect_area.get_overlapping_bodies()
+	for body in affected_bodies:
+		if body.is_in_group("Playable") or body.is_in_group("Enemies"):
+			body.kill()
 
 func deactivate_area():
 	effect_area.monitoring = false

@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch2hw7pw87h1w"]
+[gd_scene load_steps=10 format=3 uid="uid://ch2hw7pw87h1w"]
 
 [ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scripts/ui/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://dm4l6xah288m3" path="res://sprites/inimigo_morto.png" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="3_c4w8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_c4w8v")
+region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0qyxi"]
 atlas = ExtResource("2_5uy6h")
@@ -10,6 +15,14 @@ region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk33d"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0qyxi")
@@ -20,16 +33,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wf2uy"]
-radius = 3.0
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 7.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4ra3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nk33d")
-frame_progress = 0.890277
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_wf2uy")
 
 [node name="VisionCone" type="Sprite2D" parent="."]
@@ -45,3 +61,12 @@ path_desired_distance = 4.0
 target_desired_distance = 4.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 0.0941176, 1, 1)
+
+[node name="kill_area" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_5uy6h")
+
+[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]

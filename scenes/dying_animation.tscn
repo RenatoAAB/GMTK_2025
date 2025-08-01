@@ -1,70 +1,67 @@
-[gd_scene load_steps=24 format=3 uid="uid://d00t07m1808r5"]
+[gd_scene load_steps=20 format=3 uid="uid://m47vhcoxshpi"]
 
-[ext_resource type="Script" uid="uid://b6yfxswym3cog" path="res://scripts/characterMovement.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://c6vgf3k8pmlp8" path="res://tilesets/player-moves.png" id="2_g2els"]
-[ext_resource type="Texture2D" uid="uid://dkh6qucoxo576" path="res://sprites/fantasminha.png" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="3_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://d0yd534stjty" path="res://sprites/animacao_morte_player.png" id="3_tuyoq"]
-[ext_resource type="AudioStream" uid="uid://c5ewo17rfgnni" path="res://sounds/som_morte.mp3" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dkh6qucoxo576" path="res://sprites/fantasminha.png" id="1_5yiwx"]
+[ext_resource type="Texture2D" uid="uid://d0yd534stjty" path="res://sprites/animacao_morte_player.png" id="2_a6wrj"]
+[ext_resource type="Texture2D" uid="uid://c6vgf3k8pmlp8" path="res://tilesets/player-moves.png" id="3_h2cmh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
-atlas = ExtResource("2_qlg0r")
+atlas = ExtResource("1_5yiwx")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(32, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(40, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(48, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(56, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(64, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axta4"]
-atlas = ExtResource("3_tuyoq")
+atlas = ExtResource("2_a6wrj")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("3_h2cmh")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("3_h2cmh")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("3_h2cmh")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
-atlas = ExtResource("2_g2els")
+atlas = ExtResource("3_h2cmh")
 region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
@@ -135,34 +132,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t7cam"]
-radius = 2.0
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-z_index = 2
-collision_layer = 2
-motion_mode = 1
-script = ExtResource("1_onrkg")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="DyingAnimation" type="AnimatedSprite2D"]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_dqkch")
-animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_t7cam")
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(0, 2)
-color = Color(1, 1, 0.823529, 1)
-energy = 0.5
-shadow_enabled = true
-shadow_color = Color(0.592157, 0.462745, 0.360784, 0.172549)
-shadow_filter = 2
-shadow_filter_smooth = 0.6
-texture = ExtResource("3_qhqgy")
-texture_scale = 0.5
-
-[node name="som_morte" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_tuyoq")
-bus = &"EfeitoPlayer"
+animation = &"dying"
+autoplay = "dying"

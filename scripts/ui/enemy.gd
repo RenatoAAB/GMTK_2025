@@ -71,7 +71,6 @@ func _physics_process(delta):
 		
 	# Rotate the vision cone to match current direction
 		vision_cone.rotation = velocity.angle() - deg_to_rad(90)
-		print("rotating due to velocity")
 		
 	#Flip sprite left/right based on movement
 	if velocity.x != 0:

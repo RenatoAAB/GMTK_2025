@@ -1986,9 +1986,8 @@ position = Vector2(2, -1)
 y_sort_enabled = true
 position = Vector2(34, -20)
 
-[node name="Interaction" parent="Interactables" index="1" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_4tcl0")]
+[node name="Interaction" parent="Interactables" index="1" instance=ExtResource("2_4tcl0")]
 position = Vector2(-23, 12)
-interactionEffect = NodePath("../FallingBarrels")
 
 [node name="FallingBarrels" parent="Interactables" index="2" instance=ExtResource("4_8a7m2")]
 position = Vector2(7, -9)

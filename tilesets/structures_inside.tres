@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="1_xsmqb"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xsmqb"]
+polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jm7xb"]
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s4pl0"]
-polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xsmqb"]
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_48euj"]

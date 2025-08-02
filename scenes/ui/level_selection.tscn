@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=19 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="9_x1utg"]
 [ext_resource type="PackedScene" uid="uid://brx33s3s751fg" path="res://scenes/levels/ThePantry.tscn" id="10_t5xyv"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="11_0hcqc"]
+[ext_resource type="PackedScene" uid="uid://bcd0wc56qsohi" path="res://ThePortalRoom.tscn" id="11_8qhfv"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="12_r01pg"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="13_jjiqo"]
 
@@ -108,22 +109,31 @@ level = ExtResource("8_mj20w")
 level_name = "The Prison"
 
 [node name="BotaoLevel2" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 430.0
+offset_left = 341.0
 offset_top = 252.0
-offset_right = 600.0
+offset_right = 511.0
 offset_bottom = 422.0
 level_number = "2"
 level = ExtResource("9_x1utg")
 level_name = "The Corridor"
 
 [node name="BotaoLevel3" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 744.0
+offset_left = 576.0
 offset_top = 252.0
-offset_right = 914.0
+offset_right = 746.0
 offset_bottom = 422.0
 level_number = "3"
 level = ExtResource("10_t5xyv")
 level_name = "The Pantry"
+
+[node name="BotaoLevel4" parent="." instance=ExtResource("7_mn1yi")]
+offset_left = 829.0
+offset_top = 250.0
+offset_right = 999.0
+offset_bottom = 420.0
+level_number = "4"
+level = ExtResource("11_8qhfv")
+level_name = "The Portal Room"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

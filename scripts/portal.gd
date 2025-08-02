@@ -39,13 +39,19 @@ func _on_portal_2_animation_finished() -> void:
 		portal_2.play("rodando")
 		is_active = true
 		point_light_2d_2.enabled = true
+		var affected_bodies = area_2.get_overlapping_bodies()
+		for body in affected_bodies:
+			_on_area_2_body_entered(body)
 
 func _on_portal_1_animation_finished() -> void:
 	if portal_1.animation == 'ligando':
 		portal_1.play("rodando")
 		is_active = true
 		point_light_2d.enabled = true
-
+		var affected_bodies = area_1.get_overlapping_bodies()
+		for body in affected_bodies:
+			_on_area_1_body_entered(body)
+			
 func desligar_portais():
 	som_passagem.play()
 	som_ativo.stop()

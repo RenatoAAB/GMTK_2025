@@ -2,7 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
-[ext_resource type="PackedScene" uid="uid://di00pasualrhk" path="res://scenes/levels/level1.tscn" id="3_yssoo"]
+[ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="3_56ig4"]
 [ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
@@ -11,6 +11,21 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("6_hg3rx")
 shader_parameter/time = 0.0
+
+[sub_resource type="Animation" id="Animation_n7r7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_hg3rx"]
 resource_name = "transition_to_title"
@@ -26,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_n7r7k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/time")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwede"]
@@ -71,7 +71,7 @@ offset_top = 250.0
 offset_right = 300.0
 offset_bottom = 420.0
 level_number = "1"
-level = ExtResource("3_yssoo")
+level = ExtResource("3_56ig4")
 level_name = "The Prison"
 
 [node name="BotaoLevel2" parent="." instance=ExtResource("2_hvilc")]
@@ -92,6 +92,7 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="TitleScreen"]
 material = SubResource("ShaderMaterial_n7r7k")
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
@@ -103,6 +104,7 @@ libraries = {
 
 [node name="LevelName" type="Label" parent="TitleScreen"]
 visible = false
+layout_mode = 0
 offset_left = 10.0
 offset_top = 280.0
 offset_right = 1154.0

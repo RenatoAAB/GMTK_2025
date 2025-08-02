@@ -4,7 +4,7 @@
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="2_ntye7"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="3_cghgw"]
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="4_1pxh0"]
-[ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/ui/level_selection.tscn" id="5_e11en"]
+[ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/levels/level_selection.tscn" id="5_e11en"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

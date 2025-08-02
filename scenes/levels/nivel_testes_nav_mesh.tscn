@@ -63,9 +63,8 @@ navigation_polygon = SubResource("NavigationPolygon_1g4uw")
 position = Vector2(48, 25)
 is_open = true
 
-[node name="Interaction portaH" parent="." index="14" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("4_7v3q7")]
+[node name="Interaction portaH" parent="." index="14" instance=ExtResource("4_7v3q7")]
 position = Vector2(-19, 59)
-interactionEffect = NodePath("../Porta-h")
 reactivatable = true
 interactionSprite = 0
 
@@ -75,9 +74,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_lkbe5")
 hframes = 3
 
-[node name="Interaction portaV" parent="." index="15" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("4_7v3q7")]
+[node name="Interaction portaV" parent="." index="15" instance=ExtResource("4_7v3q7")]
 position = Vector2(11, 59)
-interactionEffect = NodePath("../porta-v")
 reactivatable = true
 interactionSprite = 0
 

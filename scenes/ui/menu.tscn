@@ -6,7 +6,7 @@
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="4_1pxh0"]
 [ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="4_tub5d"]
 [ext_resource type="Texture2D" uid="uid://yvu5iksjdug5" path="res://images/menu-art/layer3-people.png" id="5_dnmb1"]
-[ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/levels/level_selection.tscn" id="5_e11en"]
+[ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/ui/level_selection.tscn" id="5_e11en"]
 [ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="6_5j7hh"]
 [ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="7_y7dvm"]
 [ext_resource type="Texture2D" uid="uid://bev1fcgpl4ijk" path="res://images/menu-art/title.png" id="10_288ov"]

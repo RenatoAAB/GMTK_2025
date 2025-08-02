@@ -1,21 +1,21 @@
 [gd_scene load_steps=18 format=3 uid="uid://c2jjdr2m3jxkq"]
 
-[ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
-[ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_bnl3k"]
-[ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="1_q7wdm"]
-[ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="2_bnl3k"]
-[ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
-[ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="3_8n4eq"]
-[ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="3_56ig4"]
-[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="4_8qhfv"]
-[ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="4_56ig4"]
-[ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
-[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
-[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="8_tjon8"]
-[ext_resource type="PackedScene" uid="uid://brx33s3s751fg" path="res://scenes/levels/ThePantry.tscn" id="10_fcxnf"]
+[ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
+[ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
+[ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="3_rlppb"]
+[ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="4_j8buf"]
+[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="5_giqsl"]
+[ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="6_o3on7"]
+[ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="7_mn1yi"]
+[ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="8_mj20w"]
+[ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="9_x1utg"]
+[ext_resource type="PackedScene" uid="uid://brx33s3s751fg" path="res://scenes/levels/ThePantry.tscn" id="10_t5xyv"]
+[ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="11_0hcqc"]
+[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="12_r01pg"]
+[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="13_jjiqo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
-shader = ExtResource("6_hg3rx")
+shader = ExtResource("11_0hcqc")
 shader_parameter/time = 0.0
 
 [sub_resource type="Animation" id="Animation_n7r7k"]
@@ -56,7 +56,7 @@ _data = {
 }
 
 [node name="LevelSelection" type="CanvasLayer"]
-script = ExtResource("1_bnl3k")
+script = ExtResource("1_8n4eq")
 
 [node name="background" type="TextureRect" parent="."]
 offset_left = -49.0
@@ -64,7 +64,7 @@ offset_top = -39.0
 offset_right = 1103.0
 offset_bottom = 609.0
 scale = Vector2(1.1822, 1.1822)
-texture = ExtResource("1_q7wdm")
+texture = ExtResource("2_8qhfv")
 
 [node name="clouds-tower" type="TextureRect" parent="."]
 offset_left = -61.0
@@ -72,7 +72,7 @@ offset_top = -37.0
 offset_right = 1091.0
 offset_bottom = 611.0
 scale = Vector2(1.12, 1.12)
-texture = ExtResource("2_bnl3k")
+texture = ExtResource("3_rlppb")
 
 [node name="fog2" type="TextureRect" parent="."]
 offset_left = -67.0
@@ -80,7 +80,7 @@ offset_top = -78.0
 offset_right = 1085.0
 offset_bottom = 570.0
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_8n4eq")
+texture = ExtResource("4_j8buf")
 
 [node name="fog1" type="TextureRect" parent="."]
 offset_left = -141.0
@@ -88,7 +88,7 @@ offset_top = -43.0
 offset_right = 1011.0
 offset_bottom = 605.0
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("4_8qhfv")
+texture = ExtResource("5_giqsl")
 
 [node name="ChooseLevel" type="Label" parent="."]
 offset_left = 177.0
@@ -96,33 +96,33 @@ offset_top = 25.0
 offset_right = 988.0
 offset_bottom = 148.0
 text = "Choose level"
-label_settings = ExtResource("1_48dmm")
+label_settings = ExtResource("6_o3on7")
 
-[node name="BotaoLevel" parent="." instance=ExtResource("2_hvilc")]
+[node name="BotaoLevel" parent="." instance=ExtResource("7_mn1yi")]
 offset_left = 130.0
 offset_top = 250.0
 offset_right = 300.0
 offset_bottom = 420.0
 level_number = "1"
-level = ExtResource("3_56ig4")
+level = ExtResource("8_mj20w")
 level_name = "The Prison"
 
-[node name="BotaoLevel2" parent="." instance=ExtResource("2_hvilc")]
+[node name="BotaoLevel2" parent="." instance=ExtResource("7_mn1yi")]
 offset_left = 430.0
 offset_top = 252.0
 offset_right = 600.0
 offset_bottom = 422.0
 level_number = "2"
-level = ExtResource("4_56ig4")
+level = ExtResource("9_x1utg")
 level_name = "The Corridor"
 
-[node name="BotaoLevel3" parent="." instance=ExtResource("2_hvilc")]
+[node name="BotaoLevel3" parent="." instance=ExtResource("7_mn1yi")]
 offset_left = 744.0
 offset_top = 252.0
 offset_right = 914.0
 offset_bottom = 422.0
 level_number = "3"
-level = ExtResource("10_fcxnf")
+level = ExtResource("10_t5xyv")
 level_name = "The Pantry"
 
 [node name="TitleScreen" type="Control" parent="."]
@@ -153,7 +153,7 @@ offset_right = 1154.0
 offset_bottom = 403.0
 size_flags_horizontal = 4
 text = "Twin escape"
-label_settings = ExtResource("7_iwede")
+label_settings = ExtResource("12_r01pg")
 horizontal_alignment = 1
 
 [node name="LevelnameFront" type="Label" parent="TitleScreen/LevelName"]
@@ -161,5 +161,5 @@ layout_mode = 0
 offset_right = 1144.0
 offset_bottom = 123.0
 text = "Twin escape"
-label_settings = ExtResource("8_tjon8")
+label_settings = ExtResource("13_jjiqo")
 horizontal_alignment = 1

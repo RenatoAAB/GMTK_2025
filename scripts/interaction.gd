@@ -2,7 +2,7 @@ extends Node2D
 const ALAVANCA = preload("res://sprites/interactions/alavanca.png")
 const ALTAR_DO_FOGO = preload("res://sprites/interactions/altar_do_fogo.png")
 
-@export var interactionEffect : Node;
+@export var interactionEffects : Array[Node];
 @export var reactivatable := false;
 @export var timerCooldown := 3
 var last_run_time := 0.0
@@ -33,8 +33,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func activate():
-	
-
 	# _can run checks if cooldown for activation is ok
 	# also sets new cooldown at the moment it is called
 	if _can_run():
@@ -44,7 +42,7 @@ func activate():
 				trigger.material.set_shader_parameter("show_outline", false)
 				already_activated = true
 				print("Activated")
-				interactionEffect.activate()
+				activate_interactions()
 				
 				if interactionSprite == SpriteType.LEVER:
 					lever_sound.play()
@@ -53,37 +51,48 @@ func activate():
 			if not already_activated:
 				already_activated = true
 				print("Activated")
-				interactionEffect.activate()
+				activate_interactions()
 			else:
 				already_activated = false
-				interactionEffect.activate()
+				activate_interactions()
 				print("Ractivated")
 			if interactionSprite == SpriteType.LEVER:
 				lever_sound.play()
 				toggle_lever_sprite()
 
+func activate_interactions():
+	for intEffect in interactionEffects:
+		intEffect.activate()
+		
+func activate_interactions_highlight():
+	for intEffect in interactionEffects:
+		intEffect.activate_highlight()
+
+func deactivate_interactions_highlight():
+	for intEffect in interactionEffects:
+		intEffect.deactivate_highlight()
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if not reactivatable:
 		if body.is_in_group("Playable") and not already_activated:
 			if not TutorialManager.mostrou_tutorial['interacoes']:
 				TutorialManager.tutorial_needed('interacoes')
-			interactionEffect.activate_highlight()
+			activate_interactions_highlight()
 			trigger.material.set_shader_parameter("show_outline", true)
 			body.set_possible_interaction(self)
 	elif body.is_in_group("Playable"):
-		interactionEffect.activate_highlight()
+		activate_interactions_highlight()
 		trigger.material.set_shader_parameter("show_outline", true)
 		body.set_possible_interaction(self)
 
 func _on_trigger_area_body_exited(body: Node2D) -> void:
 	if not reactivatable:
 		if body.is_in_group("Playable") and not already_activated:
-			interactionEffect.deactivate_highlight()
+			deactivate_interactions_highlight()
 			trigger.material.set_shader_parameter("show_outline", false)
 			body.set_possible_interaction(null)
 	elif body.is_in_group("Playable"):
-		interactionEffect.deactivate_highlight()
+		deactivate_interactions_highlight()
 		trigger.material.set_shader_parameter("show_outline", false)
 		body.set_possible_interaction(null)
 		

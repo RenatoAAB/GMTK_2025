@@ -35,14 +35,13 @@ tile_map_data = PackedByteArray("AAABAPX/AQAEACUAAAAHAPX/AQAFACUAAAANAPX/AQAEACU
 tile_map_data = PackedByteArray("AAD9//7/AAAKAA0AAAD9////AAAbAAoAAAD+//7/AAAQAAoAAAD+////AAAbAAwAAAD///7/AAAQAAoAAAD/////AAAbAAwAAAAAAP7/AAAQAAoAAAAAAP//AAAbAAoAAAABAP7/AAAQAAoAAAABAP//AAAbAAwAAAACAP7/AAAQAAoAAAACAP//AAAbAAwAAAADAP3/AAAPAAoAAAADAP7/AAANAA0AAAADAP//AAAbAAoAAAAEAPn/AAAQAAoAAAAEAPr/AAAbAAwAAAAEAP7/AAAQAAoAAAAEAP//AAAbAA4AAAAFAP7/AAAQAAoAAAAFAP//AAAbAAoAAAAGAP7/AAAQAAoAAAAGAP//AAAbAAoAAAAHAP7/AAAQAAoAAAAHAP//AAAGAC8AAAAIAP7/AAAQAAoAAAAIAP//AAAbAAoAAAAJAP7/AAAQAAoAAAAJAP//AAAbAAoAAAAKAP7/AAAMAA0AAAAKAP//AAAbAA8AAAAKAPn/AAAMAAwAAAAKAP3/AAAPAAoAAAAKAPz/AAAPAAoAAAAKAPv/AAAPAAoAAAAKAPr/AAAPAAoAAAANAP3/AAAPAAoAAAANAP7/AAALAA0AAAAHAPr/AAAkAAoAAAAHAPv/AAAjAAsAAAAHAPz/AAAjAAwAAAADAPn/AAAOAAwAAAADAPr/AAAPAAoAAAAFAPn/AAAQAAoAAAAGAPn/AAAQAAoAAAAHAPn/AAAQAAoAAAAIAPn/AAAQAAoAAAAJAPn/AAAQAAoAAAAAAPn/AAAKAA0AAAABAPn/AAAQAAoAAAACAPn/AAAQAAoAAAAAAPr/AAAbAAwAAAABAPr/AAAbAAwAAAACAPr/AAAbAAoAAAAFAPr/AAAbAAoAAAAGAPr/AAAbAAwAAAAIAPr/AAAbAAwAAAAJAPr/AAAbAAoAAAANAP//AAAbAAwAAAAOAP//AAAbAAwAAAAPAP//AAAbAAoAAAAQAP//AAAbAAwAAAARAP//AAAbAAoAAAANAPr/AAAPAAoAAAANAPv/AAAPAAoAAAANAPz/AAAPAAoAAAANAPn/AAALAAwAAAAOAPn/AAAQAAoAAAAPAPn/AAAQAAoAAAAQAPn/AAAQAAoAAAARAPn/AAAQAAoAAAAOAPr/AAAbAAwAAAAPAPr/AAAbAAoAAAAQAPr/AAAbAAwAAAARAPr/AAAbAAoAAAAOAP7/AAAQAAoAAAAPAP7/AAAQAAoAAAAQAP7/AAAQAAoAAAARAP7/AAAQAAoAAAADAPz/AAAPAAoAAAADAPv/AAAPAAoAAAA=")
 
 [node name="props" parent="." index="4"]
-tile_map_data = PackedByteArray("AAD9//3/AAAGAEwAAAABAPr/AAAMAHwAAAABAPv/AAAMAH0AAAACAPr/AAANAHwAAAACAPv/AAANAH0AAAAEAPr/AAALAH4AAAAEAPv/AAALAH8AAAAFAPr/AAAMAH4AAAAFAPv/AAAMAH8AAAAGAPr/AAANAH4AAAAGAPv/AAANAH8AAAAJAPv/BgAEAB4AAAAIAPv/BgAEAB4AAAAJAP3/BgAEAAUAAAAIAP3/BgAEAAEAAAAJAPz/BgADAAIAAAAFAP3/BgACAAIAAAAEAP3/BgAEAAEAAAAJAAAABgAAAAEAAAD//wEABgACAAIAAAAOAPv/BgABAAcAAAAPAPv/BgABAAcAAAAQAP3/BgAAAB0AAAA=")
+tile_map_data = PackedByteArray("AAAEAPv/AAALAH8AAAD9//3/AAAGAEwAAAABAPr/AAAMAHwAAAABAPv/AAAMAH0AAAACAPr/AAANAHwAAAACAPv/AAANAH0AAAAEAPr/AAALAH4AAAAFAPr/AAAMAH4AAAAFAPv/AAAMAH8AAAAGAPr/AAANAH4AAAAGAPv/AAANAH8AAAAJAPv/BgAEAB4AAAAIAPv/BgAEAB4AAAAJAP3/BgAEAAUAAAAIAP3/BgAEAAEAAAAJAPz/BgADAAIAAAAFAP3/BgACAAIAAAAEAP3/BgAEAAEAAAAJAAAABgAAAAEAAAD//wEABgACAAIAAAAOAPv/BgABAAcAAAAPAPv/BgABAAcAAAAQAP3/BgAAAB0AAAA=")
 
 [node name="props2" parent="." index="5"]
 tile_map_data = PackedByteArray("AAAPAPv/BgAHABYAAAA=")
 
-[node name="BookB" parent="Interactables" index="0" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="BookB" parent="Interactables" index="0" instance=ExtResource("2_r5431")]
 position = Vector2(36, -73)
-interactionEffect = NodePath("../ExplosionB")
 
 [node name="ExplosionB" parent="Interactables" index="1" instance=ExtResource("3_tirjk")]
 position = Vector2(96, -20)
@@ -51,9 +50,8 @@ position = Vector2(96, -20)
 position = Vector2(96, -8)
 is_open = true
 
-[node name="LeverA" parent="Interactables" index="3" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverA" parent="Interactables" index="3" instance=ExtResource("2_r5431")]
 position = Vector2(11, -20)
-interactionEffect = NodePath("../DoorA")
 reactivatable = true
 interactionSprite = 0
 
@@ -62,9 +60,8 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverC" parent="Interactables" index="4" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverC" parent="Interactables" index="4" instance=ExtResource("2_r5431")]
 position = Vector2(94, -71)
-interactionEffect = NodePath("../DoorC")
 reactivatable = true
 interactionSprite = 0
 
@@ -73,9 +70,8 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverD" parent="Interactables" index="5" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverD" parent="Interactables" index="5" instance=ExtResource("2_r5431")]
 position = Vector2(129, -1)
-interactionEffect = NodePath("../DoorD")
 reactivatable = true
 interactionSprite = 0
 

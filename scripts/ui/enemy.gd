@@ -30,6 +30,9 @@ var moving_forward = true
 
 #@onready var player : CharacterBody2D = $"../CharacterBody2D"
 var dead = false
+var just_seen = false
+var just_seen_cooldown = 0.5
+var just_seen_cooldown_timer = 0.5
 
 var direction := Vector2.DOWN
 var start_position := Vector2.ZERO
@@ -80,7 +83,15 @@ func _process(delta):
 	if has_object_with_id("Playable","B"):
 		NinjaB = get_object_with_id("Playable","B")
 	
-	if is_in_line_of_sight(NinjaA, NinjaB):
+	just_seen_cooldown_timer -= delta
+	if just_seen_cooldown_timer < 0:
+		just_seen = false
+	
+	var ta_vendo = is_in_line_of_sight(NinjaA, NinjaB)
+	if ta_vendo or just_seen:
+		if (ta_vendo):
+			just_seen = true
+			just_seen_cooldown_timer = just_seen_cooldown
 		self.visible = true
 	else:
 		self.visible = always_visible
@@ -212,16 +223,14 @@ func is_in_line_of_sight(player1: Node2D, player2: Node2D, collision_mask := 1) 
 	var player_1_visible = false
 	var player_2_visible = false
 	if player1:
-		if not player1.dead:
-			var query = PhysicsRayQueryParameters2D.create(player1.global_position, self.global_position, collision_mask, [player1])
-			var result1 := space_state.intersect_ray(query)
-			player_1_visible = not result1 or result1.get("collider") == self
+		var query = PhysicsRayQueryParameters2D.create(player1.global_position, self.global_position, collision_mask, [player1])
+		var result1 := space_state.intersect_ray(query)
+		player_1_visible = not result1 or result1.get("collider") == self
 	
 	if player2:
-		if not player2.dead:
-			var query = PhysicsRayQueryParameters2D.create(player2.global_position, self.global_position, collision_mask, [player2])
-			var result2 := space_state.intersect_ray(query)
-			player_2_visible = not result2 or result2.get("collider") == self
+		var query = PhysicsRayQueryParameters2D.create(player2.global_position, self.global_position, collision_mask, [player2])
+		var result2 := space_state.intersect_ray(query)
+		player_2_visible = not result2 or result2.get("collider") == self
 	
 
 	return player_1_visible or player_2_visible

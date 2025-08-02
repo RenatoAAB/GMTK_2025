@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4b1etp1d00"]
+
+[ext_resource type="Script" uid="uid://1nrfjd8oic85" path="res://scripts/ui/tutorial_screen.gd" id="1_rcxmo"]
+[ext_resource type="LabelSettings" uid="uid://crqyb5auexjsb" path="res://fonts/pause_button_font_config.tres" id="2_4unk4"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="3_4unk4"]
+
+[node name="Tutorial" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rcxmo")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.12, 16.72)
+color = Color(0, 0, 0, 0.509804)
+
+[node name="Botao3" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(370, 170)
+offset_left = 745.0
+offset_top = 446.0
+offset_right = 1135.0
+offset_bottom = 616.0
+color = Color(0.345098, 0.0980392, 0.196078, 1)
+
+[node name="BotaoBack" type="ColorRect" parent="Botao3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 375.0
+offset_bottom = 155.0
+color = Color(0.792157, 0.501961, 0.4, 1)
+
+[node name="BackContinue" type="Label" parent="Botao3/BotaoBack"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 29.0
+offset_right = 364.0
+offset_bottom = 293.0
+text = "Continue"
+label_settings = ExtResource("2_4unk4")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BotaoContinue" type="Button" parent="Botao3/BotaoBack/BackContinue"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -292.0
+offset_right = 183.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(1000, 350)
+offset_left = 91.0
+offset_top = 65.0
+offset_right = 1091.0
+offset_bottom = 124.0
+text = "Loren ipsilum lorem ipsilum"
+label_settings = ExtResource("3_4unk4")
+autowrap_mode = 2
+
+[connection signal="pressed" from="Botao3/BotaoBack/BackContinue/BotaoContinue" to="." method="_on_botao_continue_pressed"]

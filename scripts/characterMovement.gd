@@ -116,6 +116,8 @@ func _control_animation(direction):
 
 
 func _on_dying_animation_animation_finished() -> void:
+	if not TutorialManager.mostrou_tutorial['morte']:
+		TutorialManager.tutorial_needed('morte')
 	dying = false
 	player_sprite.visible = true
 	player_sprite.play("dead_"+id)

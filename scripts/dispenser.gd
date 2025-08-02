@@ -4,6 +4,9 @@ extends InteractionEffect
 const FIREBALL = preload("res://scenes/interactions/fireball.tscn")
 @onready var som_cast: AudioStreamPlayer2D = $som_cast
 
+func _ready():
+	sprite.material = sprite.material.duplicate(true)
+
 func activate() -> void:
 	deactivate_highlight()
 	sprite.play()

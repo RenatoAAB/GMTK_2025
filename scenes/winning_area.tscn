@@ -15,8 +15,9 @@ position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_gw4up")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -3)
 color = Color(1, 0.533333, 0.231373, 1)
+energy = 2.0
 texture = ExtResource("2_sw1li")
 texture_scale = 0.03
 

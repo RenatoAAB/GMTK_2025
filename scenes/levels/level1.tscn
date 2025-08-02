@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://di00pasualrhk"]
+[gd_scene load_steps=160 format=4 uid="uid://di00pasualrhk"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_x6ivy"]
 [ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_2r1tl"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="5_5ntmo"]
 [ext_resource type="PackedScene" uid="uid://d166qlc6oco8c" path="res://scenes/interactions/portal.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://dma0n7vkdga00" path="res://scenes/interactions/dispenser.tscn" id="6_5ntmo"]
+[ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="11_nkeig"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gf03w"]
 polygon = PackedVector2Array(-2, -4, 2, -4, 4, 4, -4, 4)
@@ -1956,6 +1957,21 @@ sources/2 = SubResource("TileSetAtlasSource_wf2uy")
 sources/5 = SubResource("TileSetAtlasSource_76l6q")
 sources/6 = SubResource("TileSetAtlasSource_ge1yq")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nfihu"]
+vertices = PackedVector2Array(-12, -20, 20, -20, 20, -18, 52, -18, 52, 12, -20, 12, -20, -28, -12, -28)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(2, 4, 5), PackedInt32Array(0, 2, 5), PackedInt32Array(0, 5, 6), PackedInt32Array(7, 0, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-29, -53, 62, -55, 62, 23, -30, 23)])
+sample_partition_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 4.0
+
+[sub_resource type="Curve2D" id="Curve2D_lgguw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -18, -27, 0, 0, 0, 0, -18, -13)
+}
+point_count = 2
+
 [node name="base_level" instance=ExtResource("1_x6ivy")]
 
 [node name="furniture" parent="." index="1"]
@@ -1972,10 +1988,10 @@ position = Vector2(34, -20)
 
 [node name="Interaction" parent="Interactables" index="1" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_4tcl0")]
 position = Vector2(-23, 12)
-interactionEffect = NodePath("../Dispenser")
+interactionEffect = NodePath("../FallingBarrels")
 
 [node name="FallingBarrels" parent="Interactables" index="2" instance=ExtResource("4_8a7m2")]
-position = Vector2(-15, -31)
+position = Vector2(7, -9)
 
 [node name="Portal" parent="Interactables" index="3" instance=ExtResource("5_plydf")]
 
@@ -1992,6 +2008,23 @@ position = Vector2(16, -24)
 z_index = 1
 tile_map_data = PackedByteArray("AAAGAPz/BgAEAB4AAAAEAP//BQAKAAoAAAA=")
 tile_set = SubResource("TileSet_63tae")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="11" groups=["navigation", "navmesh"]]
+navigation_polygon = SubResource("NavigationPolygon_nfihu")
+
+[node name="Path2D" type="Path2D" parent="." index="12"]
+position = Vector2(67, 13)
+curve = SubResource("Curve2D_lgguw")
+
+[node name="Path2d_follow_enemy1" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(-18, -27)
+rotation = 1.5708
+cubic_interp = false
+
+[node name="Enemy" parent="Path2D" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("11_nkeig")]
+position = Vector2(-18, -27)
+chase_speed = 5.0
+path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 
 [editable path="Interactables/Interaction"]
 [editable path="Interactables/Portal"]

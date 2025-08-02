@@ -12,6 +12,10 @@ var is_active = false
 @onready var som_ativo: AudioStreamPlayer2D = $som_ativo
 @onready var som_passagem: AudioStreamPlayer2D = $som_passagem
 
+func _ready():
+	portal_1.material = portal_1.material.duplicate(true)
+	portal_2.material = portal_1.material
+
 # Called when the node enters the scene tree for the first time.
 func activate() -> void:
 	deactivate_highlight()

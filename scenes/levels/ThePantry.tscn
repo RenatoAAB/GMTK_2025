@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://brx33s3s751fg"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_23o6a"]
-[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://sounds/interaction_trigger.tscn" id="2_r5431"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_r5431"]
 [ext_resource type="PackedScene" uid="uid://bqd5w4ooo0chj" path="res://scenes/interactions/explosao.tscn" id="3_tirjk"]
 [ext_resource type="PackedScene" uid="uid://12k4py6kadkb" path="res://scenes/interactions/porta-h.tscn" id="4_qany0"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="5_7j1yd"]
@@ -40,9 +40,8 @@ tile_map_data = PackedByteArray("AAAEAPv/AAALAH8AAAD9//3/AAAGAEwAAAABAPr/AAAMAHw
 [node name="props2" parent="." index="5"]
 tile_map_data = PackedByteArray("AAAPAPv/BgAHABYAAAA=")
 
-[node name="BookB" parent="Interactables" index="0" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="BookB" parent="Interactables" index="0" instance=ExtResource("2_r5431")]
 position = Vector2(36, -73)
-interactionEffect = NodePath("../ExplosionB")
 
 [node name="ExplosionB" parent="Interactables" index="1" instance=ExtResource("3_tirjk")]
 position = Vector2(96, -20)
@@ -51,9 +50,8 @@ position = Vector2(96, -20)
 position = Vector2(96, -8)
 is_open = true
 
-[node name="LeverA" parent="Interactables" index="3" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverA" parent="Interactables" index="3" instance=ExtResource("2_r5431")]
 position = Vector2(11, -20)
-interactionEffect = NodePath("../DoorA")
 reactivatable = true
 interactionSprite = 0
 
@@ -62,9 +60,8 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverC" parent="Interactables" index="4" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverC" parent="Interactables" index="4" instance=ExtResource("2_r5431")]
 position = Vector2(94, -71)
-interactionEffect = NodePath("../DoorC")
 reactivatable = true
 interactionSprite = 0
 
@@ -73,9 +70,8 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverD" parent="Interactables" index="5" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("2_r5431")]
+[node name="LeverD" parent="Interactables" index="5" instance=ExtResource("2_r5431")]
 position = Vector2(129, -1)
-interactionEffect = NodePath("../DoorD")
 reactivatable = true
 interactionSprite = 0
 

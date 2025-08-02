@@ -235,7 +235,7 @@ radius = 11.0
 script = ExtResource("1_qy0ux")
 
 [node name="EffectArea" type="Area2D" parent="."]
-collision_mask = 2
+collision_mask = 3
 
 [node name="effect" type="AnimatedSprite2D" parent="EffectArea"]
 y_sort_enabled = true
@@ -251,5 +251,6 @@ shape = SubResource("CircleShape2D_1p5lb")
 stream = ExtResource("3_cytb0")
 bus = &"EfeitoInteracao"
 
+[connection signal="body_entered" from="EffectArea" to="." method="_on_effect_area_body_entered"]
 [connection signal="animation_finished" from="EffectArea/effect" to="." method="_on_effect_animation_finished"]
 [connection signal="frame_changed" from="EffectArea/effect" to="." method="_on_effect_frame_changed"]

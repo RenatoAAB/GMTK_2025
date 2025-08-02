@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ck1gkaat6s53u"]
+[gd_scene load_steps=11 format=4 uid="uid://ck1gkaat6s53u"]
 
 [ext_resource type="TileSet" uid="uid://ix3leyeds3yw" path="res://tilesets/structures_inside.tres" id="1_3rriw"]
 [ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="1_h4ce7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://s4b1etp1d00" path="res://scenes/ui/tutorial_screen.tscn" id="8_53c65"]
 [ext_resource type="PackedScene" uid="uid://bb1lmjt284vec" path="res://scenes/ui/pause_menu.tscn" id="9_8yl83"]
 [ext_resource type="PackedScene" uid="uid://cx5wtsyll7rw2" path="res://scenes/winning_area.tscn" id="9_43bxi"]
+[ext_resource type="PackedScene" uid="uid://chyy1otnrxilr" path="res://scenes/ui/UI_helper.tscn" id="10_j7gcg"]
 [ext_resource type="PackedScene" uid="uid://cgnxum1dgug0u" path="res://scenes/ui/win_menu.tscn" id="12_0caop"]
 
 [node name="base_level" type="Node2D"]
@@ -82,3 +83,5 @@ visible = false
 
 [node name="Tutorial" parent="." instance=ExtResource("8_53c65")]
 visible = false
+
+[node name="UIHelper" parent="." instance=ExtResource("10_j7gcg")]

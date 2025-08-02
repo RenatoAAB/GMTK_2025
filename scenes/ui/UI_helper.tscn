@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://chyy1otnrxilr"]
+
+[ext_resource type="FontFile" uid="uid://dm2riqyucv4dq" path="res://fonts/PixeloidSans-Bold.otf" id="1_6ij2j"]
+[ext_resource type="Script" uid="uid://bcah72ati44ud" path="res://scripts/ui/ui_helper.gd" id="1_snj8b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_snj8b"]
+font = ExtResource("1_6ij2j")
+font_size = 24
+font_color = Color(0.516864, 0.558565, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1mio"]
+font = ExtResource("1_6ij2j")
+font_size = 24
+font_color = Color(0.996491, 0.300387, 0.436828, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkemx"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.517647, 0.556863, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8ddg"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.996078, 0.301961, 0.435294, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ij2j"]
+bg_color = Color(0.9014, 0.846989, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="UiHelper" type="CanvasLayer"]
+script = ExtResource("1_snj8b")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 36.0
+offset_right = 76.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 518.0
+offset_right = 163.0
+offset_bottom = 602.0
+
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "1 - Blue"
+label_settings = SubResource("LabelSettings_snj8b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "2 - Red"
+label_settings = SubResource("LabelSettings_h1mio")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 523.0
+offset_right = 73.0
+offset_bottom = 607.0
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jkemx")
+
+[node name="Panel2" type="Panel" parent="Control/VBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b8ddg")
+
+[node name="marker" type="Panel" parent="."]
+visible = false
+offset_left = 43.0
+offset_top = 535.0
+offset_right = 63.0
+offset_bottom = 555.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ij2j")
+
+[node name="marker2" type="Panel" parent="."]
+offset_left = 43.0
+offset_top = 578.0
+offset_right = 63.0
+offset_bottom = 598.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ij2j")

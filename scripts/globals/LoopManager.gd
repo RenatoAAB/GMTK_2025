@@ -8,6 +8,8 @@ var recorded_inputs := []
 var current_player = null
 var should_change = false
 
+signal player_set(id)
+
 func get_should_change_characters():
 	return should_change
 
@@ -30,6 +32,7 @@ func start_recording(player):
 	recording_start_time = 0.0
 	recording_inputs.clear()
 	current_player = player
+	emit_signal("player_set", current_player)
 	print("🎥 Recording started")
 
 func stop_recording_and_change():

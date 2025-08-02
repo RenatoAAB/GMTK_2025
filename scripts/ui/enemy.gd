@@ -7,8 +7,16 @@ extends CharacterBody2D
 @export var is_chasing := false
 @export var path_2d_to_follow: PathFollow2D
 @export var is_path_linear := true
+@onready var exclamation_mark: Sprite2D = $ExclamationMark
+@export var always_visible := false
 var path_follow: PathFollow2D
 var on_patrolloing_path := true
+var hide_timer_running := false
+
+# chase timeout timer
+@export var chase_timer := 10.0
+
+
 
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
@@ -75,7 +83,7 @@ func _process(delta):
 	if is_in_line_of_sight(NinjaA, NinjaB):
 		self.visible = true
 	else:
-		self.visible = true
+		self.visible = always_visible
 	
 	
 	if is_patrolling:
@@ -94,10 +102,7 @@ func _process(delta):
 			
 			# sets player to be chased
 			playerBeingChased = visiblePlayer
-			# Trigger desired behavior
 			start_chase()
-		#else:
-			#print("Unspotted")
 
 func patrol(delta):
 		# if is already in the path place
@@ -149,6 +154,8 @@ func start_chase():
 	is_chasing = true
 	is_patrolling = false
 	on_patrolloing_path = false
+	set_exclamation_mark()
+	start_chase_timer()
 
 func stop_chase():
 	is_chasing = false
@@ -167,6 +174,9 @@ func chase_player(delta):
 		velocity = direction * chase_speed
 		move_and_slide()
 	else: stop_chase()
+	
+	
+	
 	
 
 		
@@ -238,3 +248,13 @@ func _on_kill_area_body_entered(body: Node2D) -> void:
 		
 func is_within_distance(point_a: Vector2, point_b: Vector2, max_distance: float) -> bool:
 	return point_a.distance_to(point_b) <= max_distance
+	
+func set_exclamation_mark():
+	exclamation_mark.visible = true
+	await get_tree().create_timer(2.0).timeout
+	exclamation_mark.visible = false
+	
+func start_chase_timer():
+	await get_tree().create_timer(chase_timer).timeout
+	stop_chase()
+	

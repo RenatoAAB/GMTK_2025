@@ -26,3 +26,10 @@ hframes = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_rndm5")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="StaticBody2D" groups=["navigation"]]
+position = Vector2(7, 0)
+radius = 8.0
+vertices = PackedVector2Array(1, 8, 1, -8, -3, -8, -3, 8)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

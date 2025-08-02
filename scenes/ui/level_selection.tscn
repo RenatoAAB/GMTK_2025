@@ -1,8 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=17 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
+[ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_bnl3k"]
+[ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="1_q7wdm"]
+[ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="2_bnl3k"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
+[ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="3_8n4eq"]
 [ext_resource type="PackedScene" uid="uid://di00pasualrhk" path="res://scenes/levels/level1.tscn" id="3_yssoo"]
+[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="4_8qhfv"]
 [ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
@@ -24,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_hg3rx"]
@@ -43,21 +48,6 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_n7r7k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/time")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwede"]
 _data = {
 &"RESET": SubResource("Animation_n7r7k"),
@@ -65,12 +55,39 @@ _data = {
 }
 
 [node name="LevelSelection" type="CanvasLayer"]
+script = ExtResource("1_bnl3k")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(29.12, 16.72)
-color = Color(0.925011, 0.667135, 0.39847, 1)
+[node name="background" type="TextureRect" parent="."]
+offset_left = -49.0
+offset_top = -39.0
+offset_right = 1103.0
+offset_bottom = 609.0
+scale = Vector2(1.1822, 1.1822)
+texture = ExtResource("1_q7wdm")
+
+[node name="clouds-tower" type="TextureRect" parent="."]
+offset_left = -61.0
+offset_top = -37.0
+offset_right = 1091.0
+offset_bottom = 611.0
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("2_bnl3k")
+
+[node name="fog2" type="TextureRect" parent="."]
+offset_left = -67.0
+offset_top = -78.0
+offset_right = 1085.0
+offset_bottom = 570.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_8n4eq")
+
+[node name="fog1" type="TextureRect" parent="."]
+offset_left = -141.0
+offset_top = -43.0
+offset_right = 1011.0
+offset_bottom = 605.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_8qhfv")
 
 [node name="ChooseLevel" type="Label" parent="."]
 offset_left = 177.0
@@ -107,6 +124,7 @@ offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="TitleScreen"]
 material = SubResource("ShaderMaterial_n7r7k")
+layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 647.0
 color = Color(0, 0, 0, 1)
@@ -118,6 +136,7 @@ libraries = {
 
 [node name="LevelName" type="Label" parent="TitleScreen"]
 visible = false
+layout_mode = 0
 offset_left = 10.0
 offset_top = 280.0
 offset_right = 1154.0

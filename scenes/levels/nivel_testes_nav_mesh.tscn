@@ -14,8 +14,8 @@ _data = {
 point_count = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1g4uw"]
-vertices = PackedVector2Array(52, 20, 52, 54, 44, 38, 44, 16, -12, -20, 20, -20, 20, -18, 52, -18, 52, -8, 44, -8, 44, -16, 30, -16, 30, -8, 28, -8, 68, 14, 68, 12, 124, 12, 124, 3, 68, 3, 68, -28, 140, -28, 140, 60, 90, 60, 90, 28, 76, 28, 76, 32, 66, 32, 66, 20, 12, 52, 12, 38, 76, 54, 76, 60, -20, 60, -20, -28, -12, -28, -2, 52, -2, 12, 12, 12, 28, 14, 12, 16)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(7, 9, 10), PackedInt32Array(6, 7, 10), PackedInt32Array(6, 10, 11), PackedInt32Array(11, 12, 13), PackedInt32Array(6, 11, 13), PackedInt32Array(14, 15, 16), PackedInt32Array(17, 18, 19), PackedInt32Array(17, 19, 20), PackedInt32Array(17, 20, 21), PackedInt32Array(16, 17, 21), PackedInt32Array(16, 21, 22), PackedInt32Array(16, 22, 23), PackedInt32Array(14, 16, 23), PackedInt32Array(14, 23, 24), PackedInt32Array(24, 25, 26), PackedInt32Array(24, 26, 27), PackedInt32Array(14, 24, 27), PackedInt32Array(28, 29, 2), PackedInt32Array(1, 30, 31), PackedInt32Array(1, 31, 32), PackedInt32Array(32, 33, 34), PackedInt32Array(32, 34, 4), PackedInt32Array(28, 2, 1), PackedInt32Array(28, 1, 32), PackedInt32Array(35, 28, 32), PackedInt32Array(35, 32, 4), PackedInt32Array(36, 35, 4), PackedInt32Array(36, 4, 6), PackedInt32Array(37, 36, 6), PackedInt32Array(37, 6, 13), PackedInt32Array(37, 13, 38), PackedInt32Array(39, 37, 38), PackedInt32Array(3, 39, 38), PackedInt32Array(3, 38, 14), PackedInt32Array(0, 3, 14), PackedInt32Array(0, 14, 27)])
+vertices = PackedVector2Array(52, 16, 52.3047, 17.1484, 48, 16, 44, 38, 44, 34.9297, 48, 36, 52, 34.9297, 52, 54, 28, 14, 52.5313, 14, 44, 17.0625, 44, 16, 12, 16, 12, 12, 28, -8, -12, -20, 20, -20, 20, -18, 52, -18, 52, -8, 44, -8, 44, -16, 30, -16, 30, -8, 12, 52, 12, 38, 76, 54, 76, 60, -20, 60, -20, -28, -12, -28, -2, 52, -2, 12, 68, 16, 67.4688, 14, 68, 14, 140, 60, 90, 60, 90, 28, 76, 28, 76, 32, 66, 32, 66, 20.9297, 66.9297, 20, 68, 12, 124, 12, 124, 3, 68, 3, 68, -28, 140, -28)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 6, 7), PackedInt32Array(8, 9, 0), PackedInt32Array(8, 0, 2), PackedInt32Array(2, 10, 11), PackedInt32Array(8, 2, 11), PackedInt32Array(8, 11, 12), PackedInt32Array(3, 5, 7), PackedInt32Array(8, 12, 13), PackedInt32Array(14, 8, 13), PackedInt32Array(15, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(18, 20, 21), PackedInt32Array(17, 18, 21), PackedInt32Array(17, 21, 22), PackedInt32Array(22, 23, 14), PackedInt32Array(17, 22, 14), PackedInt32Array(24, 25, 3), PackedInt32Array(7, 26, 27), PackedInt32Array(7, 27, 28), PackedInt32Array(28, 29, 30), PackedInt32Array(28, 30, 15), PackedInt32Array(24, 3, 7), PackedInt32Array(24, 7, 28), PackedInt32Array(31, 24, 28), PackedInt32Array(31, 28, 15), PackedInt32Array(32, 31, 15), PackedInt32Array(32, 15, 17), PackedInt32Array(13, 32, 17), PackedInt32Array(13, 17, 14), PackedInt32Array(33, 34, 35), PackedInt32Array(36, 37, 38), PackedInt32Array(39, 40, 41), PackedInt32Array(39, 41, 42), PackedInt32Array(39, 42, 43), PackedInt32Array(35, 44, 45), PackedInt32Array(46, 47, 48), PackedInt32Array(46, 48, 49), PackedInt32Array(46, 49, 36), PackedInt32Array(45, 46, 36), PackedInt32Array(45, 36, 38), PackedInt32Array(35, 45, 38), PackedInt32Array(35, 38, 39), PackedInt32Array(33, 35, 39), PackedInt32Array(33, 39, 43)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-29, -53, 150, -53, 150, 72, -29, 72)])
 sample_partition_type = 1
 source_geometry_mode = 1
@@ -54,12 +54,14 @@ cubic_interp = false
 [node name="Enemy" parent="Path2D" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_gtkfl")]
 position = Vector2(-18, -27)
 path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
+always_visible = true
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="12" groups=["navigation"]]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="12" groups=["navmesh"]]
 navigation_polygon = SubResource("NavigationPolygon_1g4uw")
 
 [node name="Porta-h" parent="." index="13" instance=ExtResource("3_x2ugm")]
 position = Vector2(48, 25)
+is_open = true
 
 [node name="Interaction portaH" parent="." index="14" node_paths=PackedStringArray("interactionEffect") instance=ExtResource("4_7v3q7")]
 position = Vector2(-19, 59)
@@ -87,6 +89,7 @@ hframes = 3
 
 [node name="porta-v" parent="." index="16" instance=ExtResource("6_7v3q7")]
 position = Vector2(53, 16)
+is_open = true
 
 [editable path="Interaction portaH"]
 [editable path="Interaction portaV"]

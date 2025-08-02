@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn2pln1gqhliw"]
+[gd_scene load_steps=11 format=3 uid="uid://dn2pln1gqhliw"]
 
 [ext_resource type="Script" uid="uid://cfwjbuf0epy8m" path="res://scripts/ui/menu.gd" id="1_cx0sj"]
-[ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="2_ntye7"]
-[ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="3_cghgw"]
+[ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_e11en"]
+[ext_resource type="Texture2D" uid="uid://cx2vk4nk33su4" path="res://images/menu-art/layer4-torre.png" id="3_288ov"]
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="4_1pxh0"]
+[ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="4_tub5d"]
+[ext_resource type="Texture2D" uid="uid://yvu5iksjdug5" path="res://images/menu-art/layer3-people.png" id="5_dnmb1"]
 [ext_resource type="PackedScene" uid="uid://c2jjdr2m3jxkq" path="res://scenes/ui/level_selection.tscn" id="5_e11en"]
+[ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="6_5j7hh"]
+[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="7_y7dvm"]
+[ext_resource type="Texture2D" uid="uid://bev1fcgpl4ijk" path="res://images/menu-art/title.png" id="10_288ov"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,39 +18,67 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cx0sj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(29.12, 16.72)
-color = Color(0.925011, 0.667135, 0.39847, 1)
+offset_left = -117.0
+offset_top = -39.0
+offset_right = 1035.0
+offset_bottom = 609.0
+scale = Vector2(1.1822, 1.1822)
+texture = ExtResource("2_e11en")
 
-[node name="PlayText2" type="Label" parent="."]
+[node name="tower" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 112.0
-offset_right = 1164.0
-offset_bottom = 235.0
-text = "Twin escape"
-label_settings = ExtResource("2_ntye7")
-horizontal_alignment = 1
+offset_left = -36.0
+offset_top = -6.0
+offset_right = 1116.0
+offset_bottom = 642.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_288ov")
 
-[node name="PlayText3" type="Label" parent="."]
+[node name="clouds-tower" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 112.0
-offset_right = 1164.0
-offset_bottom = 235.0
-text = "Twin escape"
-label_settings = ExtResource("3_cghgw")
-horizontal_alignment = 1
+offset_left = -65.0
+offset_top = -37.0
+offset_right = 1087.0
+offset_bottom = 611.0
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("4_tub5d")
+
+[node name="people" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 9.00001
+offset_top = -70.0
+offset_right = 1161.0
+offset_bottom = 578.0
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("5_dnmb1")
+
+[node name="fog2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -78.0
+offset_right = 1085.0
+offset_bottom = 570.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_5j7hh")
+
+[node name="fog1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -141.0
+offset_top = -43.0
+offset_right = 1011.0
+offset_bottom = 605.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_y7dvm")
 
 [node name="Botao" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 392.0
-offset_top = 371.0
-offset_right = 762.0
-offset_bottom = 541.0
+offset_left = 801.0
+offset_top = 447.0
+offset_right = 1171.0
+offset_bottom = 617.0
+scale = Vector2(0.720001, 0.720001)
 color = Color(0.345098, 0.0980392, 0.196078, 1)
 
 [node name="BotaoBack" type="ColorRect" parent="Botao"]
@@ -82,5 +115,10 @@ flat = true
 
 [node name="LevelSelection" parent="." instance=ExtResource("5_e11en")]
 visible = false
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(678, 263)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("10_288ov")
 
 [connection signal="pressed" from="Botao/BotaoBack/PlayText/BotaoPlay" to="." method="_on_botao_play_pressed"]

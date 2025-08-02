@@ -23,6 +23,7 @@ LevelManager="*res://scripts/globals/LevelManager.gd"
 [global_group]
 
 navigation=""
+navmesh=""
 
 [input]
 

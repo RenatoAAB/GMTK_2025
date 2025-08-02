@@ -5,13 +5,15 @@ var textos_explicativos = {
 	'controles' : 'You can move with WASD or Arrow Keys. Get through the shining door and escape!',
 	'morte': 'Guards will try to kill if they see you. 
 		Ghosts can not win but can still move. Restart by pressing 1 (blue) or 2 (red)! The other character remembers...',
-	'escapou': 'To win you must escape with both characters! Press 1 to play as your partner. The first character will move just as you did'
+	'escapou': 'To win you must escape with both characters! Press 1 to play as your partner. The first character will move just as you did',
+	'interacoes': 'You can activate interactions by pressing E'
 }
 
 var mostrou_tutorial = {
 	'controles' : false,
 	'morte': false,
-	'escapou': false
+	'escapou': false,
+	'interacoes': false
 }
 
 

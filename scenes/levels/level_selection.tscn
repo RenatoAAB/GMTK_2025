@@ -3,7 +3,7 @@
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
 [ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="3_56ig4"]
-[ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
+[ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="4_56ig4"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="8_tjon8"]
@@ -80,8 +80,8 @@ offset_top = 252.0
 offset_right = 600.0
 offset_bottom = 422.0
 level_number = "2"
-level = ExtResource("5_yssoo")
-level_name = "The Kitchen"
+level = ExtResource("4_56ig4")
+level_name = "The Corridor"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

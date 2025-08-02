@@ -1,4 +1,6 @@
 extends Node2D
+const ALAVANCA = preload("res://sprites/interactions/alavanca.png")
+const ALTAR_DO_FOGO = preload("res://sprites/interactions/altar_do_fogo.png")
 
 @export var interactionEffect : Node;
 @export var reactivatable := false;
@@ -22,7 +24,10 @@ var effect_once = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	trigger.material = trigger.material.duplicate(true)
-
+	if interactionSprite == SpriteType.LEVER:
+		sprite.texture = ALAVANCA
+		sprite.hframes = 3
+		sprite.scale = Vector2(0.5,0.5)
 	
 
 
@@ -59,6 +64,8 @@ func activate():
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if not reactivatable:
 		if body.is_in_group("Playable") and not already_activated:
+			if not TutorialManager.mostrou_tutorial['interacoes']:
+				TutorialManager.tutorial_needed('interacoes')
 			interactionEffect.activate_highlight()
 			trigger.material.set_shader_parameter("show_outline", true)
 			body.set_possible_interaction(self)

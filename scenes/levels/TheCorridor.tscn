@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cnv8oc2u5nscp"]
+[gd_scene load_steps=10 format=4 uid="uid://cnv8oc2u5nscp"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_g0qkx"]
 [ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_yl2l8"]
 [ext_resource type="PackedScene" uid="uid://dma0n7vkdga00" path="res://scenes/interactions/dispenser.tscn" id="3_xfnjr"]
 [ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="4_x42u4"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_auqno"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="6_6uxd2"]
 
 [sub_resource type="Curve2D" id="Curve2D_6uxd2"]
 _data = {
@@ -92,7 +93,7 @@ color = Color(0.913725, 0.807843, 0, 1)
 energy = 0.5
 texture = ExtResource("4_x42u4")
 
-[node name="Path2D" type="Path2D" parent="." index="18"]
+[node name="Path2D" type="Path2D" parent="." index="17"]
 position = Vector2(49, 30)
 curve = SubResource("Curve2D_6uxd2")
 
@@ -106,7 +107,7 @@ position = Vector2(-102, -67)
 chase_speed = 35.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 
-[node name="Path2D2" type="Path2D" parent="." index="19"]
+[node name="Path2D2" type="Path2D" parent="." index="18"]
 position = Vector2(49, 30)
 curve = SubResource("Curve2D_auqno")
 
@@ -120,6 +121,16 @@ position = Vector2(17, -69)
 chase_speed = 35.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="20" groups=["navmesh"]]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="19" groups=["navmesh"]]
 position = Vector2(0, -51)
 navigation_polygon = SubResource("NavigationPolygon_auqno")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="20"]
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+offset_left = 441.0
+offset_top = 547.0
+offset_right = 689.0
+offset_bottom = 577.0
+text = "Press E to interact"
+label_settings = ExtResource("6_6uxd2")

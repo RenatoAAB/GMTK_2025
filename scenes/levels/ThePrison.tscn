@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://fna5widhpic0"]
+[gd_scene load_steps=6 format=4 uid="uid://fna5widhpic0"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_is8x7"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="3_5t24y"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="4_lcq3g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r5wal"]
@@ -67,3 +68,38 @@ position = Vector2(-11, 6)
 [node name="winning_area" parent="." index="13"]
 position = Vector2(79, 14)
 rotation = -1.5708
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="17"]
+
+[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 942.0
+offset_top = 23.0
+offset_right = 1142.0
+offset_bottom = 119.0
+text = "Move with WASD or arrow keys"
+label_settings = ExtResource("3_5t24y")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer" index="1"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 937.0
+offset_top = 442.0
+offset_right = 1137.0
+offset_bottom = 538.0
+text = "Both must escape ALIVE"
+label_settings = ExtResource("3_5t24y")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer" index="2"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 948.0
+offset_top = 203.0
+offset_right = 1148.0
+offset_bottom = 299.0
+text = "Press 1 or 2 to go back in time"
+label_settings = ExtResource("3_5t24y")
+horizontal_alignment = 1
+autowrap_mode = 2

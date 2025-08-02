@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=18 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="1_48dmm"]
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_bnl3k"]
@@ -6,14 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="2_bnl3k"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="2_hvilc"]
 [ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="3_8n4eq"]
-[ext_resource type="PackedScene" uid="uid://di00pasualrhk" path="res://scenes/levels/level1.tscn" id="3_yssoo"]
-[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="4_8qhfv"]
-[ext_resource type="PackedScene" uid="uid://q2wstrx0nnab" path="res://scenes/levels/nivel_testes_nav_mesh.tscn" id="5_yssoo"]
 [ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="3_56ig4"]
+[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="4_8qhfv"]
 [ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="4_56ig4"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="6_hg3rx"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="7_iwede"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="8_tjon8"]
+[ext_resource type="PackedScene" uid="uid://brx33s3s751fg" path="res://scenes/levels/ThePantry.tscn" id="10_fcxnf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("6_hg3rx")
@@ -116,6 +115,15 @@ offset_bottom = 422.0
 level_number = "2"
 level = ExtResource("4_56ig4")
 level_name = "The Corridor"
+
+[node name="BotaoLevel3" parent="." instance=ExtResource("2_hvilc")]
+offset_left = 744.0
+offset_top = 252.0
+offset_right = 914.0
+offset_bottom = 422.0
+level_number = "3"
+level = ExtResource("10_fcxnf")
+level_name = "The Pantry"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

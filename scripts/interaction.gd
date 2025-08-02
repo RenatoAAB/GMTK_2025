@@ -7,7 +7,7 @@ const ALTAR_DO_FOGO = preload("res://sprites/interactions/altar_do_fogo.png")
 @export var timerCooldown := 3
 var last_run_time := 0.0
 
-
+@onready var lever_sound: AudioStreamPlayer = $LeverSound
 @onready var trigger: Sprite2D = $TriggerArea/trigger
 @onready var sprite: Sprite2D = $TriggerArea/trigger
 
@@ -47,6 +47,7 @@ func activate():
 				interactionEffect.activate()
 				
 				if interactionSprite == SpriteType.LEVER:
+					lever_sound.play()
 					sprite.frame = 2
 		else:
 			if not already_activated:
@@ -58,6 +59,7 @@ func activate():
 				interactionEffect.activate()
 				print("Ractivated")
 			if interactionSprite == SpriteType.LEVER:
+				lever_sound.play()
 				toggle_lever_sprite()
 
 

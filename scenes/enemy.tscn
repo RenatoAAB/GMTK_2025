@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch2hw7pw87h1w"]
+[gd_scene load_steps=12 format=3 uid="uid://ch2hw7pw87h1w"]
 
 [ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scripts/ui/enemy.gd" id="1_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://dm4l6xah288m3" path="res://sprites/inimigo_morto.png" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="3_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://b3gff4rknhrit" path="res://sprites/ui/exclamation.png" id="5_c4w8v"]
+[ext_resource type="AudioStream" uid="uid://cv5r6n3pp4q4w" path="res://sounds/guard_chase_alert.mp3" id="6_xwavj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
 atlas = ExtResource("2_c4w8v")
@@ -75,5 +76,8 @@ shape = SubResource("CircleShape2D_5uy6h")
 visible = false
 position = Vector2(0, -10)
 texture = ExtResource("5_c4w8v")
+
+[node name="enemyAlertedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xwavj")
 
 [connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]

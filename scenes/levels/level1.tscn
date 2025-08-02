@@ -1,8 +1,8 @@
-[gd_scene load_steps=160 format=4 uid="uid://di00pasualrhk"]
+[gd_scene load_steps=160 format=3 uid="uid://di00pasualrhk"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_x6ivy"]
 [ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_2r1tl"]
-[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_4tcl0"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://sounds/interaction_trigger.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bqd5w4ooo0chj" path="res://scenes/interactions/explosao.tscn" id="2_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="3_8a7m2"]
 [ext_resource type="PackedScene" uid="uid://c6dtowwelhokh" path="res://scenes/interactions/falling_barrels.tscn" id="4_8a7m2"]
@@ -1974,12 +1974,12 @@ point_count = 2
 
 [node name="base_level" instance=ExtResource("1_x6ivy")]
 
-[node name="furniture" parent="." index="1"]
-tile_map_data = PackedByteArray("AAD///z/AgAHAAAAAAAAAPz/AgAIAAAAAAABAPz/AgACAAAAAAACAPz/AgACAAAAAAAEAPv/AgACAAkAAAAGAPz/BgAEAB4AAAA=")
-
-[node name="Interactables" parent="." index="2"]
+[node name="furnitureMiddle" type="TileMapLayer" parent="." index="3"]
 z_index = 1
-y_sort_enabled = true
+tile_map_data = PackedByteArray(0, 0, 6, 0, 252, 255, 6, 0, 4, 0, 30, 0, 0, 0, 4, 0, 255, 255, 5, 0, 10, 0, 10, 0, 0, 0)
+tile_set = SubResource("TileSet_63tae")
+
+[node name="Interactables" parent="." index="7"]
 position = Vector2(2, -1)
 
 [node name="Explosao" parent="Interactables" index="0" instance=ExtResource("2_dd0lh")]
@@ -2003,11 +2003,6 @@ position = Vector2(8, -23)
 
 [node name="Dispenser" parent="Interactables" index="4" instance=ExtResource("6_5ntmo")]
 position = Vector2(16, -24)
-
-[node name="furnitureMiddle" type="TileMapLayer" parent="." index="3"]
-z_index = 1
-tile_map_data = PackedByteArray("AAAGAPz/BgAEAB4AAAAEAP//BQAKAAoAAAA=")
-tile_set = SubResource("TileSet_63tae")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="11" groups=["navigation", "navmesh"]]
 navigation_polygon = SubResource("NavigationPolygon_nfihu")

@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var is_path_linear := true
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 @export var always_visible := false
+@onready var enemy_alerted_sound: AudioStreamPlayer = $enemyAlertedSound
+
 var path_follow: PathFollow2D
 var on_patrolloing_path := true
 var hide_timer_running := false
@@ -166,6 +168,7 @@ func start_chase():
 	is_patrolling = false
 	on_patrolloing_path = false
 	set_exclamation_mark()
+	enemy_alerted_sound.play()
 	start_chase_timer()
 
 func stop_chase():

@@ -9,6 +9,7 @@ extends InteractionEffect
 
 
 func _ready() -> void:
+	sprite.material = sprite.material.duplicate(true)
 	if is_open:
 		open()
 	else:

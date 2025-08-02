@@ -254,6 +254,8 @@ func get_object_with_id(group_name: String, target_id: String) -> Node:
 
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
+	if dead:
+		return
 	if body.is_in_group("Playable"):
 		body.kill()
 		stop_chase()

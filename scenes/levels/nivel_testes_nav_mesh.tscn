@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_sk34a"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="2_gtkfl"]
 [ext_resource type="PackedScene" uid="uid://12k4py6kadkb" path="res://scenes/interactions/porta-h.tscn" id="3_x2ugm"]
-[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://sounds/interaction_trigger.tscn" id="4_7v3q7"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="4_7v3q7"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="5_lkbe5"]
 [ext_resource type="PackedScene" uid="uid://bhiqp2eja5bih" path="res://scenes/interactions/porta_v.tscn" id="6_7v3q7"]
 

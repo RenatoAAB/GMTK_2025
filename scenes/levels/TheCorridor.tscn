@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://cnv8oc2u5nscp"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_g0qkx"]
-[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://sounds/interaction_trigger.tscn" id="2_yl2l8"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_yl2l8"]
 [ext_resource type="PackedScene" uid="uid://dma0n7vkdga00" path="res://scenes/interactions/dispenser.tscn" id="3_xfnjr"]
 [ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="4_x42u4"]
 

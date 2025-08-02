@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://v2tgiusrnp0n"]
+[gd_scene load_steps=9 format=3 uid="uid://v2tgiusrnp0n"]
 
 [ext_resource type="Script" uid="uid://0ki6k02n8hwm" path="res://scripts/interaction.gd" id="1_cbj7k"]
 [ext_resource type="Shader" uid="uid://dgdqwik3tq4l1" path="res://shaders/highlight.gdshader" id="2_4318m"]
 [ext_resource type="Texture2D" uid="uid://bqchxnndk5ik4" path="res://sprites/interactions/altar_do_fogo.png" id="3_d3o5t"]
 [ext_resource type="AudioStream" uid="uid://0gjspjosxh45" path="res://sounds/lever_action.mp3" id="4_3xwoi"]
+[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="5_1ty0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ty0p"]
 shader = ExtResource("2_4318m")
@@ -37,6 +38,11 @@ shape = SubResource("RectangleShape2D_xkqms")
 
 [node name="LeverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3xwoi")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.3
+texture = ExtResource("5_1ty0p")
+texture_scale = 0.1
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]

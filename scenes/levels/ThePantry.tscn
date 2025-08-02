@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://brx33s3s751fg"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_23o6a"]
-[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://sounds/interaction_trigger.tscn" id="2_r5431"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="2_r5431"]
 [ext_resource type="PackedScene" uid="uid://bqd5w4ooo0chj" path="res://scenes/interactions/explosao.tscn" id="3_tirjk"]
 [ext_resource type="PackedScene" uid="uid://12k4py6kadkb" path="res://scenes/interactions/porta-h.tscn" id="4_qany0"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="5_7j1yd"]

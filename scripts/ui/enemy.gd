@@ -6,10 +6,13 @@ extends CharacterBody2D
 @export var is_patrolling := true
 @export var is_chasing := false
 @export var path_2d_to_follow: PathFollow2D
+@export var ignore_path := false
 @export var is_path_linear := true
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 @export var always_visible := false
 @onready var enemy_alerted_sound: AudioStreamPlayer = $enemyAlertedSound
+@onready var initial_standing_position
+@onready var initial_direction
 
 var path_follow: PathFollow2D
 var on_patrolloing_path := true
@@ -40,8 +43,12 @@ var direction := Vector2.DOWN
 var start_position := Vector2.ZERO
 
 func _ready():
-	path_follow = path_2d_to_follow
-	start_position = path_follow.global_position
+	if not ignore_path:
+		path_follow = path_2d_to_follow
+		start_position = path_follow.global_position
+	else:
+		initial_direction = vision_cone.rotation
+		initial_standing_position = global_position
 	add_to_group("Enemies")
 	# Set how close we need to get to the target point before requesting a new one
 	#agent.target_desired_distance = 4.0
@@ -60,10 +67,11 @@ func _physics_process(delta):
 		patrol(delta)
 		
 	# Only rotate if moving
-	if velocity.length() > 0.01:
+	if velocity.length() > 1:
 		
 	# Rotate the vision cone to match current direction
 		vision_cone.rotation = velocity.angle() - deg_to_rad(90)
+		print("rotating due to velocity")
 		
 	#Flip sprite left/right based on movement
 	if velocity.x != 0:
@@ -118,39 +126,55 @@ func _process(delta):
 			start_chase()
 
 func patrol(delta):
+	if not ignore_path:
 		# if is already in the path place
-	if(on_patrolloing_path):
-		
-		# Move enemy to path follow position
-		var direction = (path_follow.global_position - global_position).normalized()
-		velocity = direction * patrol_speed
-		move_and_slide()
-
-		if moving_forward:
-			path_follow.progress += (patrol_speed) * delta
-		else:
-			path_follow.progress -= (patrol_speed) * delta
+		if(on_patrolloing_path):
 			
-		# Optional: Ping-pong movement
-		if is_path_linear:
-			if path_follow.progress_ratio >= 0.9:
-				moving_forward = false
-			elif path_follow.progress_ratio <= 0.1:
-				moving_forward = true
-	else:
-		# directs the enemy back to the
-		agent.target_position = path_follow.global_position
+			# Move enemy to path follow position
+			var direction = (path_follow.global_position - global_position).normalized()
+			velocity = direction * patrol_speed
+			move_and_slide()
 
-		var next_path_point = agent.get_next_path_position()
-		var direction = (next_path_point - global_position).normalized()
-		
-		velocity = direction * chase_speed
-		move_and_slide()
-		
-		if is_within_distance(global_position, path_follow.global_position, 30):
-			on_patrolloing_path = true
-		
+			if moving_forward:
+				path_follow.progress += (patrol_speed) * delta
+			else:
+				path_follow.progress -= (patrol_speed) * delta
+				
+			# Optional: Ping-pong movement
+			if is_path_linear:
+				if path_follow.progress_ratio >= 0.9:
+					moving_forward = false
+				elif path_follow.progress_ratio <= 0.1:
+					moving_forward = true
+		else:
+			# directs the enemy back to the
+			agent.target_position = path_follow.global_position
 
+			var next_path_point = agent.get_next_path_position()
+			var direction = (next_path_point - global_position).normalized()
+			
+			velocity = direction * chase_speed
+			move_and_slide()
+			
+			if is_within_distance(global_position, path_follow.global_position, 30):
+				on_patrolloing_path = true
+				
+			
+	else:# if ignore path is true! (no path set to enemy)
+		if not is_within_distance(global_position, initial_standing_position, 5):
+			agent.target_position = initial_standing_position
+			
+			var next_path_point = agent.get_next_path_position()
+			var direction = (next_path_point - global_position).normalized()
+			
+			velocity = direction * chase_speed
+			move_and_slide()
+
+		else:
+			# tá parado
+			velocity = Vector2.ZERO
+			vision_cone.rotation  = velocity.angle() - initial_direction
+			
 	
 	
 	

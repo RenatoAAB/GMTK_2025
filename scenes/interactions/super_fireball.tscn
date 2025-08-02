@@ -90,7 +90,7 @@ animations = [{
 radius = 3.0
 
 [node name="Super_fireball" type="Node2D"]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 script = ExtResource("1_8eggv")
 

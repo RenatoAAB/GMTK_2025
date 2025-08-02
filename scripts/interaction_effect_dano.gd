@@ -31,7 +31,8 @@ func activate_area():
 	# Manually check for overlaps
 	var affected_bodies = effect_area.get_overlapping_bodies()
 	for body in affected_bodies:
-		if body.is_in_group("Playable") or body.is_in_group("Enemies"):
+		print(body.name)
+		if body.is_in_group("Playable") or body.is_in_group("Enemies") or body.is_in_group("Mage"):
 			body.kill()
 
 func deactivate_area():

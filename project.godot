@@ -21,6 +21,11 @@ LoopManager="*res://scripts/globals/LoopManager.gd"
 LevelManager="*res://scripts/globals/LevelManager.gd"
 TutorialManager="*res://scripts/globals/TutorialManager.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 navigation=""

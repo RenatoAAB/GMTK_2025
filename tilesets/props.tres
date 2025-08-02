@@ -5844,6 +5844,18 @@ texture_region_size = Vector2i(8, 8)
 23:30/size_in_atlas = Vector2i(1, 2)
 23:30/0 = 0
 23:30/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4.06102, 7.91899, -3.85797, 7.91899)
+8:43/0 = 0
+9:43/0 = 0
+10:43/0 = 0
+8:42/0 = 0
+9:42/0 = 0
+10:42/0 = 0
+8:44/0 = 0
+8:45/0 = 0
+9:45/0 = 0
+10:45/0 = 0
+9:44/0 = 0
+10:44/0 = 0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s3vp4"]
 polygon = PackedVector2Array(-4, -4, 4, -4, 4, 0, 2, 0, 2, 8, -4, 8)

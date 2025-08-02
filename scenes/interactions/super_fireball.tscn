@@ -1,46 +1,44 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgq738i6jt228"]
+[gd_scene load_steps=16 format=3 uid="uid://cvgtsc2bst7vu"]
 
-[ext_resource type="Script" uid="uid://t1l5kj14b3r2" path="res://scripts/fireball.gd" id="1_y0tbf"]
-[ext_resource type="Texture2D" uid="uid://05nn6xgnx13b" path="res://sprites/interactions/fireball.png" id="2_oxeb6"]
-[ext_resource type="AudioStream" uid="uid://ffixd1xm6m8d" path="res://sounds/fireball_voando.mp3" id="3_5pam0"]
-[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="3_kbwmi"]
-[ext_resource type="AudioStream" uid="uid://xp5glta3row1" path="res://sounds/fireball_hit.mp3" id="4_6aplk"]
-[ext_resource type="AudioStream" uid="uid://fn5564ea5u25" path="res://sounds/fireball_cast.mp3" id="6_5v2ee"]
+[ext_resource type="Script" uid="uid://u8n1ow8ihfhx" path="res://scripts/super_fireball.gd" id="1_8eggv"]
+[ext_resource type="Texture2D" uid="uid://05nn6xgnx13b" path="res://sprites/interactions/fireball.png" id="2_8erl3"]
+[ext_resource type="AudioStream" uid="uid://drsbxcsy03r8d" path="res://sounds/super_fireball.mp3" id="3_8eggv"]
+[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="3_ojkhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5n34"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(54, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3yd3"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(63, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yb4l"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(72, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pam0"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(0, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6aplk"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(9, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbwmi"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(18, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v2ee"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(27, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fogx0"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(36, 0, 9, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3hb5"]
-atlas = ExtResource("2_oxeb6")
+atlas = ExtResource("2_8erl3")
 region = Rect2(45, 0, 9, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5n34"]
@@ -91,45 +89,36 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oxeb6"]
 radius = 3.0
 
-[node name="Fireball" type="Node2D"]
+[node name="Super_fireball" type="Node2D"]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_y0tbf")
+script = ExtResource("1_8eggv")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 5.5)
+position = Vector2(0, -9)
+scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_k5n34")
-animation = &"explodindo"
-frame = 2
-frame_progress = 1.0
+animation = &"voando"
 
-[node name="PointLight2D" type="PointLight2D" parent="sprite"]
-color = Color(1, 0, 0, 1)
-energy = 0.5
-texture = ExtResource("3_kbwmi")
-texture_scale = 0.5
-
-[node name="kill_area" type="Area2D" parent="."]
-position = Vector2(0, 6.5)
+[node name="kill_area" type="Area2D" parent="sprite"]
+position = Vector2(0, 0.1)
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/kill_area"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_oxeb6")
 
 [node name="som" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_5pam0")
-volume_db = 20.0
-bus = &"EfeitoInteracao"
-parameters/looping = true
-
-[node name="som_explosao" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_6aplk")
+stream = ExtResource("3_8eggv")
+volume_db = 5.0
 bus = &"EfeitoInteracao"
 
-[node name="som_cast" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_5v2ee")
-bus = &"EfeitoInteracao"
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 30)
+color = Color(1, 0, 0, 1)
+energy = 2.0
+texture = ExtResource("3_ojkhu")
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
-[connection signal="body_entered" from="kill_area" to="." method="_on_kill_area_body_entered"]
+[connection signal="body_entered" from="sprite/kill_area" to="." method="_on_kill_area_body_entered"]
+[connection signal="finished" from="som" to="." method="_on_som_finished"]

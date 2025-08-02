@@ -32,7 +32,7 @@ tile_map_data = PackedByteArray("AAD9//3/AAASAA0AAAD9//7/AAASAA4AAAD9////AAASAA8
 tile_map_data = PackedByteArray("AAABAPX/AQAEACUAAAAHAPX/AQAFACUAAAANAPX/AQAEACUAAAA=")
 
 [node name="innerWalls" parent="." index="3"]
-tile_map_data = PackedByteArray("AAD9//7/AAAKAA0AAAD9////AAAbAAoAAAD+//7/AAAQAAoAAAD+////AAAbAAwAAAD///7/AAAQAAoAAAD/////AAAbAAwAAAAAAP7/AAAQAAoAAAAAAP//AAAbAAoAAAABAP7/AAAQAAoAAAABAP//AAAbAAwAAAACAP7/AAAQAAoAAAACAP//AAAbAAwAAAADAP3/AAAPAAoAAAADAP7/AAANAA0AAAADAP//AAAbAAoAAAAEAPn/AAAQAAoAAAAEAPr/AAAbAAwAAAAEAP7/AAAQAAoAAAAEAP//AAAbAA4AAAAFAP7/AAAQAAoAAAAFAP//AAAbAAoAAAAGAP7/AAAQAAoAAAAGAP//AAAbAAoAAAAHAP7/AAAQAAoAAAAHAP//AAAGAC8AAAAIAP7/AAAQAAoAAAAIAP//AAAbAAoAAAAJAP7/AAAQAAoAAAAJAP//AAAbAAoAAAAKAP7/AAAMAA0AAAAKAP//AAAbAA8AAAAKAPn/AAAMAAwAAAAKAP3/AAAPAAoAAAAKAPz/AAAPAAoAAAAKAPv/AAAPAAoAAAAKAPr/AAAPAAoAAAANAP3/AAAPAAoAAAANAP7/AAALAA0AAAAHAPr/AAAkAAoAAAAHAPv/AAAjAAsAAAAHAPz/AAAjAAwAAAADAPn/AAAOAAwAAAADAPr/AAAPAAoAAAAFAPn/AAAQAAoAAAAGAPn/AAAQAAoAAAAHAPn/AAAQAAoAAAAIAPn/AAAQAAoAAAAJAPn/AAAQAAoAAAAAAPn/AAAKAA0AAAABAPn/AAAQAAoAAAACAPn/AAAQAAoAAAAAAPr/AAAbAAwAAAABAPr/AAAbAAwAAAACAPr/AAAbAAoAAAAFAPr/AAAbAAoAAAAGAPr/AAAbAAwAAAAIAPr/AAAbAAwAAAAJAPr/AAAbAAoAAAANAP//AAAbAAwAAAAOAP//AAAbAAwAAAAPAP//AAAbAAoAAAAQAP//AAAbAAwAAAARAP//AAAbAAoAAAANAPr/AAAPAAoAAAANAPv/AAAPAAoAAAANAPz/AAAPAAoAAAANAPn/AAALAAwAAAAOAPn/AAAQAAoAAAAPAPn/AAAQAAoAAAAQAPn/AAAQAAoAAAARAPn/AAAQAAoAAAAOAPr/AAAbAAwAAAAPAPr/AAAbAAoAAAAQAPr/AAAbAAwAAAARAPr/AAAbAAoAAAAOAP7/AAAQAAoAAAAPAP7/AAAQAAoAAAAQAP7/AAAQAAoAAAARAP7/AAAQAAoAAAADAPz/AAAPAAoAAAADAPv/AAAPAAoAAAA=")
+tile_map_data = PackedByteArray("AAD9//7/AAABAA0AAAD9////AAAbAAoAAAD+//7/AAAHAAoAAAD+////AAAbAAwAAAD///7/AAAHAAoAAAD/////AAAbAAwAAAAAAP7/AAAHAAoAAAAAAP//AAAbAAoAAAABAP7/AAAHAAoAAAABAP//AAAbAAwAAAACAP7/AAAHAAoAAAACAP//AAAbAAwAAAADAP3/AAAGAAoAAAADAP7/AAAEAA0AAAADAP//AAAbAAoAAAAEAPn/AAAHAAoAAAAEAPr/AAAbAAwAAAAEAP7/AAAHAAoAAAAEAP//AAAbAA4AAAAFAP7/AAAHAAoAAAAFAP//AAAbAAoAAAAGAP7/AAAHAAoAAAAGAP//AAAbAAoAAAAHAP7/AAAHAAoAAAAHAP//AAAGAC8AAAAIAP7/AAAHAAoAAAAIAP//AAAbAAoAAAAJAP7/AAAHAAoAAAAJAP//AAAbAAoAAAAKAP7/AAADAA0AAAAKAP//AAAbAA8AAAAKAPn/AAADAAwAAAAKAP3/AAAGAAoAAAAKAPz/AAAGAAoAAAAKAPv/AAAGAAoAAAAKAPr/AAAGAAoAAAANAP3/AAAGAAoAAAANAP7/AAACAA0AAAAHAPr/AAAkAAoAAAAHAPv/AAAjAAsAAAAHAPz/AAAjAAwAAAADAPn/AAAFAAwAAAADAPr/AAAGAAoAAAAFAPn/AAAHAAoAAAAGAPn/AAAHAAoAAAAHAPn/AAAHAAoAAAAIAPn/AAAHAAoAAAAJAPn/AAAHAAoAAAAAAPn/AAABAA0AAAABAPn/AAAHAAoAAAACAPn/AAAHAAoAAAAAAPr/AAAbAAwAAAABAPr/AAAbAAwAAAACAPr/AAAbAAoAAAAFAPr/AAAbAAoAAAAGAPr/AAAbAAwAAAAIAPr/AAAbAAwAAAAJAPr/AAAbAAoAAAANAP//AAAbAAwAAAAOAP//AAAbAAwAAAAPAP//AAAbAAoAAAAQAP//AAAbAAwAAAARAP//AAAbAAoAAAANAPr/AAAGAAoAAAANAPv/AAAGAAoAAAANAPz/AAAGAAoAAAANAPn/AAACAAwAAAAOAPn/AAAHAAoAAAAPAPn/AAAHAAoAAAAQAPn/AAAHAAoAAAARAPn/AAAHAAoAAAAOAPr/AAAbAAwAAAAPAPr/AAAbAAoAAAAQAPr/AAAbAAwAAAARAPr/AAAbAAoAAAAOAP7/AAAHAAoAAAAPAP7/AAAHAAoAAAAQAP7/AAAHAAoAAAARAP7/AAAHAAoAAAADAPz/AAAGAAoAAAADAPv/AAAGAAoAAAA=")
 
 [node name="props" parent="." index="4"]
 tile_map_data = PackedByteArray("AAAEAPv/AAALAH8AAAD9//3/AAAGAEwAAAABAPr/AAAMAHwAAAABAPv/AAAMAH0AAAACAPr/AAANAHwAAAACAPv/AAANAH0AAAAEAPr/AAALAH4AAAAFAPr/AAAMAH4AAAAFAPv/AAAMAH8AAAAGAPr/AAANAH4AAAAGAPv/AAANAH8AAAAJAPv/BgAEAB4AAAAIAPv/BgAEAB4AAAAJAP3/BgAEAAUAAAAIAP3/BgAEAAEAAAAJAPz/BgADAAIAAAAFAP3/BgACAAIAAAAEAP3/BgAEAAEAAAAJAAAABgAAAAEAAAD//wEABgACAAIAAAAOAPv/BgABAAcAAAAPAPv/BgABAAcAAAAQAP3/BgAAAB0AAAA=")
@@ -40,8 +40,9 @@ tile_map_data = PackedByteArray("AAAEAPv/AAALAH8AAAD9//3/AAAGAEwAAAABAPr/AAAMAHw
 [node name="props2" parent="." index="5"]
 tile_map_data = PackedByteArray("AAAPAPv/BgAHABYAAAA=")
 
-[node name="BookB" parent="Interactables" index="0" instance=ExtResource("2_r5431")]
+[node name="BookB" parent="Interactables" index="0" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("2_r5431")]
 position = Vector2(36, -73)
+interactionEffects = [NodePath("../ExplosionB")]
 
 [node name="ExplosionB" parent="Interactables" index="1" instance=ExtResource("3_tirjk")]
 position = Vector2(96, -20)
@@ -50,8 +51,9 @@ position = Vector2(96, -20)
 position = Vector2(96, -8)
 is_open = true
 
-[node name="LeverA" parent="Interactables" index="3" instance=ExtResource("2_r5431")]
+[node name="LeverA" parent="Interactables" index="3" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("2_r5431")]
 position = Vector2(11, -20)
+interactionEffects = [NodePath("../DoorA")]
 reactivatable = true
 interactionSprite = 0
 
@@ -60,8 +62,9 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverC" parent="Interactables" index="4" instance=ExtResource("2_r5431")]
+[node name="LeverC" parent="Interactables" index="4" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("2_r5431")]
 position = Vector2(94, -71)
+interactionEffects = [NodePath("../DoorC")]
 reactivatable = true
 interactionSprite = 0
 
@@ -70,8 +73,9 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_7j1yd")
 hframes = 3
 
-[node name="LeverD" parent="Interactables" index="5" instance=ExtResource("2_r5431")]
+[node name="LeverD" parent="Interactables" index="5" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("2_r5431")]
 position = Vector2(129, -1)
+interactionEffects = [NodePath("../DoorD")]
 reactivatable = true
 interactionSprite = 0
 
@@ -123,18 +127,6 @@ cubic_interp = false
 position = Vector2(-95, -64)
 path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 
-[node name="Node2D" type="Node2D" parent="." index="18"]
-
-[node name="Enemy" parent="Node2D" index="0" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("7_7j1yd")]
-position = Vector2(95, -40)
-path_2d_to_follow = NodePath("../../Path2D/Path2d_follow_enemy1")
-ignore_path = true
-always_visible = true
-
-[node name="VisionCone" parent="Node2D/Enemy" index="2"]
-rotation = -3.05433
-
 [editable path="Interactables/LeverA"]
 [editable path="Interactables/LeverC"]
 [editable path="Interactables/LeverD"]
-[editable path="Node2D/Enemy"]

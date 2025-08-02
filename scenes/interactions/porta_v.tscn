@@ -18,6 +18,7 @@ script = ExtResource("1_5bsqi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_sos41")
+position = Vector2(0, -4)
 texture = ExtResource("3_n3y8e")
 hframes = 2
 

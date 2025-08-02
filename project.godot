@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 LoopManager="*res://scripts/globals/LoopManager.gd"
 LevelManager="*res://scripts/globals/LevelManager.gd"
 
+[global_group]
+
+navigation=""
+
 [input]
 
 up={

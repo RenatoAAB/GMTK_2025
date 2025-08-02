@@ -55,7 +55,7 @@ cubic_interp = false
 position = Vector2(-18, -27)
 path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="12"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="12" groups=["navigation"]]
 navigation_polygon = SubResource("NavigationPolygon_1g4uw")
 
 [node name="Porta-h" parent="." index="13" instance=ExtResource("3_x2ugm")]

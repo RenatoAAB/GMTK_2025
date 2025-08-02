@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=22 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://tj3tgpw0fj3w" path="res://scenes/levels/TheKitchen.tscn" id="12_rlppb"]
 [ext_resource type="PackedScene" uid="uid://cgpltx58cd84" path="res://scenes/levels/TheThrone.tscn" id="13_j8buf"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="13_jjiqo"]
+[ext_resource type="PackedScene" uid="uid://coluyt0o8xoci" path="res://scenes/levels/TheLibrary.tscn" id="14_giqsl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("11_0hcqc")
@@ -154,6 +155,15 @@ offset_bottom = 606.0
 level_number = "10"
 level = ExtResource("13_j8buf")
 level_name = "The Throne"
+
+[node name="BotaoLevel7" parent="." instance=ExtResource("7_mn1yi")]
+offset_left = 352.0
+offset_top = 450.0
+offset_right = 522.0
+offset_bottom = 620.0
+level_number = "6"
+level = ExtResource("14_giqsl")
+level_name = "The Library"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

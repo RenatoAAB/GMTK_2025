@@ -134,3 +134,4 @@ offset_right = 689.0
 offset_bottom = 577.0
 text = "Press E to interact"
 label_settings = ExtResource("6_6uxd2")
+metadata/_edit_use_anchors_ = true

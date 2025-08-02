@@ -12,6 +12,8 @@ func _on_body_entered(character: Node2D) -> void:
 
 
 func update_characters_escaped():
+	if not TutorialManager.mostrou_tutorial['escapou']:
+		TutorialManager.tutorial_needed('escapou')
 	characters_escaped += 1
 	if (characters_escaped == 2):
 		call_winning_screen()

@@ -22,6 +22,9 @@ var moving_forward = true
 
 #@onready var player : CharacterBody2D = $"../CharacterBody2D"
 var dead = false
+var just_seen = false
+var just_seen_cooldown = 0.5
+var just_seen_cooldown_timer = 0.5
 
 var direction := Vector2.DOWN
 var start_position := Vector2.ZERO
@@ -72,7 +75,15 @@ func _process(delta):
 	if has_object_with_id("Playable","B"):
 		NinjaB = get_object_with_id("Playable","B")
 	
-	if is_in_line_of_sight(NinjaA, NinjaB):
+	just_seen_cooldown_timer -= delta
+	if just_seen_cooldown_timer < 0:
+		just_seen = false
+	
+	var ta_vendo = is_in_line_of_sight(NinjaA, NinjaB)
+	if ta_vendo or just_seen:
+		if (ta_vendo):
+			just_seen = true
+			just_seen_cooldown_timer = just_seen_cooldown
 		self.visible = true
 	else:
 		self.visible = false

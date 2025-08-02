@@ -56,6 +56,7 @@ func _ready():
 
 func kill():
 	sprite.play("dead")
+	vision_cone.visible = false
 	dead = true
 
 func _physics_process(delta):

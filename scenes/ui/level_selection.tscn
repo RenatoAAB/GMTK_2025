@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=20 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="11_0hcqc"]
 [ext_resource type="PackedScene" uid="uid://bcd0wc56qsohi" path="res://ThePortalRoom.tscn" id="11_8qhfv"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="12_r01pg"]
+[ext_resource type="PackedScene" uid="uid://tj3tgpw0fj3w" path="res://scenes/levels/TheKitchen.tscn" id="12_rlppb"]
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="13_jjiqo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
@@ -131,9 +132,18 @@ offset_left = 829.0
 offset_top = 250.0
 offset_right = 999.0
 offset_bottom = 420.0
-level_number = "4"
+level_number = "5"
 level = ExtResource("11_8qhfv")
 level_name = "The Portal Room"
+
+[node name="BotaoLevel5" parent="." instance=ExtResource("7_mn1yi")]
+offset_left = 130.0
+offset_top = 455.0
+offset_right = 300.0
+offset_bottom = 625.0
+level_number = "4"
+level = ExtResource("12_rlppb")
+level_name = "The Kitchen"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

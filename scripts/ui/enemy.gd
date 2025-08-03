@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var initial_standing_position
 @onready var initial_direction
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var path_follow: PathFollow2D
 var on_patrolloing_path := true
@@ -71,6 +72,9 @@ func _physics_process(delta):
 		
 	# Only rotate if moving
 	if velocity.length() > 1:
+		
+		if direction.length() > 0:
+			animated_sprite.play("walking")
 		
 	# Rotate the vision cone to match current direction
 		vision_cone.rotation = velocity.angle() - deg_to_rad(90)
@@ -175,6 +179,7 @@ func patrol(delta):
 		else:
 			# tá parado
 			velocity = Vector2.ZERO
+			animated_sprite.play("default")
 			vision_cone.rotation  = velocity.angle() - initial_direction
 			
 	

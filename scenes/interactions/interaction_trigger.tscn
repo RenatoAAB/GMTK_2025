@@ -8,8 +8,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ty0p"]
 shader = ExtResource("2_4318m")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_size = 0.5
+shader_parameter/outline_color = Color(0.986237, 0.661557, 0, 1)
+shader_parameter/outline_size = 1.0
 shader_parameter/show_outline = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkqms"]

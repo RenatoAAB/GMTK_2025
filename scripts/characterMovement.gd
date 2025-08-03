@@ -2,6 +2,10 @@ extends CharacterBody2D
 @onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
 const DYING_ANIMATION = preload("res://scenes/dying_animation.tscn")
 @onready var som_morte: AudioStreamPlayer2D = $som_morte
+@onready var som_step: AudioStreamPlayer2D = $som_step
+
+var footstep_timer := 0.0
+var footstep_interval := 0.5
 
 @export var id : String
 @export var SPEED := 30.0
@@ -83,6 +87,14 @@ func _physics_process(delta):
 			playback_done = true
 			print("✅ Ghost finished playback")
 			
+	if velocity.length() > 0.1:  # player is walking
+		footstep_timer += delta
+		if footstep_timer >= footstep_interval:
+			play_footstep()
+			footstep_timer = 0.0
+	else:
+		footstep_timer = 0.0  # reset if not walking
+			
 func _move(input, delta):
 	var direction := Vector2.ZERO
 	if input["left"]: direction.x -= 1
@@ -100,6 +112,7 @@ func _move(input, delta):
 	velocity = lerp(velocity, direction * SPEED, delta * ACCEL)
 	
 	_control_animation(direction)
+	_control_audio_steps(delta, direction)
 	
 	move_and_slide()
 	
@@ -114,6 +127,15 @@ func _control_animation(direction):
 	if velocity.x != 0:
 		player_sprite.flip_h = velocity.x < 0
 
+func _control_audio_steps(delta, direction):
+	if not dead:
+		if direction.length() > 0:
+			footstep_timer += delta
+			if footstep_timer >= footstep_interval:
+				play_footstep()
+				footstep_timer = 0.0
+		else :
+			footstep_timer = 0.0  # reset if not walking
 
 func _on_dying_animation_animation_finished() -> void:
 	if not TutorialManager.mostrou_tutorial['morte']:
@@ -121,3 +143,7 @@ func _on_dying_animation_animation_finished() -> void:
 	dying = false
 	player_sprite.visible = true
 	player_sprite.play("dead_"+id)
+	
+func play_footstep() -> void:
+	som_step.pitch_scale = randf_range(0.9, 1.1)  # small pitch variation
+	som_step.play()

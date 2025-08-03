@@ -43,10 +43,10 @@ tile_map_data = PackedByteArray()
 tile_map_data = PackedByteArray()
 
 [node name="props" parent="." index="4"]
-tile_map_data = PackedByteArray("AAD3//f/BQALAAQAAAD5//f/BQAJAAQAAAD6//f/BQABAAQAAAD///f/BQALAAQAAAD+//r/BQALAAQAAAAAAPr/BQAJAAYAAAACAP3/BQACAAQAAAAEAPf/BQACAAQAAAAGAPf/BQAAAAAAAAAAAP3/BQAKAAIAAAD7//3/BQALAAQAAAAJAPr/BQALAAQAAAAEAPr/BQALAAQAAAAIAP3/BQAKAAQAAAAHAP3/BQAKAAQAAAD6//r/BQAKAAQAAAD5//r/BQAKAAQAAAAJAPf/BQALAAQAAAAAAPb/BQAOAAgAAAAAAPX/BQAOAAgAAAA=")
+tile_map_data = PackedByteArray("AAD3//f/BQALAAQAAAD5//f/BQAJAAQAAAD6//f/BQABAAQAAAD///f/BQALAAQAAAD+//r/BQALAAQAAAAAAPr/BQAJAAYAAAACAP3/BQACAAQAAAAEAPf/BQACAAQAAAAGAPf/BQAAAAAAAAAAAP3/BQAKAAIAAAD7//3/BQALAAQAAAAJAPr/BQALAAQAAAAEAPr/BQALAAQAAAAIAP3/BQAKAAQAAAAHAP3/BQAKAAQAAAD6//r/BQAKAAQAAAD5//r/BQAKAAQAAAAJAPf/BQALAAQAAAAAAPb/BQAOAAgAAAAAAPX/BQAOAAgAAAAFAPT/AQAHADEAAAADAPT/AQAFACUAAAAIAPT/AQAFACUAAAD+//X/AABZAC8AAAD2//7/AABkAC8AAAD2////AABkADAAAAA=")
 
 [node name="props2" parent="." index="5"]
-tile_map_data = PackedByteArray()
+tile_map_data = PackedByteArray("AAABAPX/AQADACEAAAA=")
 
 [node name="NinjaA" parent="." index="7"]
 position = Vector2(80, -83)
@@ -90,7 +90,7 @@ progress = 186.829
 cubic_interp = false
 
 [node name="Enemy2" parent="Path1" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
-modulate = Color(0.995792, 0.973355, 7.70092e-07, 1)
+modulate = Color(1, 0.856935, 0.735061, 1)
 position = Vector2(-32, -13)
 chase_speed = 45.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
@@ -110,7 +110,7 @@ rotation = -3.09401
 cubic_interp = false
 
 [node name="Enemy" parent="Path2" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
-modulate = Color(1, 0.802873, 0.995969, 1)
+modulate = Color(1, 0.787918, 0.996058, 1)
 position = Vector2(-166, -6)
 patrol_speed = 8
 chase_speed = 45.0
@@ -126,7 +126,7 @@ rotation = -3.10589
 cubic_interp = false
 
 [node name="Enemy" parent="Path3" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
-modulate = Color(0.274881, 0.995821, 1, 1)
+modulate = Color(0.719691, 1, 0.998241, 1)
 position = Vector2(-95, -64)
 chase_speed = 45.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy4")

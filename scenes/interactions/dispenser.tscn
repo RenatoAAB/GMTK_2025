@@ -6,8 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wgj74"]
 shader = ExtResource("2_u13x7")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_size = 0.5
+shader_parameter/outline_color = Color(0.984314, 0.662745, 0, 1)
+shader_parameter/outline_size = 1.0
 shader_parameter/show_outline = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wgj74"]

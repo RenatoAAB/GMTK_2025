@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c060ag5aoejdw"]
+[gd_scene load_steps=12 format=4 uid="uid://c060ag5aoejdw"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_ln5xh"]
 [ext_resource type="Script" uid="uid://dshr4ts1d8ml3" path="res://scripts/tutorial_texts.gd" id="2_nymxj"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="5_rdot3"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_xs2in"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="6_ji2kp"]
-[ext_resource type="AudioStream" uid="uid://dnqmiu6oycn08" path="res://sounds/music/song-tutorial.mp3" id="10_uwmea"]
 
 [sub_resource type="Curve2D" id="Curve2D_otiwr"]
 _data = {
@@ -178,10 +177,5 @@ label_settings = ExtResource("3_otiwr")
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="18"]
-stream = ExtResource("10_uwmea")
-volume_db = -3.975
-autoplay = true
 
 [editable path="Interactables/LeverA"]

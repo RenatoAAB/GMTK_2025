@@ -14,7 +14,4 @@ func _on_player1_died():
 	
 func _on_player2_died():
 	tutorial_texts.nextText()
-
-
-
-		
+	

@@ -7,6 +7,7 @@ var characters_escaped = 0
 @onready var tutorial_texts: CanvasLayer = $"../Tutorial texts"
 
 #var level_1_scene := preload("res://scenes/levels/ThePrison.tscn")
+@export var firemage : Node;
 
 func _on_body_entered(character: Node2D) -> void:
 
@@ -28,8 +29,16 @@ func update_characters_escaped():
 		call_winning_screen()
 		
 func call_winning_screen():
-	tutorial_texts.visible = false
+	if is_tutorial:
+		tutorial_texts.visible = false
+		
 	vitory_sound.play()
 	LevelManager.level_won()
 	win_menu.visible = true;
 	print("You won !!")
+	if firemage:
+		firemage.kill()
+	else:
+		LevelManager.level_won()
+		win_menu.visible = true;
+		print("You won !!")

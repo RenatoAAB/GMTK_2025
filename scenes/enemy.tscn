@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch2hw7pw87h1w"]
+[gd_scene load_steps=14 format=3 uid="uid://ch2hw7pw87h1w"]
 
 [ext_resource type="Script" uid="uid://cufi7ippcj50l" path="res://scripts/ui/enemy.gd" id="1_4ra3w"]
-[ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="2_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://dm4l6xah288m3" path="res://sprites/inimigo_morto.png" id="2_c4w8v"]
 [ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="3_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://23d7aiyag1u" path="res://sprites/enemy_green.png" id="3_xwavj"]
 [ext_resource type="Texture2D" uid="uid://b3gff4rknhrit" path="res://sprites/ui/exclamation.png" id="5_c4w8v"]
 [ext_resource type="AudioStream" uid="uid://cv5r6n3pp4q4w" path="res://sounds/guard_chase_alert.mp3" id="6_xwavj"]
 
@@ -11,9 +11,17 @@
 atlas = ExtResource("2_c4w8v")
 region = Rect2(0, 0, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qyxi"]
-atlas = ExtResource("2_5uy6h")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("3_xwavj")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
+atlas = ExtResource("3_xwavj")
 region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipns3"]
+atlas = ExtResource("3_xwavj")
+region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nk33d"]
 animations = [{
@@ -27,11 +35,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0qyxi")
+"texture": SubResource("AtlasTexture_nenq2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md484")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipns3")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wf2uy"]
@@ -46,6 +65,8 @@ script = ExtResource("1_4ra3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nk33d")
+animation = &"walking"
+frame_progress = 0.3295
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

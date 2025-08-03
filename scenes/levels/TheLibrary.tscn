@@ -52,7 +52,7 @@ tile_map_data = PackedByteArray()
 position = Vector2(80, -83)
 
 [node name="NinjaB" parent="." index="8"]
-position = Vector2(-61, -83)
+position = Vector2(-77, -80)
 
 [node name="Camera2D" parent="." index="9"]
 position = Vector2(1, -43)
@@ -66,7 +66,7 @@ offset_top = 558.0
 offset_right = 1077.0
 offset_bottom = 654.0
 text = "Sometimes information is the only advantage you have.
-Four eyes see more than two."
+Guards usually follow the same patrolling route."
 label_settings = ExtResource("2_34pb7")
 metadata/_edit_use_anchors_ = true
 
@@ -83,24 +83,14 @@ max_distance = 9821.0
 position = Vector2(112, 0)
 curve = SubResource("Curve2D_34pb7")
 
-[node name="Path2d_follow_enemy1" type="PathFollow2D" parent="Path1" index="0"]
-position = Vector2(-170, -57)
-rotation = -0.00862048
-cubic_interp = false
-
-[node name="Enemy" parent="Path1" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
-position = Vector2(-171, -57)
-chase_speed = 45.0
-path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
-is_path_linear = false
-
-[node name="Path2d_follow_enemy2" type="PathFollow2D" parent="Path1" index="2"]
-position = Vector2(-31.7798, -13.2856)
+[node name="Path2d_follow_enemy2" type="PathFollow2D" parent="Path1" index="0"]
+position = Vector2(-31.7798, -13.2855)
 rotation = 1.61244
 progress = 186.829
 cubic_interp = false
 
-[node name="Enemy2" parent="Path1" index="3" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
+[node name="Enemy2" parent="Path1" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
+modulate = Color(0.995792, 0.973355, 7.70092e-07, 1)
 position = Vector2(-32, -13)
 chase_speed = 45.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
@@ -120,6 +110,7 @@ rotation = -3.09401
 cubic_interp = false
 
 [node name="Enemy" parent="Path2" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
+modulate = Color(1, 0.802873, 0.995969, 1)
 position = Vector2(-166, -6)
 patrol_speed = 8
 chase_speed = 45.0
@@ -135,6 +126,7 @@ rotation = -3.10589
 cubic_interp = false
 
 [node name="Enemy" parent="Path3" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
+modulate = Color(0.274881, 0.995821, 1, 1)
 position = Vector2(-95, -64)
 chase_speed = 45.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy4")

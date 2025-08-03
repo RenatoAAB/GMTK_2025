@@ -75,26 +75,30 @@ scale = Vector2(1.56, 1)
 [node name="PointLight2D" type="PointLight2D" parent="." index="15"]
 position = Vector2(-12, -8)
 color = Color(0.913725, 0.572549, 0, 1)
+energy = 0.5
 texture = ExtResource("4_xcydy")
-texture_scale = 0.3
+texture_scale = 0.2
 
 [node name="PointLight2D2" type="PointLight2D" parent="." index="16"]
 position = Vector2(36, -8)
 color = Color(0.913725, 0.572549, 0, 1)
+energy = 0.5
 texture = ExtResource("4_xcydy")
-texture_scale = 0.3
+texture_scale = 0.2
 
 [node name="PointLight2D3" type="PointLight2D" parent="." index="17"]
 position = Vector2(36, -42)
 color = Color(0.913725, 0.572549, 0, 1)
+energy = 0.5
 texture = ExtResource("4_xcydy")
-texture_scale = 0.3
+texture_scale = 0.2
 
 [node name="PointLight2D4" type="PointLight2D" parent="." index="18"]
 position = Vector2(-12, -42)
 color = Color(0.913725, 0.572549, 0, 1)
+energy = 0.5
 texture = ExtResource("4_xcydy")
-texture_scale = 0.3
+texture_scale = 0.2
 
 [node name="Enemy6" parent="." index="19" instance=ExtResource("5_utqpu")]
 position = Vector2(-15, -25)

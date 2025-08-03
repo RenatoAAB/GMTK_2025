@@ -109,7 +109,7 @@ offset_top = 544.0
 offset_right = 1077.0
 offset_bottom = 640.0
 text = "Use your ghost mode to explore the map and understand your options.
-Watch out for traps! They are deadly .. also for your enemies."
+Watch out for traps! They are deadly .. mostly for your enemies."
 label_settings = ExtResource("7_y6g21")
 metadata/_edit_use_anchors_ = true
 

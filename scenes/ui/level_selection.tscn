@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=30 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -6,12 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="4_j8buf"]
 [ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="5_giqsl"]
 [ext_resource type="LabelSettings" uid="uid://bhtpfll2ofnax" path="res://fonts/button_font_config.tres" id="6_o3on7"]
+[ext_resource type="FontFile" uid="uid://dm2riqyucv4dq" path="res://fonts/PixeloidSans-Bold.otf" id="7_0hcqc"]
 [ext_resource type="PackedScene" uid="uid://c1w7bh8b3ias2" path="res://scenes/ui/botao_selecao_level.tscn" id="7_mn1yi"]
 [ext_resource type="PackedScene" uid="uid://fna5widhpic0" path="res://scenes/levels/ThePrison.tscn" id="8_mj20w"]
+[ext_resource type="Texture2D" uid="uid://ctfj48fgucdgq" path="res://images/Sem Título-2.png" id="8_r01pg"]
 [ext_resource type="PackedScene" uid="uid://cnv8oc2u5nscp" path="res://scenes/levels/TheCorridor.tscn" id="9_x1utg"]
+[ext_resource type="PackedScene" uid="uid://dwca4sr6qwpy4" path="res://scenes/levels/TheTutorial_pt1.tscn" id="10_jjiqo"]
 [ext_resource type="PackedScene" uid="uid://brx33s3s751fg" path="res://scenes/levels/ThePantry.tscn" id="10_t5xyv"]
 [ext_resource type="Shader" uid="uid://bq1ie3xtd7hyx" path="res://shaders/level_selection.gdshader" id="11_0hcqc"]
 [ext_resource type="PackedScene" uid="uid://bcd0wc56qsohi" path="res://scenes/levels/ThePortalRoom.tscn" id="11_8qhfv"]
+[ext_resource type="PackedScene" uid="uid://c060ag5aoejdw" path="res://scenes/levels/TheTutorial_pt2.tscn" id="11_r01pg"]
 [ext_resource type="LabelSettings" uid="uid://b84qimq2ponbu" path="res://fonts/title_font_config.tres" id="12_r01pg"]
 [ext_resource type="PackedScene" uid="uid://tj3tgpw0fj3w" path="res://scenes/levels/TheKitchen.tscn" id="12_rlppb"]
 [ext_resource type="PackedScene" uid="uid://cgpltx58cd84" path="res://scenes/levels/TheThrone.tscn" id="13_j8buf"]
@@ -20,6 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://mynkic8hhmnk" path="res://scenes/levels/TheArmory.tscn" id="15_o3on7"]
 [ext_resource type="PackedScene" uid="uid://b3efiv34r73fm" path="res://scenes/levels/ThePlanningRoom.tscn" id="16_mn1yi"]
 [ext_resource type="AudioStream" uid="uid://dj1uncdk4kmex" path="res://sounds/new_level_2.mp3" id="20_mj20w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tylmo"]
+font = ExtResource("7_0hcqc")
+font_size = 44
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("11_0hcqc")
@@ -98,24 +106,52 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_giqsl")
 
 [node name="ChooseLevel" type="Label" parent="."]
-offset_left = 262.0
-offset_top = 80.0
-offset_right = 1073.0
-offset_bottom = 203.0
+offset_left = 263.0
+offset_top = 13.0
+offset_right = 1074.0
+offset_bottom = 136.0
 text = "Choose level"
 label_settings = ExtResource("6_o3on7")
 
+[node name="Tutorial" type="Label" parent="."]
+offset_left = 115.0
+offset_top = 127.0
+offset_right = 926.0
+offset_bottom = 250.0
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_tylmo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 82.0
+offset_top = 168.0
+offset_right = 122.0
+offset_bottom = 208.0
+scale = Vector2(7.12816, 2.36414)
+texture = ExtResource("8_r01pg")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 164.0
+offset_left = 74.0
 offset_top = 252.0
-offset_right = 1359.0
+offset_right = 1524.0
 offset_bottom = 427.0
 scale = Vector2(0.7, 0.7)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 80
 
-[node name="BotaoLevel" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+[node name="BotaoLevelT1" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "T1"
+level = ExtResource("10_jjiqo")
+level_name = "The Tutorial 1"
+
+[node name="BotaoLevelT2" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "T2"
+level = ExtResource("11_r01pg")
+level_name = "The Tutorial 2"
+
+[node name="BotaoLevel1" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
 layout_mode = 2
 level_number = "1"
 level = ExtResource("8_mj20w")
@@ -139,19 +175,19 @@ level_number = "4"
 level = ExtResource("11_8qhfv")
 level_name = "The Portal Room"
 
-[node name="BotaoLevel5" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_left = 176.0
+offset_top = 441.0
+offset_right = 1371.0
+offset_bottom = 616.0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 80
+
+[node name="BotaoLevel5" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
 layout_mode = 2
 level_number = "5"
 level = ExtResource("10_t5xyv")
 level_name = "The Pantry"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-offset_left = 259.0
-offset_top = 441.0
-offset_right = 1199.0
-offset_bottom = 616.0
-scale = Vector2(0.7, 0.7)
-theme_override_constants/separation = 80
 
 [node name="BotaoLevel6" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
 layout_mode = 2

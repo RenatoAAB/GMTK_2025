@@ -1,0 +1,181 @@
+[gd_scene load_steps=12 format=4 uid="uid://c060ag5aoejdw"]
+
+[ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_ln5xh"]
+[ext_resource type="Script" uid="uid://dshr4ts1d8ml3" path="res://scripts/tutorial_texts.gd" id="2_nymxj"]
+[ext_resource type="Script" uid="uid://7lf3tbham5xe" path="res://scenes/levels/the_tutorial_pt_2.gd" id="2_otiwr"]
+[ext_resource type="PackedScene" uid="uid://12k4py6kadkb" path="res://scenes/interactions/porta-h.tscn" id="3_koilb"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="3_otiwr"]
+[ext_resource type="PackedScene" uid="uid://bhiqp2eja5bih" path="res://scenes/interactions/porta_v.tscn" id="4_uwmea"]
+[ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="5_rdot3"]
+[ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_xs2in"]
+[ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="6_ji2kp"]
+
+[sub_resource type="Curve2D" id="Curve2D_otiwr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -105, -64, 0, 0, 0, 0, -59, -65)
+}
+point_count = 2
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_otiwr"]
+vertices = PackedVector2Array(142, 13, -20, 13, -20, 3, 116, 3, 142, -29, 116, -19, -20, -29, -20, -19)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3), PackedInt32Array(4, 0, 3), PackedInt32Array(4, 3, 5), PackedInt32Array(6, 4, 5), PackedInt32Array(6, 5, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-29, -53, 150, -53, 148, 20, -28, 19)])
+sample_partition_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 3.0
+
+[node name="base_level" instance=ExtResource("1_ln5xh")]
+script = ExtResource("2_otiwr")
+
+[node name="map" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD9//3/AAAYAA0AAAD9//7/AAAYAA0AAAD9////AAAYAAsAAAD9/wAAAAAYAA0AAAD9/wEAAAAYAAsAAAD+//3/AAAYAAsAAAD+//7/AAAYAAsAAAD+////AAAYAA0AAAD+/wAAAAAYAAsAAAD+/wEAAAAYAA0AAAD///3/AAAYAAsAAAD///7/AAAYAAsAAAD/////AAAYAAsAAAD//wAAAAAYAAsAAAD//wEAAAAYAAsAAAAAAP3/AAAYAAwAAAAAAP7/AAAYAAwAAAAAAP//AAAYAA0AAAAAAAAAAAAYAAwAAAAAAAEAAAAYAAsAAAABAP3/AAAYAA0AAAABAP7/AAAYAA0AAAABAP//AAAYAA0AAAABAAAAAAAYAA0AAAABAAEAAAAXAAsAAAACAP3/AAAYAAsAAAACAP7/AAAYAAsAAAACAP//AAAXAAsAAAACAAAAAAAYAAsAAAACAAEAAAAYAAsAAAADAAEAAAAYAA0AAAADAAAAAAAYAA0AAAADAP//AAAYAA0AAAADAP7/AAAYAA0AAAADAP3/AAAYAA0AAAD8/wEAAAAYAA0AAAD8/wAAAAAYAA0AAAD8////AAAYAA0AAAD8//7/AAAYAA0AAAD8//3/AAAYAA0AAAD8//z/AAAYAA0AAAD8//v/AAAcAAsAAAD8//r/AAAcAAoAAAD8//n/AAABAAoAAAD9//n/AAABAAoAAAD+//n/AAABAAoAAAD///n/AAABAAoAAAAAAPn/AAABAAoAAAABAPn/AAABAAoAAAACAPn/AAABAAoAAAADAPn/AAABAAoAAAADAPr/AAAcAAwAAAADAPv/AAAcAA0AAAADAPz/AAAYAA0AAAD+//r/AAAcAAoAAAD+//v/AAAcAAsAAAD+//z/AAAYAA0AAAAAAPr/AAAcAAoAAAAAAPv/AAAcAAsAAAAAAPz/AAAYAA0AAAACAPr/AAAcAAoAAAACAPv/AAAcAAsAAAACAPz/AAAXAAsAAAD9//r/AAAcAAwAAAD9//v/AAAcAA0AAAD9//z/AAAYAAsAAAD///r/AAAcAAwAAAD///v/AAAcAA0AAAD///z/AAAYAAsAAAABAPr/AAAcAAwAAAABAPv/AAAcAA0AAAABAPz/AAAYAA0AAAAEAPn/AAABAAoAAAAEAPr/AAAcAAoAAAAEAPv/AAAcAAsAAAAEAPz/AAAYAAsAAAAEAP3/AAAYAAsAAAAEAP7/AAAYAAsAAAAEAP//AAAYAAsAAAAEAAAAAAAYAAsAAAAEAAEAAAAYAA0AAAAFAPn/AAABAAoAAAAFAPr/AAAcAAwAAAAFAPv/AAAcAA0AAAAFAPz/AAAXAAsAAAAFAP3/AAAYAAsAAAAFAP7/AAAYAAsAAAAFAP//AAAXAAsAAAAFAAAAAAAYAAsAAAAFAAEAAAAYAAsAAAAGAPn/AAABAAoAAAAGAPr/AAAcAAoAAAAGAPv/AAAcAAsAAAAGAPz/AAAYAAsAAAAGAP3/AAAXAAsAAAAGAP7/AAAXAAsAAAAGAP//AAAYAAsAAAAGAAAAAAAXAAsAAAAGAAEAAAAYAA0AAAAHAPn/AAABAAoAAAAHAPr/AAAcAAwAAAAHAPv/AAAcAA0AAAAHAPz/AAAYAA0AAAAHAP3/AAAYAAsAAAAHAP7/AAAYAAsAAAAHAP//AAAYAA0AAAAHAAAAAAAYAAsAAAAHAAEAAAAYAAsAAAD8/wIAAAAAAAsAAAAHAAIAAAAAAAsAAAD9/wIAAAAAAAsAAAD+/wIAAAAAAAsAAAD//wIAAAAAAAsAAAAAAAIAAAAAAAsAAAABAAIAAAAAAAsAAAACAAIAAAAAAAsAAAADAAIAAAAAAAsAAAAEAAIAAAAAAAsAAAAFAAIAAAAAAAsAAAAGAAIAAAAAAAsAAADk/+z/AAAQAAoAAADk/+3/AAAbAAoAAADk/+7/AAAbAA4AAADl/+z/AAAQAAoAAADl/+3/AAAbAAoAAADl/+7/AAAbAAoAAADm/+z/AAAJAAwAAADm/+3/AAAbAA8AAADm/+7/AAAbAAoAAAAIAP//AAAYAA0AAAD0////AAAYAAsAAAD1////AAAXAAsAAAD2////AAAYAAsAAAD3////AAAYAA0AAAD4////AAAYAA0AAAD5////AAAYAAsAAAD6////AAAYAAsAAAD7////AAAYAAwAAAD0/wAAAAAYAA0AAAD0/wEAAAAYAAsAAAD1/wAAAAAYAA0AAAD1/wEAAAAXAAsAAAD2/wAAAAAYAA0AAAD2/wEAAAAYAAsAAAD3/wAAAAAYAA0AAAD3/wEAAAAYAA0AAAD4/wAAAAAYAAsAAAD4/wEAAAAYAA0AAAD5/wAAAAAYAAsAAAD5/wEAAAAYAAsAAAD6/wAAAAAXAAsAAAD6/wEAAAAYAAsAAAD7/wAAAAAYAAsAAAD7/wEAAAAYAAwAAAAIAAAAAAAYAA0AAAAIAAEAAAAYAA0AAADz////AAAAAAoAAADz/wAAAAAAAAoAAADz/wEAAAAAAAoAAAAJAAEAAAABAAsAAAAJAAAAAAABAAsAAAAJAP//AAABAAsAAADz/wIAAAACAAsAAAD0/wIAAAAAAAsAAAD1/wIAAAAAAAsAAAD2/wIAAAAAAAsAAAD3/wIAAAAAAAsAAAD4/wIAAAAAAAsAAAD5/wIAAAAAAAsAAAD6/wIAAAAAAAsAAAD7/wIAAAAAAAsAAAAIAAIAAAAAAAsAAAAJAAIAAAADAAsAAADz//r/AAAAAAoAAADz//v/AAAAAAoAAADz//z/AAAAAAoAAADz//3/AAAAAAoAAAD0//r/AAAcAAoAAAD0//v/AAAcAAsAAAD0//z/AAAYAAsAAAD0//3/AAAYAA0AAAD1//r/AAAcAAwAAAD1//v/AAAcAA0AAAD1//z/AAAXAAsAAAD1//3/AAAYAA0AAAD2//r/AAAcAAoAAAD2//v/AAAcAAsAAAD2//z/AAAYAAsAAAD2//3/AAAYAA0AAAD3//r/AAAcAAwAAAD3//v/AAAcAA0AAAD3//z/AAAYAA0AAAD3//3/AAAYAA0AAAD4//r/AAAcAAoAAAD4//v/AAAcAAsAAAD4//z/AAAYAA0AAAD4//3/AAAYAAsAAAD5//r/AAAcAAwAAAD5//v/AAAcAA0AAAD5//z/AAAYAAsAAAD5//3/AAAYAAsAAAD6//r/AAAcAAoAAAD6//v/AAAcAAsAAAD6//z/AAAYAAsAAAD6//3/AAAXAAsAAAD7//r/AAAcAAwAAAD7//v/AAAcAA0AAAD7//z/AAAYAAwAAAD7//3/AAAYAAsAAAAIAPr/AAAcAAoAAAAIAPv/AAAcAAsAAAAIAPz/AAAYAA0AAAAIAP3/AAAYAA0AAAAJAPr/AAABAAsAAAAJAPv/AAABAAsAAAAJAPz/AAABAAsAAAAJAP3/AAABAAsAAADz//n/AAACAAoAAAD0//n/AAABAAoAAAD1//n/AAABAAoAAAD2//n/AAABAAoAAAD3//n/AAABAAoAAAD4//n/AAABAAoAAAD5//n/AAABAAoAAAD6//n/AAABAAoAAAD7//n/AAABAAoAAAAIAPn/AAABAAoAAAAJAPn/AAADAAoAAADz//7/AAAAAAoAAAD0//7/AAAYAA0AAAD1//7/AAAYAA0AAAD2//7/AAAYAA0AAAD3//7/AAAYAA0AAAD4//7/AAAYAAsAAAD5//7/AAAYAAsAAAD6//7/AAAXAAsAAAD7//7/AAAYAAsAAAAIAP7/AAAYAA0AAAAJAP7/AAABAAsAAAA=")
+
+[node name="props_chao_parede" parent="." index="2"]
+tile_map_data = PackedByteArray()
+
+[node name="innerWalls" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD8//7/AAAHAAoAAAD8////AAAbAAoAAAD9//7/AAAHAAoAAAD9////AAAbAAoAAAD+//7/AAAHAAoAAAD+////AAAbAAoAAAD///7/AAAHAAoAAAD/////AAAbAAoAAAAAAP7/AAAHAAoAAAAAAP//AAAbAAoAAAABAP7/AAAHAAoAAAABAP//AAAbAAoAAAACAP7/AAAHAAoAAAACAP//AAAbAAoAAAADAP7/AAAHAAoAAAADAP//AAAbAAoAAAAEAP7/AAADAAwAAAAEAP//AAAGAAoAAAAEAAAAAAAGAAoAAAAEAAEAAAAGAAoAAAD0////AAAbAAoAAAD1////AAAbAAoAAAD2////AAAbAAoAAAD5////AAAbAAoAAAD6////AAAbAAoAAAD7////AAAbAAoAAAD0//7/AAAHAAoAAAD1//7/AAAHAAoAAAD2//7/AAAHAAoAAAD5//7/AAAHAAoAAAD6//7/AAAHAAoAAAD7//7/AAAHAAoAAAA=")
+
+[node name="props" parent="." index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="props2" parent="." index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="Porta-h" parent="Interactables" index="0" instance=ExtResource("3_koilb")]
+position = Vector2(-64, -10)
+
+[node name="porta-v" parent="Interactables" index="1" instance=ExtResource("4_uwmea")]
+position = Vector2(-49, 8)
+is_open = true
+
+[node name="porta-v2" parent="Interactables" index="2" instance=ExtResource("4_uwmea")]
+position = Vector2(30, -24)
+
+[node name="LeverA" parent="Interactables" index="3" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("5_rdot3")]
+position = Vector2(-64, -30)
+interactionEffects = [NodePath("../Porta-h"), NodePath("../porta-v"), NodePath("../porta-v2")]
+interactionSprite = 0
+
+[node name="trigger" parent="Interactables/LeverA/TriggerArea" index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_ji2kp")
+hframes = 3
+
+[node name="NinjaA" parent="." index="7"]
+position = Vector2(-85, -27)
+
+[node name="NinjaB" parent="." index="8"]
+position = Vector2(-85, 7)
+
+[node name="Camera2D" parent="." index="9"]
+position = Vector2(-12, -6)
+zoom = Vector2(6, 6)
+
+[node name="winning_area" parent="." index="11"]
+position = Vector2(69, -4)
+rotation = -1.57079
+is_tutorial = true
+
+[node name="Path2D" type="Path2D" parent="." index="15"]
+position = Vector2(75, 72)
+curve = SubResource("Curve2D_otiwr")
+
+[node name="Path2d_follow_enemy1" type="PathFollow2D" parent="Path2D" index="0"]
+position = Vector2(-105, -64)
+rotation = -0.0217357
+cubic_interp = false
+
+[node name="Enemy" parent="Path2D" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("5_xs2in")]
+position = Vector2(-107, -64)
+path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16" groups=["navmesh"]]
+position = Vector2(-73, 0)
+navigation_polygon = SubResource("NavigationPolygon_otiwr")
+
+[node name="Tutorial texts" type="CanvasLayer" parent="." index="17" node_paths=PackedStringArray("texts1", "texts2", "texts3")]
+script = ExtResource("2_nymxj")
+texts1 = [NodePath("Label")]
+texts2 = [NodePath("Label2"), NodePath("Label3"), NodePath("Label4")]
+texts3 = [NodePath("Label5")]
+
+[node name="Label" type="Label" parent="Tutorial texts" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 554.0
+offset_top = 524.0
+offset_right = 754.0
+offset_bottom = 633.0
+text = "Beware of the guards, they will do anything to stop you!"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Tutorial texts" index="1"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+offset_left = 237.0
+offset_top = 527.0
+offset_right = 637.0
+offset_bottom = 636.0
+text = "If you die, you'll become a ghost. Ghosts can explore the map, but can't interact with items or escape."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Tutorial texts" index="2"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+offset_left = 667.0
+offset_top = 528.0
+offset_right = 867.0
+offset_bottom = 665.0
+text = "Any actions you do as ghost are also recorded."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Tutorial texts" index="3"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+offset_left = 922.0
+offset_top = 509.0
+offset_right = 1122.0
+offset_bottom = 646.0
+text = "Press 1 to LOOP back and revive as RED or 5 to switch to BLUE.
+"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="Tutorial texts" index="4"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+offset_left = 562.0
+offset_top = 526.0
+offset_right = 762.0
+offset_bottom = 635.0
+text = "Now LOOP back to escape with your second character."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="Tutorial texts" index="5"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 185.0
+offset_top = 110.0
+offset_right = 385.0
+offset_bottom = 215.0
+text = "Press E to interact"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[editable path="Interactables/LeverA"]

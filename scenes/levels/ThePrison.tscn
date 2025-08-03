@@ -70,68 +70,14 @@ rotation = -1.5708
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="17"]
 
-[node name="Label" type="Label" parent="CanvasLayer" index="0"]
+[node name="Label5" type="Label" parent="CanvasLayer" index="0"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 948.0
-offset_top = 10.0
+offset_top = 281.0
 offset_right = 1148.0
-offset_bottom = 106.0
-text = "Move with WASD or arrow keys"
-label_settings = ExtResource("3_5t24y")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer" index="1"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 948.0
-offset_top = 445.0
-offset_right = 1148.0
-offset_bottom = 541.0
-text = "Both must escape ALIVE"
-label_settings = ExtResource("3_5t24y")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="CanvasLayer" index="2"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 948.0
-offset_top = 206.0
-offset_right = 1148.0
-offset_bottom = 302.0
-text = "Press 1 or 5 to switch character."
-label_settings = ExtResource("3_5t24y")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label4" type="Label" parent="CanvasLayer" index="3"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 948.0
-offset_top = 302.0
-offset_right = 1148.0
-offset_bottom = 407.0
-text = "When you switch your last character actions are recorded"
-label_settings = ExtResource("3_5t24y")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label5" type="Label" parent="CanvasLayer" index="4"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 948.0
-offset_top = 540.0
-offset_right = 1148.0
-offset_bottom = 645.0
+offset_bottom = 386.0
 text = "Maybe blue could use a little distraction?"
 label_settings = ExtResource("3_5t24y")
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Label6" type="Label" parent="CanvasLayer" index="5"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 948.0
-offset_top = 124.0
-offset_right = 1148.0
-offset_bottom = 229.0
-text = "Get to the light to escape!"
-label_settings = ExtResource("3_5t24y")
-horizontal_alignment = 1
-autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

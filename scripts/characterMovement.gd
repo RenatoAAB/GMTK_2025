@@ -4,6 +4,8 @@ const DYING_ANIMATION = preload("res://scenes/dying_animation.tscn")
 @onready var som_morte: AudioStreamPlayer2D = $som_morte
 @onready var som_step: AudioStreamPlayer2D = $som_step
 
+signal player_died  # Define signal
+
 var footstep_timer := 0.0
 var footstep_interval := 0.5
 
@@ -52,6 +54,7 @@ func kill():
 		dying_animation.global_position = global_position
 		dying = true
 		dead = true
+		player_died.emit()
 
 func _start_recording():
 	if (being_played):

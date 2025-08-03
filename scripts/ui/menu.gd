@@ -7,6 +7,7 @@ extends Control
 @onready var people: TextureRect = $people
 @onready var fog_2: TextureRect = $fog2
 @onready var fog_1: TextureRect = $fog1
+@onready var historinha: CanvasLayer = $Historinha
 
 var move_distance := 50.0  # pixels
 var move_distance_y := 15.0 # pixels
@@ -45,6 +46,6 @@ func _process(delta: float) -> void:
 
 func _on_botao_play_pressed() -> void:
 	print("Apertei o botao")
-	level_selection.visible = true;
+	historinha.roda_historinha()
 	
 	

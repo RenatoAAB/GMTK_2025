@@ -57,12 +57,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -184.0
-offset_top = -156.0
-offset_right = 166.0
-offset_bottom = -6.0
+offset_left = -193.0
+offset_top = -153.0
+offset_right = 157.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.04, 1)
 flat = true
 
 [node name="Botao3" type="ColorRect" parent="VBoxContainer"]
@@ -96,12 +97,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -177.0
+offset_left = -188.0
 offset_top = -251.0
-offset_right = 173.0
+offset_right = 162.0
 offset_bottom = -101.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.04, 1)
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/Botao2/BotaoBack/ResumeText/BotaoResume" to="." method="_on_botao_resume_pressed"]

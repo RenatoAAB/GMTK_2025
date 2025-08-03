@@ -42,7 +42,7 @@ tile_map_data = PackedByteArray("AAAEAPv/AAALAH8AAAD9//3/AAAGAEwAAAABAPr/AAAMAHw
 tile_map_data = PackedByteArray("AAAPAPv/BgAHABYAAAA=")
 
 [node name="BookB" parent="Interactables" index="0" node_paths=PackedStringArray("interactionEffects") instance=ExtResource("2_r5431")]
-position = Vector2(36, -73)
+position = Vector2(-17, -35)
 interactionEffects = [NodePath("../ExplosionB")]
 
 [node name="ExplosionB" parent="Interactables" index="1" instance=ExtResource("3_tirjk")]

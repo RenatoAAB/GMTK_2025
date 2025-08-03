@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var enemy_alerted_sound: AudioStreamPlayer = $enemyAlertedSound
 @onready var initial_standing_position
 @onready var initial_direction
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 var path_follow: PathFollow2D
 var on_patrolloing_path := true
@@ -57,6 +58,7 @@ func _ready():
 func kill():
 	sprite.play("dead")
 	vision_cone.visible = false
+	collision_shape_2d.disabled = true
 	dead = true
 
 func _physics_process(delta):

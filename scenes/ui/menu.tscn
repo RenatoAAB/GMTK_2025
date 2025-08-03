@@ -74,11 +74,11 @@ texture = ExtResource("7_y7dvm")
 
 [node name="Botao" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 801.0
-offset_top = 447.0
-offset_right = 1171.0
-offset_bottom = 617.0
-scale = Vector2(0.720001, 0.720001)
+offset_left = 889.0
+offset_top = 468.0
+offset_right = 1259.0
+offset_bottom = 638.0
+scale = Vector2(0.48, 0.48)
 color = Color(0.345098, 0.0980392, 0.196078, 1)
 
 [node name="BotaoBack" type="ColorRect" parent="Botao"]

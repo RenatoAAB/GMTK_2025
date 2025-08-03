@@ -3,6 +3,7 @@ extends Area2D
 var characters_escaped = 0
 @onready var win_menu: CanvasLayer = $"../WinMenu"
 @export var is_tutorial := false
+@export var is_tutorial_2 := false
 @onready var tutorial_texts: CanvasLayer = $"../Tutorial texts"
 
 #var level_1_scene := preload("res://scenes/levels/ThePrison.tscn")
@@ -13,8 +14,9 @@ func _on_body_entered(character: Node2D) -> void:
 	if character.is_in_group("Playable"):
 		if not character.dead:
 			if is_tutorial:
-				tutorial_texts.nextText()
-				print("WE are here")
+				tutorial_texts.nextText(character.id)
+			if is_tutorial_2:
+				tutorial_texts.show_extra()
 			print(character.id + ": Saved himself")
 			update_characters_escaped()
 			character.queue_free()

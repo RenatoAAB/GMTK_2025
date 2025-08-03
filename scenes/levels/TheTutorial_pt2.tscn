@@ -76,7 +76,7 @@ zoom = Vector2(6, 6)
 [node name="winning_area" parent="." index="11"]
 position = Vector2(69, -4)
 rotation = -1.57079
-is_tutorial = true
+is_tutorial_2 = true
 
 [node name="Path2D" type="Path2D" parent="." index="15"]
 position = Vector2(75, 72)
@@ -95,13 +95,20 @@ path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 position = Vector2(-73, 0)
 navigation_polygon = SubResource("NavigationPolygon_otiwr")
 
-[node name="Tutorial texts" type="CanvasLayer" parent="." index="17" node_paths=PackedStringArray("texts1", "texts2", "texts3")]
+[node name="Tutorial texts" type="CanvasLayer" parent="." index="17" node_paths=PackedStringArray("textoBase", "textoRed", "textoBlue", "extra")]
 script = ExtResource("2_nymxj")
-texts1 = [NodePath("Label")]
-texts2 = [NodePath("Label2"), NodePath("Label3"), NodePath("Label4")]
-texts3 = [NodePath("Label5")]
+textoBase = NodePath("Base")
+textoRed = NodePath("Red")
+textoBlue = NodePath("Blue")
+extra = NodePath("Extra")
 
-[node name="Label" type="Label" parent="Tutorial texts" index="0"]
+[node name="Base" type="Control" parent="Tutorial texts" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Tutorial texts/Base" index="0"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 554.0
 offset_top = 524.0
@@ -113,8 +120,25 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Tutorial texts" index="1"]
-visible = false
+[node name="Label6" type="Label" parent="Tutorial texts/Base" index="1"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 185.0
+offset_top = 110.0
+offset_right = 385.0
+offset_bottom = 215.0
+text = "Press E to interact"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Red" type="Control" parent="Tutorial texts" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Tutorial texts/Red" index="0"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 237.0
 offset_top = 527.0
@@ -126,8 +150,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Tutorial texts" index="2"]
-visible = false
+[node name="Label3" type="Label" parent="Tutorial texts/Red" index="1"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 667.0
 offset_top = 528.0
@@ -139,40 +162,76 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label4" type="Label" parent="Tutorial texts" index="3"]
-visible = false
+[node name="Label4" type="Label" parent="Tutorial texts/Red" index="2"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 922.0
 offset_top = 509.0
 offset_right = 1122.0
 offset_bottom = 646.0
-text = "Press 1 to LOOP back and revive as RED or 5 to switch to BLUE.
+text = "Press 5 to LOOP back and revive as RED or 1 to switch to BLUE.
 "
 label_settings = ExtResource("3_otiwr")
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label5" type="Label" parent="Tutorial texts" index="4"]
+[node name="Blue" type="Control" parent="Tutorial texts" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Tutorial texts/Blue" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 237.0
+offset_top = 527.0
+offset_right = 637.0
+offset_bottom = 636.0
+text = "If you die, you'll become a ghost. Ghosts can explore the map, but can't interact with items or escape."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Tutorial texts/Blue" index="1"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 667.0
+offset_top = 528.0
+offset_right = 867.0
+offset_bottom = 665.0
+text = "Any actions you do as ghost are also recorded."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Tutorial texts/Blue" index="2"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 922.0
+offset_top = 509.0
+offset_right = 1122.0
+offset_bottom = 646.0
+text = "Press 1 to LOOP back and revive as BLUE or 5 to switch to RED.
+"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Extra" type="Control" parent="Tutorial texts" index="3"]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label5" type="Label" parent="Tutorial texts/Extra" index="0"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 562.0
 offset_top = 526.0
 offset_right = 762.0
 offset_bottom = 635.0
 text = "Now LOOP back to escape with your second character."
-label_settings = ExtResource("3_otiwr")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label6" type="Label" parent="Tutorial texts" index="5"]
-custom_minimum_size = Vector2(200, 0)
-offset_left = 185.0
-offset_top = 110.0
-offset_right = 385.0
-offset_bottom = 215.0
-text = "Press E to interact"
 label_settings = ExtResource("3_otiwr")
 horizontal_alignment = 1
 autowrap_mode = 2

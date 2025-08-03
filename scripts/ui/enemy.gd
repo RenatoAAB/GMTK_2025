@@ -61,6 +61,8 @@ func kill():
 	vision_cone.visible = false
 	collision_shape_2d.disabled = true
 	dead = true
+	collision_layer = 0
+	collision_mask = 0
 
 func _physics_process(delta):
 	if dead:

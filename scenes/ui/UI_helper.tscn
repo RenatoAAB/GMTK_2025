@@ -67,7 +67,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "2 - Red"
+text = "5 - Red"
 label_settings = SubResource("LabelSettings_h1mio")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Control"]

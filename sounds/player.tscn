@@ -1,125 +1,126 @@
-[gd_scene load_steps=40 format=3 uid="uid://d00t07m1808r5"]
+[gd_scene load_steps=41 format=3 uid="uid://d00t07m1808r5"]
 
-[ext_resource type="Script" uid="uid://b6yfxswym3cog" path="res://scripts/characterMovement.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://ta0h5nwqd81j" path="res://sprites/fantasminha_azul.png" id="2_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="3_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://clbj0p58b1k7m" path="res://sprites/fantasminha_vermelho.png" id="3_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://ci4rwu2l04ilu" path="res://sprites/animacao_morte_player_azul.png" id="4_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://by2k4abetv8j7" path="res://sprites/animacao_morte_player_vermelho.png" id="5_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://b8305yau5y6o8" path="res://sprites/ninjaB.png" id="6_jej6c"]
-[ext_resource type="AudioStream" uid="uid://c5ewo17rfgnni" path="res://sounds/som_morte.mp3" id="6_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://bjocjiinawhst" path="res://sprites/ninjaA.png" id="7_f1ej7"]
+[ext_resource type="Script" uid="uid://b6yfxswym3cog" path="res://scripts/characterMovement.gd" id="1_v2d02"]
+[ext_resource type="Texture2D" uid="uid://ta0h5nwqd81j" path="res://sprites/fantasminha_azul.png" id="2_tkoiu"]
+[ext_resource type="Texture2D" uid="uid://clbj0p58b1k7m" path="res://sprites/fantasminha_vermelho.png" id="3_bjcno"]
+[ext_resource type="Texture2D" uid="uid://ci4rwu2l04ilu" path="res://sprites/animacao_morte_player_azul.png" id="4_fxooa"]
+[ext_resource type="Texture2D" uid="uid://by2k4abetv8j7" path="res://sprites/animacao_morte_player_vermelho.png" id="5_3bedc"]
+[ext_resource type="Texture2D" uid="uid://b8305yau5y6o8" path="res://sprites/ninjaB.png" id="6_qbvq7"]
+[ext_resource type="Texture2D" uid="uid://bjocjiinawhst" path="res://sprites/ninjaA.png" id="7_uhrtc"]
+[ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="8_6lc3t"]
+[ext_resource type="AudioStream" uid="uid://c5ewo17rfgnni" path="res://sounds/som_morte.mp3" id="9_ncqsm"]
+[ext_resource type="AudioStream" uid="uid://cea7laf66r7pd" path="res://sounds/wood_step.mp3" id="10_70go4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
-atlas = ExtResource("2_ur7pv")
+atlas = ExtResource("2_tkoiu")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
-atlas = ExtResource("3_y4r1p")
+atlas = ExtResource("3_bjcno")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(32, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(40, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(48, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(56, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(64, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
-atlas = ExtResource("4_d2wvv")
+atlas = ExtResource("4_fxooa")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(24, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnwbv"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(32, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(40, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(48, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(56, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(64, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jc3p3"]
-atlas = ExtResource("5_3v2ag")
+atlas = ExtResource("5_3bedc")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
-atlas = ExtResource("6_jej6c")
+atlas = ExtResource("6_qbvq7")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4otl"]
-atlas = ExtResource("7_f1ej7")
+atlas = ExtResource("7_uhrtc")
 region = Rect2(0, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2b1d"]
-atlas = ExtResource("6_jej6c")
+atlas = ExtResource("6_qbvq7")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
-atlas = ExtResource("6_jej6c")
+atlas = ExtResource("6_qbvq7")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dvfe"]
-atlas = ExtResource("7_f1ej7")
+atlas = ExtResource("7_uhrtc")
 region = Rect2(16, 0, 8, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_giy8y"]
-atlas = ExtResource("7_f1ej7")
+atlas = ExtResource("7_uhrtc")
 region = Rect2(8, 0, 8, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
@@ -256,7 +257,7 @@ radius = 2.0
 z_index = 2
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("1_onrkg")
+script = ExtResource("1_v2d02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dqkch")
@@ -274,9 +275,13 @@ shadow_enabled = true
 shadow_color = Color(0.592157, 0.462745, 0.360784, 0.172549)
 shadow_filter = 2
 shadow_filter_smooth = 0.6
-texture = ExtResource("3_qhqgy")
+texture = ExtResource("8_6lc3t")
 texture_scale = 0.5
 
 [node name="som_morte" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_tuyoq")
+stream = ExtResource("9_ncqsm")
 bus = &"EfeitoPlayer"
+
+[node name="som_step" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_70go4")
+volume_db = -35.0

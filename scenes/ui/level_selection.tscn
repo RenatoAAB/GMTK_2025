@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=25 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://coluyt0o8xoci" path="res://scenes/levels/TheLibrary.tscn" id="14_giqsl"]
 [ext_resource type="PackedScene" uid="uid://mynkic8hhmnk" path="res://scenes/levels/TheArmory.tscn" id="15_o3on7"]
 [ext_resource type="PackedScene" uid="uid://b3efiv34r73fm" path="res://scenes/levels/ThePlanningRoom.tscn" id="16_mn1yi"]
+[ext_resource type="AudioStream" uid="uid://dj1uncdk4kmex" path="res://sounds/new_level_2.mp3" id="20_mj20w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("11_0hcqc")
@@ -65,27 +66,27 @@ _data = {
 script = ExtResource("1_8n4eq")
 
 [node name="background" type="TextureRect" parent="."]
-offset_left = -49.0
-offset_top = -39.0
-offset_right = 1103.0
-offset_bottom = 609.0
-scale = Vector2(1.1822, 1.1822)
+offset_left = -35.0
+offset_top = -34.0
+offset_right = 1117.0
+offset_bottom = 781.0
+scale = Vector2(1.0622, 1.0622)
 texture = ExtResource("2_8qhfv")
 
 [node name="clouds-tower" type="TextureRect" parent="."]
-offset_left = -61.0
-offset_top = -37.0
-offset_right = 1091.0
-offset_bottom = 611.0
-scale = Vector2(1.12, 1.12)
+offset_left = -42.0
+offset_top = -46.0
+offset_right = 1110.0
+offset_bottom = 769.0
+scale = Vector2(1.06171, 1.06171)
 texture = ExtResource("3_rlppb")
 
 [node name="fog2" type="TextureRect" parent="."]
-offset_left = -67.0
-offset_top = -78.0
-offset_right = 1085.0
-offset_bottom = 570.0
-scale = Vector2(1.2, 1.2)
+offset_left = -42.0
+offset_top = -197.0
+offset_right = 1110.0
+offset_bottom = 618.0
+scale = Vector2(1.08, 1.08)
 texture = ExtResource("4_j8buf")
 
 [node name="fog1" type="TextureRect" parent="."]
@@ -97,10 +98,10 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_giqsl")
 
 [node name="ChooseLevel" type="Label" parent="."]
-offset_left = 177.0
-offset_top = 25.0
-offset_right = 988.0
-offset_bottom = 148.0
+offset_left = 262.0
+offset_top = 80.0
+offset_right = 1073.0
+offset_bottom = 203.0
 text = "Choose level"
 label_settings = ExtResource("6_o3on7")
 
@@ -214,3 +215,7 @@ offset_bottom = 123.0
 text = "Twin escape"
 label_settings = ExtResource("13_jjiqo")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_mj20w")
+volume_db = 9.109

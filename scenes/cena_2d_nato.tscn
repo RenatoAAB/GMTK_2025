@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="4_ip6fh"]
 [ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="5_4aw34"]
 [ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="6_gsas5"]
-[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="7_wmbac"]
+[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://sounds/player.tscn" id="7_wmbac"]
 [ext_resource type="PackedScene" uid="uid://bb1lmjt284vec" path="res://scenes/ui/pause_menu.tscn" id="9_6ig0u"]
 [ext_resource type="Texture2D" uid="uid://cs45vv5csr4o" path="res://tilesets/Units.png" id="9_k5cja"]
 [ext_resource type="Texture2D" uid="uid://bdw8qlaa80sqq" path="res://images/enemy-see-mask.png" id="10_5vacv"]

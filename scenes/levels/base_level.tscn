@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://ck1gkaat6s53u"]
+[gd_scene load_steps=11 format=4 uid="uid://ck1gkaat6s53u"]
 
 [ext_resource type="TileSet" uid="uid://ix3leyeds3yw" path="res://tilesets/structures_inside.tres" id="1_3rriw"]
 [ext_resource type="Texture2D" uid="uid://q11ugmdwpa1v" path="res://icon.svg" id="1_h4ce7"]
 [ext_resource type="TileSet" uid="uid://dd63ngosj4sw1" path="res://tilesets/props.tres" id="2_3rriw"]
 [ext_resource type="TileSet" uid="uid://cv2mmchti2mhg" path="res://tilesets/structures.tres" id="2_43bxi"]
-[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="6_yy46b"]
+[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://sounds/player.tscn" id="6_yy46b"]
+[ext_resource type="AudioStream" uid="uid://bpg2ioglw0g3v" path="res://sounds/vitoria.mp3" id="7_j7gcg"]
 [ext_resource type="PackedScene" uid="uid://bb1lmjt284vec" path="res://scenes/ui/pause_menu.tscn" id="9_8yl83"]
 [ext_resource type="PackedScene" uid="uid://cx5wtsyll7rw2" path="res://scenes/winning_area.tscn" id="9_43bxi"]
 [ext_resource type="PackedScene" uid="uid://chyy1otnrxilr" path="res://scenes/ui/UI_helper.tscn" id="10_j7gcg"]
@@ -74,6 +75,10 @@ range_item_cull_mask = 2
 [node name="winning_area" parent="." instance=ExtResource("9_43bxi")]
 z_index = 1
 position = Vector2(3, 17)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="winning_area"]
+position = Vector2(-3, -17)
+stream = ExtResource("7_j7gcg")
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_8yl83")]
 

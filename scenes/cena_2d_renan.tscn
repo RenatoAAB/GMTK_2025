@@ -1,12 +1,12 @@
 [gd_scene load_steps=157 format=4 uid="uid://cil7frnkxylvv"]
 
-[ext_resource type="Script" uid="uid://bswcnxjqay871" path="res://scenes/cena_2d_renan.gd" id="1_0qyxi"]
+[ext_resource type="Script" path="res://scenes/cena_2d_renan.gd" id="1_0qyxi"]
 [ext_resource type="Texture2D" uid="uid://cgmegdjfqsyaj" path="res://tilesets/Interior.png" id="1_yo6r2"]
 [ext_resource type="Texture2D" uid="uid://cqhfpapvk2tsy" path="res://tilesets/Decorations.png" id="2_mse8b"]
 [ext_resource type="Texture2D" uid="uid://b1eh6y5nspl3a" path="res://tilesets/Fixtures.png" id="3_76l6q"]
 [ext_resource type="Texture2D" uid="uid://b5c8svua6emrs" path="res://tilesets/Misc.png" id="4_ge1yq"]
 [ext_resource type="Texture2D" uid="uid://bapxeku74ltdc" path="res://tilesets/Furniture_reduced.png" id="4_mse8b"]
-[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://scenes/player.tscn" id="6_76l6q"]
+[ext_resource type="PackedScene" uid="uid://d00t07m1808r5" path="res://sounds/player.tscn" id="6_76l6q"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="8_gf03w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf03w"]

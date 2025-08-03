@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1nrfjd8oic85" path="res://scripts/ui/tutorial_screen.gd" id="1_rcxmo"]
 [ext_resource type="LabelSettings" uid="uid://crqyb5auexjsb" path="res://fonts/pause_button_font_config.tres" id="2_4unk4"]
-[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="3_4unk4"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="3_4unk4"]
 
 [node name="Tutorial" type="CanvasLayer"]
 process_mode = 3

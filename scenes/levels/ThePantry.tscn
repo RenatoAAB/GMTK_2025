@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="5_7j1yd"]
 [ext_resource type="PackedScene" uid="uid://bhiqp2eja5bih" path="res://scenes/interactions/porta_v.tscn" id="6_qany0"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="7_7j1yd"]
-[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="7_y6g21"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="7_y6g21"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mq8x0"]
 vertices = PackedVector2Array(101, 54, 105.07, 54, 104.07, 55, 104.07, 63, 105.07, 64, 3, 64, 91, 54, 91, 52.6641, 96, 54, 101, 52.6641, 61, 54, 69, 54, 69, 62, 83, 62, 83, 54, -11, 56, -11, 64, -21, 64, -21, 54, 59, 54, 3, 56, 59, 46, 61, 46, 103, 59, 141, 64, 116.93, 64, 117.93, 63, 117.93, 55, 116.93, 54, 141, 54, 119, 59, 102.07, -9, 103.07, -8, 101, -8, -21, -18, 103.07, -18, 102.07, -17, 101, 35.3359, 96, 34, 91, 35.3359, 91, -8, 101, -13, -3, 14, 21, 14, 21, 32, -21, 32, -3, -8, 61, 32, 51, 32, 51, 24, 35, 24, 35, 14, 59, 14, 61, 6, 59, 6, 121, 24, 121, 32, 115, 32, 115, 24, 141, 14, 141, 24, 131, 24, 131, 14, 141, -8, 114.93, -8, 115.93, -9, 115.93, -17, 114.93, -18, 141, -18, 117, -13)

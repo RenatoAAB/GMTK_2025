@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://b408gsxmf33cg" path="res://scripts/historinha.gd" id="10_a7ikg"]
 [ext_resource type="Texture2D" uid="uid://d0q5ubfygutq7" path="res://images/cutcene-inicial/firemage.png" id="10_ir0oc"]
 [ext_resource type="Texture2D" uid="uid://dvcjfpapljtm6" path="res://images/cutcene-inicial/player1.png" id="11_y7dvm"]
-[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/tutorial_font.tres" id="12_ir0oc"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="12_ir0oc"]
 [ext_resource type="Texture2D" uid="uid://dw52dfoc3p70o" path="res://images/cutcene-inicial/chave.png" id="14_a7ikg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tub5d"]
@@ -210,6 +210,7 @@ texture = ExtResource("14_a7ikg")
 
 [node name="Label" type="Label" parent="Historinha/parte3"]
 custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
 offset_left = 354.0
 offset_top = 457.0
 offset_right = 754.0

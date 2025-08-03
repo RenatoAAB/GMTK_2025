@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 LoopManager="*res://scripts/globals/LoopManager.gd"
 LevelManager="*res://scripts/globals/LevelManager.gd"
 TutorialManager="*res://scripts/globals/TutorialManager.gd"
+MusicManager="*res://scripts/globals/MusicManager.tscn"
 
 [display]
 

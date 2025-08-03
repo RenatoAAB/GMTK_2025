@@ -30,6 +30,7 @@ func _on_botao_level_pressed() -> void:
 	pressed = true
 	new_level_sound.play()
 	animation_player.play("transition_to_title")
+	MusicManager.fade_out_music(0.5)
 	title_screen.visible = true
 	level_name_label.text = level_name
 	levelname_front.text = level_name

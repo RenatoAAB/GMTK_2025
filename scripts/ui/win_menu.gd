@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_botao_select_level_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/level_selection.tscn")
+	LevelManager.change_to_level_selection()

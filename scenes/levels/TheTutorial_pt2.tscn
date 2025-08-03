@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="5_rdot3"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_xs2in"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="6_ji2kp"]
-[ext_resource type="AudioStream" uid="uid://dnqmiu6oycn08" path="res://sounds/song-tutorial.mp3" id="10_uwmea"]
+[ext_resource type="AudioStream" uid="uid://dnqmiu6oycn08" path="res://sounds/music/song-tutorial.mp3" id="10_uwmea"]
 
 [sub_resource type="Curve2D" id="Curve2D_otiwr"]
 _data = {

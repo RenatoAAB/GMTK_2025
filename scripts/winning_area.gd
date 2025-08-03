@@ -2,7 +2,6 @@ extends Area2D
 
 var characters_escaped = 0
 @onready var win_menu: CanvasLayer = $"../WinMenu"
-@onready var vitory_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @export var is_tutorial := false
 @onready var tutorial_texts: CanvasLayer = $"../Tutorial texts"
 
@@ -31,9 +30,6 @@ func update_characters_escaped():
 func call_winning_screen():
 	if is_tutorial:
 		tutorial_texts.visible = false
-		
-	vitory_sound.play()
-	LevelManager.level_won()
 	win_menu.visible = true;
 	print("You won !!")
 	if firemage:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c060ag5aoejdw"]
+[gd_scene load_steps=12 format=4 uid="uid://c060ag5aoejdw"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_ln5xh"]
 [ext_resource type="Script" uid="uid://dshr4ts1d8ml3" path="res://scripts/tutorial_texts.gd" id="2_nymxj"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://v2tgiusrnp0n" path="res://scenes/interactions/interaction_trigger.tscn" id="5_rdot3"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_xs2in"]
 [ext_resource type="Texture2D" uid="uid://bvqiih8xl8248" path="res://sprites/interactions/alavanca.png" id="6_ji2kp"]
-[ext_resource type="AudioStream" uid="uid://dnqmiu6oycn08" path="res://sounds/music/song-tutorial.mp3" id="10_uwmea"]
 
 [sub_resource type="Curve2D" id="Curve2D_otiwr"]
 _data = {
@@ -77,7 +76,7 @@ zoom = Vector2(6, 6)
 [node name="winning_area" parent="." index="11"]
 position = Vector2(69, -4)
 rotation = -1.57079
-is_tutorial = true
+is_tutorial_2 = true
 
 [node name="Path2D" type="Path2D" parent="." index="15"]
 position = Vector2(75, 72)
@@ -96,13 +95,20 @@ path_2d_to_follow = NodePath("../Path2d_follow_enemy1")
 position = Vector2(-73, 0)
 navigation_polygon = SubResource("NavigationPolygon_otiwr")
 
-[node name="Tutorial texts" type="CanvasLayer" parent="." index="17" node_paths=PackedStringArray("texts1", "texts2", "texts3")]
+[node name="Tutorial texts" type="CanvasLayer" parent="." index="17" node_paths=PackedStringArray("textoBase", "textoRed", "textoBlue", "extra")]
 script = ExtResource("2_nymxj")
-texts1 = [NodePath("Label")]
-texts2 = [NodePath("Label2"), NodePath("Label3"), NodePath("Label4")]
-texts3 = [NodePath("Label5")]
+textoBase = NodePath("Base")
+textoRed = NodePath("Red")
+textoBlue = NodePath("Blue")
+extra = NodePath("Extra")
 
-[node name="Label" type="Label" parent="Tutorial texts" index="0"]
+[node name="Base" type="Control" parent="Tutorial texts" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Tutorial texts/Base" index="0"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 554.0
 offset_top = 524.0
@@ -114,60 +120,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Tutorial texts" index="1"]
-visible = false
-custom_minimum_size = Vector2(200, 0)
-offset_left = 237.0
-offset_top = 527.0
-offset_right = 637.0
-offset_bottom = 636.0
-text = "If you die, you'll become a ghost. Ghosts can explore the map, but can't interact with items or escape."
-label_settings = ExtResource("3_otiwr")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label3" type="Label" parent="Tutorial texts" index="2"]
-visible = false
-custom_minimum_size = Vector2(200, 0)
-offset_left = 667.0
-offset_top = 528.0
-offset_right = 867.0
-offset_bottom = 665.0
-text = "Any actions you do as ghost are also recorded."
-label_settings = ExtResource("3_otiwr")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label4" type="Label" parent="Tutorial texts" index="3"]
-visible = false
-custom_minimum_size = Vector2(200, 0)
-offset_left = 922.0
-offset_top = 509.0
-offset_right = 1122.0
-offset_bottom = 646.0
-text = "Press 1 to LOOP back and revive as RED or 5 to switch to BLUE.
-"
-label_settings = ExtResource("3_otiwr")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label5" type="Label" parent="Tutorial texts" index="4"]
-visible = false
-custom_minimum_size = Vector2(200, 0)
-offset_left = 562.0
-offset_top = 526.0
-offset_right = 762.0
-offset_bottom = 635.0
-text = "Now LOOP back to escape with your second character."
-label_settings = ExtResource("3_otiwr")
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label6" type="Label" parent="Tutorial texts" index="5"]
+[node name="Label6" type="Label" parent="Tutorial texts/Base" index="1"]
 custom_minimum_size = Vector2(200, 0)
 offset_left = 185.0
 offset_top = 110.0
@@ -179,9 +132,109 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="18"]
-stream = ExtResource("10_uwmea")
-volume_db = -3.975
-autoplay = true
+[node name="Red" type="Control" parent="Tutorial texts" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Tutorial texts/Red" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 237.0
+offset_top = 527.0
+offset_right = 637.0
+offset_bottom = 636.0
+text = "If you die, you'll become a ghost. Ghosts can explore the map, but can't interact with items or escape."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Tutorial texts/Red" index="1"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 667.0
+offset_top = 528.0
+offset_right = 867.0
+offset_bottom = 665.0
+text = "Any actions you do as ghost are also recorded."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Tutorial texts/Red" index="2"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 922.0
+offset_top = 509.0
+offset_right = 1122.0
+offset_bottom = 646.0
+text = "Press 5 to LOOP back and revive as RED or 1 to switch to BLUE.
+"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Blue" type="Control" parent="Tutorial texts" index="2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="Tutorial texts/Blue" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 237.0
+offset_top = 527.0
+offset_right = 637.0
+offset_bottom = 636.0
+text = "If you die, you'll become a ghost. Ghosts can explore the map, but can't interact with items or escape."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Tutorial texts/Blue" index="1"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 667.0
+offset_top = 528.0
+offset_right = 867.0
+offset_bottom = 665.0
+text = "Any actions you do as ghost are also recorded."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Tutorial texts/Blue" index="2"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 922.0
+offset_top = 509.0
+offset_right = 1122.0
+offset_bottom = 646.0
+text = "Press 1 to LOOP back and revive as BLUE or 5 to switch to RED.
+"
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Extra" type="Control" parent="Tutorial texts" index="3"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label5" type="Label" parent="Tutorial texts/Extra" index="0"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 562.0
+offset_top = 526.0
+offset_right = 762.0
+offset_bottom = 635.0
+text = "Now LOOP back to escape with your second character."
+label_settings = ExtResource("3_otiwr")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="Interactables/LeverA"]

@@ -3,21 +3,22 @@ extends Node
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 
 const musicas = {
-	'T1': preload("res://sounds/music/song-tutorial.mp3"),
-	'T2': preload("res://sounds/music/song-tutorial.mp3"),
-	'1': preload("res://sounds/music/song-tutorial.mp3"),
-	'2':preload("res://sounds/music/song-tutorial.mp3"),
-	'3': preload("res://sounds/music/song-tutorial.mp3"),
-	'4': preload("res://sounds/music/song-tutorial.mp3"),
-	'5': preload("res://sounds/music/song-tutorial.mp3"),
-	'6': preload("res://sounds/music/song-tutorial.mp3"),
-	'7': preload("res://sounds/music/song-tutorial.mp3"),
-	'8': preload("res://sounds/music/song-tutorial.mp3"),
-	'9': preload("res://sounds/music/song-tutorial.mp3"),
+	'T1': preload("res://sounds/songs/MenuMusic2.mp3"),
+	'T2': preload("res://sounds/songs/song-tutorial.mp3"),
+	'1': preload("res://sounds/songs/UnderTension.mp3"),
+	'2': preload("res://sounds/songs/ConfusingDoors.mp3"),
+	'3': preload("res://sounds/songs/song-tutorial.mp3"),
+	'4': preload("res://sounds/songs/MenuMusic2.mp3"),
+	'5': preload("res://sounds/songs/ConfusingDoors.mp3"),
+	'6': preload("res://sounds/songs/UnderTension.mp3"),
+	'7': preload("res://sounds/songs/song-tutorial.mp3"),
+	'8': preload("res://sounds/songs/UnderTension.mp3"),
+	'9': preload("res://sounds/songs/BossFight.mp3"),
 }
 
-const musica_menu = preload("res://sounds/music/song-tutorial.mp3")
+const musica_menu = preload("res://sounds/songs/song-tutorial.mp3")
 const musica_win = preload("res://sounds/music/vitoria.mp3")
+const musica_half_win = preload("res://sounds/half-victory.mp3")
 
 func _ready():
 	start_music_menu()

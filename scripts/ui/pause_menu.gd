@@ -27,4 +27,5 @@ func _on_botao_resume_pressed() -> void:
 
 
 func _on_botao_back_to_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/menu.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/ui/level_selection.tscn")

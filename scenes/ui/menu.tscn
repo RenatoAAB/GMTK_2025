@@ -72,6 +72,11 @@ offset_bottom = 605.0
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_y7dvm")
 
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(678, 263)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("10_288ov")
+
 [node name="Botao" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 889.0
@@ -115,10 +120,5 @@ flat = true
 
 [node name="LevelSelection" parent="." instance=ExtResource("5_e11en")]
 visible = false
-
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(678, 263)
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("10_288ov")
 
 [connection signal="pressed" from="Botao/BotaoBack/PlayText/BotaoPlay" to="." method="_on_botao_play_pressed"]

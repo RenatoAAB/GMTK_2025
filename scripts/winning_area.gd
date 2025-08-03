@@ -2,6 +2,7 @@ extends Area2D
 
 var characters_escaped = 0
 @onready var win_menu: CanvasLayer = $"../WinMenu"
+@export var firemage : Node;
 
 func _on_body_entered(character: Node2D) -> void:
 	if character.is_in_group("Playable"):
@@ -19,6 +20,9 @@ func update_characters_escaped():
 		call_winning_screen()
 		
 func call_winning_screen():
-	LevelManager.level_won()
-	win_menu.visible = true;
-	print("You won !!")
+	if firemage:
+		firemage.kill()
+	else:
+		LevelManager.level_won()
+		win_menu.visible = true;
+		print("You won !!")

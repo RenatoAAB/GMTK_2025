@@ -92,18 +92,18 @@ cubic_interp = false
 [node name="Enemy2" parent="Path1" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
 modulate = Color(1, 0.856935, 0.735061, 1)
 position = Vector2(-32, -13)
-chase_speed = 45.0
+chase_speed = 65.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
 is_path_linear = false
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path1" index="2"]
-position = Vector2(-159, -57)
+position = Vector2(-170, -57)
 rotation = -0.00862048
 
 [node name="Enemy3" parent="Path1" index="3" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
 modulate = Color(1, 0.856935, 0.735061, 1)
 position = Vector2(-159, -58)
-chase_speed = 45.0
+chase_speed = 65.0
 path_2d_to_follow = NodePath("../PathFollow2D")
 is_path_linear = false
 
@@ -124,7 +124,7 @@ cubic_interp = false
 modulate = Color(1, 0.787918, 0.996058, 1)
 position = Vector2(-166, -6)
 patrol_speed = 8
-chase_speed = 45.0
+chase_speed = 65.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy3")
 
 [node name="Path3" type="Path2D" parent="." index="19"]
@@ -139,5 +139,5 @@ cubic_interp = false
 [node name="Enemy" parent="Path3" index="1" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
 modulate = Color(0.719691, 1, 0.998241, 1)
 position = Vector2(-95, -64)
-chase_speed = 45.0
+chase_speed = 65.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy4")

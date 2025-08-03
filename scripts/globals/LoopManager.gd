@@ -7,8 +7,15 @@ var recorded_inputs := []
 # Keep reference to the current player and ghosts
 var current_player = null
 var should_change = false
+var loop_enabled = true
 
 signal player_set(id)
+
+func enable_loop():
+	loop_enabled = true
+	
+func disable_loop():
+	loop_enabled = false
 
 func get_should_change_characters():
 	return should_change
@@ -47,18 +54,19 @@ func stop_recording_but_keep_character():
 	print("🛑 Recording stopped")
 
 func _input(event):
-	if Input.is_action_pressed("play_first"):
-		if (current_player == 'A'):
-			stop_recording_but_keep_character()
-		else:
-			stop_recording_and_change()
-		get_tree().reload_current_scene()
-	if Input.is_action_just_pressed("play_second"):
-		if (current_player == 'B'):
-			stop_recording_but_keep_character()
-		else:
-			stop_recording_and_change()
-		get_tree().reload_current_scene()
+	if loop_enabled:
+		if Input.is_action_pressed("play_first"):
+			if (current_player == 'A'):
+				stop_recording_but_keep_character()
+			else:
+				stop_recording_and_change()
+			get_tree().reload_current_scene()
+		if Input.is_action_just_pressed("play_second"):
+			if (current_player == 'B'):
+				stop_recording_but_keep_character()
+			else:
+				stop_recording_and_change()
+			get_tree().reload_current_scene()
 
 func record_input(delta):
 	if not is_recording:

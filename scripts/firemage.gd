@@ -118,6 +118,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		teleport_cooldown_timer = teleport_cooldown
 		
 func camera_shake(duration := 0.5, strength := 8.0) -> void:
+	LoopManager.disable_loop()
 	await get_tree().process_frame
 	var original_offset = camera.offset
 	var elapsed = 0.0
@@ -130,3 +131,4 @@ func camera_shake(duration := 0.5, strength := 8.0) -> void:
 		await get_tree().process_frame
 		elapsed += get_process_delta_time()
 	camera.offset = original_offset
+	LoopManager.enable_loop()

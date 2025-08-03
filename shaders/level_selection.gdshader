@@ -16,11 +16,11 @@ void fragment()
     	floor(FRAGCOORD.x / resolution),
     	floor(FRAGCOORD.y / resolution)
     );
-    
+
     if(time > rand(lowresxy)){
 
     }else{
 		COLOR = vec4(0.0,0.0,0.0,0.0);
 		// change to COLOR = vec4(0.0,0.0,0.0,1.0); to make black pixels
-    } 
+    }
 }

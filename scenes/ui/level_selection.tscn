@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2jjdr2m3jxkq"]
+[gd_scene load_steps=24 format=3 uid="uid://c2jjdr2m3jxkq"]
 
 [ext_resource type="Script" uid="uid://c6p3rvgtol4qv" path="res://scripts/ui/level_selection.gd" id="1_8n4eq"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_8qhfv"]
@@ -18,6 +18,7 @@
 [ext_resource type="LabelSettings" uid="uid://b15d68sggbgh5" path="res://fonts/title_highlight_font_config.tres" id="13_jjiqo"]
 [ext_resource type="PackedScene" uid="uid://coluyt0o8xoci" path="res://scenes/levels/TheLibrary.tscn" id="14_giqsl"]
 [ext_resource type="PackedScene" uid="uid://mynkic8hhmnk" path="res://scenes/levels/TheArmory.tscn" id="15_o3on7"]
+[ext_resource type="PackedScene" uid="uid://b3efiv34r73fm" path="res://scenes/levels/ThePlanningRoom.tscn" id="16_mn1yi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n7r7k"]
 shader = ExtResource("11_0hcqc")
@@ -182,6 +183,16 @@ scale = Vector2(0.560001, 0.560001)
 level_number = "9"
 level = ExtResource("15_o3on7")
 level_name = "The Armory"
+
+[node name="BotaoLevel9" parent="." instance=ExtResource("7_mn1yi")]
+offset_left = 475.0
+offset_top = 422.0
+offset_right = 645.0
+offset_bottom = 592.0
+scale = Vector2(0.560001, 0.560001)
+level_number = "8"
+level = ExtResource("16_mn1yi")
+level_name = "The Planning Room"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

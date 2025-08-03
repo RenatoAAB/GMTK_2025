@@ -5,11 +5,11 @@ extends Node
 @export var level_name : String
 @onready var number: Label = $BotaoBack/Number
 @onready var cleared: Sprite2D = $Cleared
-@onready var animation_player: AnimationPlayer = $"../TitleScreen/AnimationPlayer"
-@onready var level_name_label: Label = $"../TitleScreen/LevelName"
-@onready var levelname_front: Label = $"../TitleScreen/LevelName/LevelnameFront"
-@onready var title_screen: Control = $"../TitleScreen"
-@onready var new_level_sound: AudioStreamPlayer2D = $"../AudioStreamPlayer2D"
+@onready var animation_player: AnimationPlayer = $"../../TitleScreen/AnimationPlayer"
+@onready var level_name_label: Label = $"../../TitleScreen/LevelName"
+@onready var levelname_front: Label = $"../../TitleScreen/LevelName/LevelnameFront"
+@onready var title_screen: Control = $"../../TitleScreen"
+@onready var new_level_sound: AudioStreamPlayer2D = $"../../AudioStreamPlayer2D"
 
 var pressed = false
 # Called when the node enters the scene tree for the first time.

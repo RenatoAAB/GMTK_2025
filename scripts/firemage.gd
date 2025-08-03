@@ -4,7 +4,8 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var evil_laugh: AudioStreamPlayer2D = $evil_laugh
 @onready var hit_sound: AudioStreamPlayer2D = $hit_sound
-@onready var win_menu: CanvasLayer = $"../WinMenu"
+@onready var win_menu_final: CanvasLayer = $"../WinMenuFinal"
+
 @export var left_pos_marker : Marker2D
 @export var right_pos_marker : Marker2D
 
@@ -61,7 +62,7 @@ func kill():
 	tween.tween_property(camera, "zoom", Vector2(8, 8), 1.0)
 	await get_tree().create_timer(2.0).timeout
 	LevelManager.level_won()
-	win_menu.visible = true;
+	win_menu_final.visible = true;
 	#await get_tree().create_timer(2.0).timeout
 
 func initiate_teleport():

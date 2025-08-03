@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cgpltx58cd84"]
+[gd_scene load_steps=19 format=4 uid="uid://cgpltx58cd84"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_2vdpc"]
 [ext_resource type="PackedScene" uid="uid://bcyx2fra78skm" path="res://scenes/firemage.tscn" id="2_jpqok"]
@@ -7,6 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://12k4py6kadkb" path="res://scenes/interactions/porta-h.tscn" id="4_fq2r3"]
 [ext_resource type="PackedScene" uid="uid://d166qlc6oco8c" path="res://scenes/interactions/portal.tscn" id="5_fq2r3"]
 [ext_resource type="PackedScene" uid="uid://dhs0smygvgici" path="res://scenes/interactions/firewall.tscn" id="6_fq2r3"]
+[ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="8_b6t1t"]
+[ext_resource type="Script" uid="uid://bkeenjw5js8sy" path="res://scripts/ui/win_menu.gd" id="8_yb043"]
+[ext_resource type="Texture2D" uid="uid://cx2vk4nk33su4" path="res://images/menu-art/layer4-torre.png" id="9_yb043"]
+[ext_resource type="Texture2D" uid="uid://b0hy8qkjdxvul" path="res://images/menu-art/layer4-nuvens-frente.png" id="10_fnsoi"]
+[ext_resource type="LabelSettings" uid="uid://crqyb5auexjsb" path="res://fonts/pause_button_font_config.tres" id="10_xy6sa"]
+[ext_resource type="Texture2D" uid="uid://yvu5iksjdug5" path="res://images/menu-art/layer3-people.png" id="11_gt43w"]
+[ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="12_c7k8x"]
+[ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="13_f83kn"]
+[ext_resource type="LabelSettings" uid="uid://scoghxhv6jwo" path="res://fonts/final_screen_font.tres" id="14_8xca8"]
+[ext_resource type="LabelSettings" uid="uid://cvqyjhxnnxx8d" path="res://fonts/final_screen_font_highlight.tres" id="15_sgco5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o3qv3"]
 vertices = PackedVector2Array(-27, 140.711, -74.9766, 140.977, -74.9531, 134, -29, 134, -27, 110, -29, 110, 53, 134, 104.039, 134, 104.008, 140.008, 51, 140.289, 51, 110, 53, 110, 85, -18, 93, -18, 75, -10, 75, -32, 85, -50, 77, -50, 93, 120, 67, 120, 67, 96, 53, -58, 77, -58, 61, -32, 61, -24, 43, -24, 43, -32, 29, -10, 37, -10, 37, -2, -5, -10, 29, -32, -5, -32, -19, -32, -19, -24, -37, -24, -37, -32, -51, -10, -43, -10, -43, -2, -13, -2, -13, -10, 67, -2, 67, -10, 37, 96, 37, 136, -13, 136, -13, 96, -43, 96, -43, 120, -69, 120, -69, -18, -61, -18, -51, -32, -61, -50, -53, -50, -53, -58, -29, -58, -29, -66, 53, -66)
@@ -128,6 +138,131 @@ position = Vector2(-29, -8)
 [node name="firewall_right" parent="." index="18" instance=ExtResource("6_fq2r3")]
 visible = false
 position = Vector2(27, -8)
+
+[node name="WinMenuFinal" type="CanvasLayer" parent="." index="19"]
+script = ExtResource("8_yb043")
+
+[node name="background" type="TextureRect" parent="WinMenuFinal" index="0"]
+offset_left = -35.0
+offset_top = -34.0
+offset_right = 1117.0
+offset_bottom = 781.0
+scale = Vector2(1.0622, 1.0622)
+texture = ExtResource("8_b6t1t")
+
+[node name="tower" type="TextureRect" parent="WinMenuFinal" index="1"]
+offset_left = 16.0
+offset_top = -31.0
+offset_right = 1168.0
+offset_bottom = 784.0
+scale = Vector2(0.847076, 0.847076)
+texture = ExtResource("9_yb043")
+
+[node name="clouds-tower" type="TextureRect" parent="WinMenuFinal" index="2"]
+offset_left = -42.0
+offset_top = -46.0
+offset_right = 1110.0
+offset_bottom = 769.0
+scale = Vector2(1.06171, 1.06171)
+texture = ExtResource("10_fnsoi")
+
+[node name="people" type="TextureRect" parent="WinMenuFinal" index="3"]
+offset_left = -46.0
+offset_top = -240.0
+offset_right = 1106.0
+offset_bottom = 575.0
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("11_gt43w")
+
+[node name="fog2" type="TextureRect" parent="WinMenuFinal" index="4"]
+offset_left = -42.0
+offset_top = -197.0
+offset_right = 1110.0
+offset_bottom = 618.0
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("12_c7k8x")
+
+[node name="fog1" type="TextureRect" parent="WinMenuFinal" index="5"]
+offset_left = -141.0
+offset_top = -43.0
+offset_right = 1011.0
+offset_bottom = 605.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("13_f83kn")
+
+[node name="PlayText2" type="Label" parent="WinMenuFinal" index="6"]
+offset_left = 177.0
+offset_top = 35.0
+offset_right = 1321.0
+offset_bottom = 158.0
+text = "You escaped!"
+label_settings = ExtResource("14_8xca8")
+horizontal_alignment = 1
+
+[node name="PlayText3" type="Label" parent="WinMenuFinal" index="7"]
+offset_left = 177.0
+offset_top = 35.0
+offset_right = 1321.0
+offset_bottom = 158.0
+text = "You escaped!"
+label_settings = ExtResource("15_sgco5")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinMenuFinal" index="8"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = -151.0
+offset_right = 544.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="Botao3" type="ColorRect" parent="WinMenuFinal/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(390, 170)
+layout_mode = 2
+color = Color(0.345098, 0.0980392, 0.196078, 1)
+
+[node name="BotaoBack" type="ColorRect" parent="WinMenuFinal/VBoxContainer/Botao3" index="0"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 375.0
+offset_bottom = 155.0
+color = Color(0.792157, 0.501961, 0.4, 1)
+
+[node name="SelectLevel" type="Label" parent="WinMenuFinal/VBoxContainer/Botao3/BotaoBack" index="0"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -7.0
+offset_right = 379.0
+offset_bottom = 257.0
+text = "Select  level"
+label_settings = ExtResource("10_xy6sa")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BotaoSelectLevel" type="Button" parent="WinMenuFinal/VBoxContainer/Botao3/BotaoBack/SelectLevel" index="0"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -251.0
+offset_right = 173.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 0
+flat = true
+
+[connection signal="pressed" from="WinMenuFinal/VBoxContainer/Botao3/BotaoBack/SelectLevel/BotaoSelectLevel" to="WinMenuFinal" method="_on_botao_select_level_pressed"]
 
 [editable path="Interactables/PortalLeft"]
 [editable path="Interactables/PortalRight"]

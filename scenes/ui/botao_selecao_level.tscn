@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7vu8a6bi4gts" path="res://sprites/ui/confirm.png" id="3_4i4aw"]
 
 [node name="BotaoLevel" type="ColorRect"]
+custom_minimum_size = Vector2(175, 175)
 offset_left = -5.0
 offset_top = -5.0
 offset_right = 165.0

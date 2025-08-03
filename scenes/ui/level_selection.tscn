@@ -104,95 +104,77 @@ offset_bottom = 148.0
 text = "Choose level"
 label_settings = ExtResource("6_o3on7")
 
-[node name="BotaoLevel" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 130.0
-offset_top = 250.0
-offset_right = 300.0
-offset_bottom = 420.0
-scale = Vector2(0.560001, 0.560001)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 164.0
+offset_top = 252.0
+offset_right = 1359.0
+offset_bottom = 427.0
+scale = Vector2(0.7, 0.7)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="BotaoLevel" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
 level_number = "1"
 level = ExtResource("8_mj20w")
 level_name = "The Prison"
 
-[node name="BotaoLevel2" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 306.0
-offset_top = 252.0
-offset_right = 476.0
-offset_bottom = 422.0
-scale = Vector2(0.560001, 0.560001)
+[node name="BotaoLevel2" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
 level_number = "2"
 level = ExtResource("9_x1utg")
 level_name = "The Corridor"
 
-[node name="BotaoLevel3" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 480.0
-offset_top = 252.0
-offset_right = 650.0
-offset_bottom = 422.0
-scale = Vector2(0.560001, 0.560001)
+[node name="BotaoLevel3" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
 level_number = "3"
-level = ExtResource("10_t5xyv")
-level_name = "The Pantry"
-
-[node name="BotaoLevel4" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 868.0
-offset_top = 252.0
-offset_right = 1038.0
-offset_bottom = 422.0
-scale = Vector2(0.560001, 0.560001)
-level_number = "5"
-level = ExtResource("11_8qhfv")
-level_name = "The Portal Room"
-
-[node name="BotaoLevel5" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 669.0
-offset_top = 254.0
-offset_right = 839.0
-offset_bottom = 424.0
-scale = Vector2(0.560001, 0.560001)
-level_number = "4"
 level = ExtResource("12_rlppb")
 level_name = "The Kitchen"
 
-[node name="BotaoLevel6" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 871.0
-offset_top = 423.0
-offset_right = 1041.0
-offset_bottom = 593.0
-scale = Vector2(0.560001, 0.560001)
-level_number = "10"
-level = ExtResource("13_j8buf")
-level_name = "The Throne"
+[node name="BotaoLevel4" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "4"
+level = ExtResource("11_8qhfv")
+level_name = "The Portal Room"
 
-[node name="BotaoLevel7" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 136.0
-offset_top = 429.0
-offset_right = 306.0
-offset_bottom = 599.0
-scale = Vector2(0.560001, 0.560001)
+[node name="BotaoLevel5" parent="HBoxContainer" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "5"
+level = ExtResource("10_t5xyv")
+level_name = "The Pantry"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_left = 259.0
+offset_top = 441.0
+offset_right = 1199.0
+offset_bottom = 616.0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 80
+
+[node name="BotaoLevel6" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
 level_number = "6"
 level = ExtResource("14_giqsl")
 level_name = "The Library"
 
-[node name="BotaoLevel8" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 671.0
-offset_top = 422.0
-offset_right = 841.0
-offset_bottom = 592.0
-scale = Vector2(0.560001, 0.560001)
-level_number = "9"
+[node name="BotaoLevel7" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "7"
+level = ExtResource("16_mn1yi")
+level_name = "The Planning Room"
+
+[node name="BotaoLevel8" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "8"
 level = ExtResource("15_o3on7")
 level_name = "The Armory"
 
-[node name="BotaoLevel9" parent="." instance=ExtResource("7_mn1yi")]
-offset_left = 475.0
-offset_top = 422.0
-offset_right = 645.0
-offset_bottom = 592.0
-scale = Vector2(0.560001, 0.560001)
-level_number = "8"
-level = ExtResource("16_mn1yi")
-level_name = "The Planning Room"
+[node name="BotaoLevel9" parent="HBoxContainer2" instance=ExtResource("7_mn1yi")]
+layout_mode = 2
+level_number = "9"
+level = ExtResource("13_j8buf")
+level_name = "The Throne"
 
 [node name="TitleScreen" type="Control" parent="."]
 visible = false

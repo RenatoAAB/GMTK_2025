@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dma0n7vkdga00" path="res://scenes/interactions/dispenser.tscn" id="3_xfnjr"]
 [ext_resource type="Texture2D" uid="uid://bgsnphgejpolv" path="res://images/white-light-mask.png" id="4_x42u4"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="5_auqno"]
-[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="6_6uxd2"]
+[ext_resource type="LabelSettings" uid="uid://cpwr4ancle163" path="res://fonts/tutorial_font.tres" id="6_6uxd2"]
 [ext_resource type="Texture2D" uid="uid://cdyvlslkbjnps" path="res://sprites/arrow_up.png" id="7_kg0ua"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_auqno"]

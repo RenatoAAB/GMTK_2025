@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://fna5widhpic0"]
 
 [ext_resource type="PackedScene" uid="uid://ck1gkaat6s53u" path="res://scenes/levels/base_level.tscn" id="1_is8x7"]
-[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="3_5t24y"]
+[ext_resource type="LabelSettings" uid="uid://cpwr4ancle163" path="res://fonts/tutorial_font.tres" id="3_5t24y"]
 [ext_resource type="PackedScene" uid="uid://ch2hw7pw87h1w" path="res://scenes/enemy.tscn" id="4_lcq3g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_r5wal"]

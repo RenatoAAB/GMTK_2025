@@ -339,9 +339,11 @@ texture_scale = 0.3
 
 [node name="you_shall_not_pass" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_jk868")
+volume_db = -10.0
 
 [node name="evil_laugh" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ef5xr")
+volume_db = -10.0
 
 [node name="hit_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_wt8nh")

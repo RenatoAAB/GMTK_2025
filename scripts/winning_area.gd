@@ -32,7 +32,6 @@ func update_characters_escaped():
 func call_winning_screen():
 	if is_tutorial:
 		tutorial_texts.visible = false
-	win_menu.visible = true;
 	print("You won !!")
 	if firemage:
 		firemage.kill()

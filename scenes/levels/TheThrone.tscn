@@ -140,7 +140,6 @@ visible = false
 position = Vector2(27, -8)
 
 [node name="WinMenuFinal" type="CanvasLayer" parent="." index="19"]
-visible = false
 script = ExtResource("8_yb043")
 
 [node name="background" type="TextureRect" parent="WinMenuFinal" index="0"]
@@ -191,7 +190,13 @@ offset_bottom = 605.0
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("13_f83kn")
 
-[node name="PlayText2" type="Label" parent="WinMenuFinal" index="6"]
+[node name="Control" type="Control" parent="WinMenuFinal" index="6"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayText2" type="Label" parent="WinMenuFinal/Control" index="0"]
 offset_left = 177.0
 offset_top = 35.0
 offset_right = 1321.0
@@ -200,12 +205,30 @@ text = "You escaped!"
 label_settings = ExtResource("14_8xca8")
 horizontal_alignment = 1
 
-[node name="PlayText3" type="Label" parent="WinMenuFinal" index="7"]
+[node name="PlayText3" type="Label" parent="WinMenuFinal/Control" index="1"]
 offset_left = 177.0
 offset_top = 35.0
 offset_right = 1321.0
 offset_bottom = 158.0
 text = "You escaped!"
+label_settings = ExtResource("15_sgco5")
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="WinMenuFinal" index="7"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 355.0
+offset_top = 159.0
+offset_right = 395.0
+offset_bottom = 199.0
+scale = Vector2(0.5, 0.5)
+
+[node name="PlayText3" type="Label" parent="WinMenuFinal/Control2" index="0"]
+offset_left = 177.0
+offset_top = 35.0
+offset_right = 1321.0
+offset_bottom = 158.0
+text = "Thank you for playing"
 label_settings = ExtResource("15_sgco5")
 horizontal_alignment = 1
 

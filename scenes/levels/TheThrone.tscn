@@ -140,6 +140,7 @@ visible = false
 position = Vector2(27, -8)
 
 [node name="WinMenuFinal" type="CanvasLayer" parent="." index="19"]
+visible = false
 script = ExtResource("8_yb043")
 
 [node name="background" type="TextureRect" parent="WinMenuFinal" index="0"]

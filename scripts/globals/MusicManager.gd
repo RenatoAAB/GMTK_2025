@@ -21,6 +21,7 @@ const musica_win = preload("res://sounds/music/vitoria.mp3")
 const musica_half_win = preload("res://sounds/half-victory.mp3")
 
 func _ready():
+	music_player.connect("finished", _on_music_finished)
 	start_music_menu()
 
 func start_level_music(current_level):
@@ -38,7 +39,6 @@ func start_win_music():
 	music_player.stream = musica_win
 	music_player.play()
 
-
 func fade_out_music(duration: float = 1.5):
 	if not music_player.playing:
 		return
@@ -55,3 +55,7 @@ func fade_out_music(duration: float = 1.5):
 	
 	music_player.stop()
 	music_player.volume_db = initial_volume  # Reset volume for next song
+
+func _on_music_finished():
+	if music_player.stream != musica_win:
+		music_player.play()

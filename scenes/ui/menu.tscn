@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn2pln1gqhliw"]
+[gd_scene load_steps=18 format=3 uid="uid://dn2pln1gqhliw"]
 
 [ext_resource type="Script" uid="uid://cfwjbuf0epy8m" path="res://scripts/ui/menu.gd" id="1_cx0sj"]
 [ext_resource type="Texture2D" uid="uid://xlavw1qbthl4" path="res://images/menu-art/layer6-fundo.png" id="2_e11en"]
@@ -9,7 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://qd2wm3li0o8f" path="res://images/menu-art/layer2-mist2.png" id="6_5j7hh"]
 [ext_resource type="Texture2D" uid="uid://bewiur2sfe8go" path="res://images/menu-art/layer1-mist1.png" id="7_y7dvm"]
 [ext_resource type="FontFile" uid="uid://bkjnsvyi6mls8" path="res://fonts/Medieval Scroll of Wisdom.ttf" id="9_288ov"]
+[ext_resource type="Texture2D" uid="uid://sb43dh7wful8" path="res://images/cutcene-inicial/player2.png" id="10_5j7hh"]
 [ext_resource type="Texture2D" uid="uid://bev1fcgpl4ijk" path="res://images/menu-art/title.png" id="10_288ov"]
+[ext_resource type="Script" uid="uid://b408gsxmf33cg" path="res://scripts/historinha.gd" id="10_a7ikg"]
+[ext_resource type="Texture2D" uid="uid://d0q5ubfygutq7" path="res://images/cutcene-inicial/firemage.png" id="10_ir0oc"]
+[ext_resource type="Texture2D" uid="uid://dvcjfpapljtm6" path="res://images/cutcene-inicial/player1.png" id="11_y7dvm"]
+[ext_resource type="LabelSettings" uid="uid://d3j4vqcmcym33" path="res://fonts/historinha_font.tres" id="12_ir0oc"]
+[ext_resource type="Texture2D" uid="uid://dw52dfoc3p70o" path="res://images/cutcene-inicial/chave.png" id="14_a7ikg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tub5d"]
 font = ExtResource("9_288ov")
@@ -115,12 +121,104 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -183.5
-offset_top = -138.0
+offset_top = -187.583
 offset_right = 166.5
-offset_bottom = 12.0
+offset_bottom = -37.583
 grow_horizontal = 2
 grow_vertical = 0
 flat = true
+
+[node name="Historinha" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("10_a7ikg")
+
+[node name="ColorRect" type="ColorRect" parent="Historinha"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.64, 17.52)
+color = Color(0, 0, 0, 1)
+
+[node name="parte1" type="Control" parent="Historinha"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -267.0
+offset_top = -3.0
+offset_right = -227.0
+offset_bottom = 37.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Historinha/parte1"]
+position = Vector2(485, 337)
+scale = Vector2(15, 15)
+texture = ExtResource("10_ir0oc")
+
+[node name="Label" type="Label" parent="Historinha/parte1"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 343.0
+offset_top = 431.0
+offset_right = 643.0
+offset_bottom = 584.0
+text = "In the high tower of the Fire Mage"
+label_settings = ExtResource("12_ir0oc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="parte2" type="Control" parent="Historinha"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Historinha/parte2"]
+position = Vector2(621.5, 338.5)
+scale = Vector2(15, 15)
+texture = ExtResource("10_5j7hh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Historinha/parte2"]
+position = Vector2(490.5, 335.5)
+scale = Vector2(15, 15)
+texture = ExtResource("11_y7dvm")
+flip_h = true
+
+[node name="Label" type="Label" parent="Historinha/parte2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 411.0
+offset_top = 85.0
+offset_right = 711.0
+offset_bottom = 238.0
+text = "Layed locked two immortal brothers"
+label_settings = ExtResource("12_ir0oc")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="parte3" type="Control" parent="Historinha"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 370.0
+offset_top = -45.0
+offset_right = 410.0
+offset_bottom = -5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Historinha/parte3"]
+position = Vector2(555, 396)
+scale = Vector2(15, 15)
+texture = ExtResource("14_a7ikg")
+
+[node name="Label" type="Label" parent="Historinha/parte3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 354.0
+offset_top = 457.0
+offset_right = 754.0
+offset_bottom = 662.0
+text = "That was, until a mysterious figure opened the doors..."
+label_settings = ExtResource("12_ir0oc")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="LevelSelection" parent="." instance=ExtResource("5_e11en")]
 visible = false

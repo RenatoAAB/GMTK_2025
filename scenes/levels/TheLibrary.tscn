@@ -96,6 +96,17 @@ chase_speed = 45.0
 path_2d_to_follow = NodePath("../Path2d_follow_enemy2")
 is_path_linear = false
 
+[node name="PathFollow2D" type="PathFollow2D" parent="Path1" index="2"]
+position = Vector2(-159, -57)
+rotation = -0.00862048
+
+[node name="Enemy3" parent="Path1" index="3" node_paths=PackedStringArray("path_2d_to_follow") instance=ExtResource("2_vbp7u")]
+modulate = Color(1, 0.856935, 0.735061, 1)
+position = Vector2(-159, -58)
+chase_speed = 45.0
+path_2d_to_follow = NodePath("../PathFollow2D")
+is_path_linear = false
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="17" groups=["navmesh"]]
 position = Vector2(39, -101)
 navigation_polygon = SubResource("NavigationPolygon_j2bni")
